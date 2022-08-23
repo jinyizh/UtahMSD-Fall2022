@@ -1,5 +1,4 @@
-// Part 2 of the Variables and Expressions Group Lab, done by JAEHYUNG 
-PARK
+// Part 2 of the Variables and Expressions Group Lab, done by JAEHYUNG PARK
 
 #include <iostream>
 
