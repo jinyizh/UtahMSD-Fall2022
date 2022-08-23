@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "Enter the cost of gas in dollars per gallon:\n";
     std::cin >> costOfGas;
     float costOfTrip = distance * costOfGas / mpg;
-    std::cout << "The cost of trip is " << costOfTrip << "\n";
+    std::cout << "The cost of trip is " << costOfTrip << " dollars" << std::endl;
     
     return 0;
 }
