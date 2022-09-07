@@ -9,23 +9,27 @@
 #include <string>
 #include <vector>
 
-struct House {
-    int numberOfBathrooms;
-    int numberOfBedrooms;
-    std::string color;
-    int zipCode;
-};
-
 int main(int argc, const char * argv[]) {
-    House house1 = {2, 2, "red", 84101};
-    House house2;
-    house2.numberOfBathrooms = 3;
-    house2.numberOfBedrooms = 3;
-    house2.color = "green";
-    house2.zipCode = 94101;
-    int totalRooms = house1.numberOfBedrooms + house1.numberOfBathrooms;
+
+    //2d array
+    int a[5][5];
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            a[i][j] = i + j;
+        }
+    }
     
-    std::cout << totalRooms << std::endl;
+    if (argc > 0) {
+        for (int i = 0; i < argc; i++) {
+            std::cout << argv[i] << std::endl;
+        }
+    }
+    
+    if (argc > 0) {
+        std::string firstArgument = argv[0];
+        std::cout << firstArgument;
+    }
+        
     
     return 0;
 }

@@ -1,0 +1,35 @@
+Convert the following decimal numbers to binary and hexadecimal:
+
+decimal 12: binary 1100; hexadecimal C.
+
+decimal 63: binary 111111; hexadecimal 3F.
+
+decimal 100: binary 1100100; hexadecimal 64
+
+decimal 127: binary 1111111; hexadecimal 7F 
+
+decimal 254: binary 11111110; hexadecimal FE
+
+Convert the following binary numbers to decimal and hexadecimal:
+
+binary 100: decimal 4; hexadecimal 4
+
+binary 10001: decimal 17; hexadecimal 11
+
+binary 100010: decimal 34; hexadecimal 22
+
+binary 11000000: decimal 192; hexadecimal C0
+
+binary 11111111: decimal 255; hexadecimal FF
+
+Convert the following hexadecimal numbers to binary and decimal:
+
+hexadecimal A: binary 1010; decimal 10
+
+hexadecimal C0: binary 11000000; decimal 192
+
+hexadecimal FF: binary 11111111; decimal 255
+
+hexadecimal BEEF: binary 1011111011101111; decimal 48879
+
+hexadecimal F00D: binary 1111000000001101; decimal 61453

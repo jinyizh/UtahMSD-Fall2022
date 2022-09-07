@@ -25,11 +25,11 @@ vector<Card> createDeck() {
             deck.push_back(card);
         }
     }
-// Push jokers:
-    Card joker1 = {'J', 0};
-    Card joker2 = {'J', 1};
-    deck.push_back(joker1);
-    deck.push_back(joker2);
+//// Push jokers:
+//    Card joker1 = {'J', 0};
+//    Card joker2 = {'J', 1};
+//    deck.push_back(joker1);
+//    deck.push_back(joker2);
     return deck;
 }
 
@@ -37,7 +37,7 @@ void printCard(Card card) {
     vector<char> jqk = {'J', 'Q', 'K'};
     if (card.rank > 10) {
         cout << card.suit << jqk[card.rank - 11] << endl;
-    } else if (card.rank == 1 && card.suit != 'J') {
+    } else if (card.rank == 1 /* && card.suit != 'J' */) {
         cout << card.suit << 'A' << endl;
     } else {
         cout << card.suit << card.rank << endl;
