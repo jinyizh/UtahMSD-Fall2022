@@ -87,7 +87,7 @@ int totalChar(vector<string> words) {
 }
 
 string shortestWord(vector<string> words) {
-    string shortest = "a";
+    string shortest = words[0];
     for (auto word : words) {
         if (word.size() <= shortest.size()) {
             return word;
@@ -97,7 +97,7 @@ string shortestWord(vector<string> words) {
 }
 
 string longestWord(vector<string> words) {
-    string result;
+    string result = "a";
     for (auto word : words) {
         if (word.size() >= result.size()) {
             result = word;
