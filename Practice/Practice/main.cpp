@@ -6,30 +6,23 @@
 //
 
 #include <iostream>
-#include <string>
 #include <vector>
+#include <fstream>
+
+struct student {
+    std::string name;
+    float height;
+};
+
+std::vector<student> readData(std::string filename) {
+    std::ifstream ifstream(filename);
+    std::string word1;
+    int num = -1;
+    ifstream >> word1;
+    num = stoi(word1);
+}
 
 int main(int argc, const char * argv[]) {
-
-    //2d array
-    int a[5][5];
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 5; j++) {
-            a[i][j] = i + j;
-        }
-    }
-    
-    if (argc > 0) {
-        for (int i = 0; i < argc; i++) {
-            std::cout << argv[i] << std::endl;
-        }
-    }
-    
-    if (argc > 0) {
-        std::string firstArgument = argv[0];
-        std::cout << firstArgument;
-    }
-        
-    
+    std::vector<int> ints = {1, 2, 3, 4, 5};
     return 0;
 }

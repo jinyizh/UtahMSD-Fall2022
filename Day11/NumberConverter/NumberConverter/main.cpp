@@ -31,6 +31,19 @@ string intToDecimalString(int num) {
     char character;
     string s;
     int digit;
+    if (num < 0) {
+        num = -num;
+        while (num != 0) {
+            digit = num % 10;
+            num -= digit;
+            num /= 10;
+            character = digit + '0';
+            s.push_back(character);
+        }
+        s.push_back('-');
+        reverse(s.begin(), s.end());
+        return s;
+    }
     while (num != 0) {
         digit = num % 10;
         num -= digit;
@@ -46,6 +59,19 @@ string intToBinaryString(int num) {
     char character;
     string s;
     int digit;
+    if (num < 0) {
+        num = -num;
+        while (num != 0) {
+            digit = num % 2;
+            num -= digit;
+            num /= 2;
+            character = digit + '0';
+            s.push_back(character);
+        }
+        s.push_back('-');
+        reverse(s.begin(), s.end());
+        return s;
+    }
     while (num != 0) {
         digit = num % 2;
         num -= digit;
@@ -61,6 +87,23 @@ string intToHexadecimalString(int num) {
     char character;
     string s;
     int digit;
+    if (num < 0) {
+        num = -num;
+        while (num != 0) {
+            digit = num % 16;
+            num -= digit;
+            num /= 16;
+            if (digit < 10) {
+                character = digit + '0';
+            } else {
+                character = digit + 'a' - 10;
+            }
+            s.push_back(character);
+        }
+        s.push_back('-');
+        reverse(s.begin(), s.end());
+        return s;
+    }
     while (num != 0) {
         digit = num % 16;
         num -= digit;
@@ -77,13 +120,13 @@ string intToHexadecimalString(int num) {
 }
 
 int main(int argc, const char * argv[]) {
-    int result = stringToInt("9229", 10);
+    int result = stringToInt("-9229", 10);
     cout << result << endl;
-    string result10 = intToDecimalString(321);
+    string result10 = intToDecimalString(-321);
     cout << result10 << endl;
-    string result2 = intToBinaryString(1200);
-    cout << result2 << endl;
-    string result16 = intToHexadecimalString(23232);
+    string result2 = intToBinaryString(-1200);
+    cout << result2 << endl; // -10010110000
+    string result16 = intToHexadecimalString(-23232);
     cout << result16 << endl;
     return 0;
 }
