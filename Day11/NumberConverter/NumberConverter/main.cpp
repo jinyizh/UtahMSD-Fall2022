@@ -121,12 +121,25 @@ string intToHexadecimalString(int num) {
 
 int main(int argc, const char * argv[]) {
     int result = stringToInt("-9229", 10);
-    cout << result << endl;
+    if (result != -9229) {
+        cout << "test 1 failed!" << endl;
+        return 0;
+    }
     string result10 = intToDecimalString(-321);
-    cout << result10 << endl;
+    if (result10 != "-321") {
+        cout << "test 2 failed!" << endl;
+        return 0;
+    }
     string result2 = intToBinaryString(-1200);
-    cout << result2 << endl; // -10010110000
+    if (result2 != "-10010110000") {
+        cout << "test 3 failed!" << endl;
+        return 0;
+    }
     string result16 = intToHexadecimalString(-23232);
-    cout << result16 << endl;
+    if (result16 != "-5ac0") {
+        cout << "test 4 failed!" << endl;
+        return 0;
+    }
+    cout << "All test past!" << endl;
     return 0;
 }
