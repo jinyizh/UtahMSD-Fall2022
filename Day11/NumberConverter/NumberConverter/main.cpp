@@ -120,24 +120,44 @@ string intToHexadecimalString(int num) {
 }
 
 int main(int argc, const char * argv[]) {
-    int result = stringToInt("-9229", 10);
-    if (result != -9229) {
+    int result = stringToInt("9229", 10);
+    if (result != 9229) {
         cout << "test 1 failed!" << endl;
         return 0;
     }
-    string result10 = intToDecimalString(-321);
-    if (result10 != "-321") {
+    string result10 = intToDecimalString(321);
+    if (result10 != "321") {
         cout << "test 2 failed!" << endl;
         return 0;
     }
-    string result2 = intToBinaryString(-1200);
-    if (result2 != "-10010110000") {
+    string result2 = intToBinaryString(1200);
+    if (result2 != "10010110000") {
         cout << "test 3 failed!" << endl;
         return 0;
     }
-    string result16 = intToHexadecimalString(-23232);
-    if (result16 != "-5ac0") {
+    string result16 = intToHexadecimalString(23232);
+    if (result16 != "5ac0") {
         cout << "test 4 failed!" << endl;
+        return 0;
+    }
+    int resultng = stringToInt("-9229", 10);
+    if (resultng != -9229) {
+        cout << "test 5 failed!" << endl;
+        return 0;
+    }
+    string result10ng = intToDecimalString(-321);
+    if (result10ng != "-321") {
+        cout << "test 6 failed!" << endl;
+        return 0;
+    }
+    string result2ng = intToBinaryString(-1200);
+    if (result2ng != "-10010110000") {
+        cout << "test 7 failed!" << endl;
+        return 0;
+    }
+    string result16ng = intToHexadecimalString(-23232);
+    if (result16ng != "-5ac0") {
+        cout << "test 8 failed!" << endl;
         return 0;
     }
     cout << "All test past!" << endl;
