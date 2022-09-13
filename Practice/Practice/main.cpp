@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <vector>
-#include <fstream>
 
 struct MyVector {
     double * data;
@@ -29,15 +28,14 @@ double arrayModSum(MyVector& vec) {
 }
 
 void growMyVector(MyVector& vec) {
-    if (vec.size == vec.capacity) {
-        double * temp = new double[2 * vec.size];
-        for (int i = 0; i < vec.size; i++) {
-            temp[i] = vec.data[i];
-        }
-        delete [] vec.data;
-        vec.data = temp;
-        temp = nullptr;
+    double * temp = new double[2 * vec.capacity];
+    for (int i = 0; i < vec.size; i++) {
+        temp[i] = vec.data[i];
     }
+    delete [] vec.data;
+    vec.data = temp;
+    vec.capacity = 2 * vec.capacity;
+    temp = nullptr;
 }
 
 int main(int argc, const char * argv[]) {
@@ -45,16 +43,27 @@ int main(int argc, const char * argv[]) {
     std::cout << "Input the array size: " << std::endl;
     std::cin >> vec1.size;
     vec1.data = new double[vec1.size];
-    
+    vec1.capacity = vec1.size;
+
     for (int i = 0; i < vec1.size; i++) {
         vec1.data[i] = 1.0;
+        std::cout << vec1.data[i] << std::endl;
     }
-    
+
     double newSum = arrayModSum(vec1);
     std::cout << "The modified sum is: " << newSum << std::endl;
-    
+
     growMyVector(vec1);
     std::cout << "After growing, the capacity becomes: " << vec1.capacity << std::endl;
     
+    for (int i = vec1.size; i < vec1.capacity; i++) {
+        vec1.data[i] = -1.0;
+    }
+    
+    std::cout << "The elements in the vector are: " << std::endl;
+    for (int i = 0; i < vec1.capacity; i++) {
+        std::cout << vec1.data[i] << std::endl;
+    }
+
     return 0;
 }
