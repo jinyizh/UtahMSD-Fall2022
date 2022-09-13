@@ -80,7 +80,7 @@ int NumBitsSet( uint32_t input )
         count += input & 1;
         input >>= 1;
     }
-    return 0;
+    return count;
 }
 
 
@@ -102,7 +102,6 @@ int NumBitsSet( uint32_t input )
  */
 unsigned char GetByte( uint32_t input, int b )
 {
-  
     return (input >> (8 * b)) & 0xff;
 }
 

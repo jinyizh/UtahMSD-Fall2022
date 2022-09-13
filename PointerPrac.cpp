@@ -1,10 +1,3 @@
-//
-//  main.cpp
-//  Practice
-//
-//  Created by Jinyi Zhou on 9/1/22.
-//
-
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -54,7 +47,9 @@ int main(int argc, const char * argv[]) {
     std::cout << "The modified sum is: " << newSum << std::endl;
     
     growMyVector(vec1);
-    std::cout << "After growing, the capacity becomes: " << vec1.capacity << std::endl;
+    std::cout << "After growing, the capacity becomes: " << vec1.capacity 
+<< std::endl;
     
     return 0;
 }
+
