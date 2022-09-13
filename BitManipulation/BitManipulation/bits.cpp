@@ -15,6 +15,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cstdlib>
+#include <cmath>
 
 using std::cout;
 using std::endl;
@@ -37,8 +39,7 @@ using std::string;
  */
 bool GetBit( uint32_t input, int b )
 {
-  // TODO: Fill in. Do not return false.
-  return false;
+    return input >> (b - 1) & input;
 }
 
 
@@ -55,8 +56,7 @@ bool GetBit( uint32_t input, int b )
  */
 bool IsNegative( int input )
 {
-  // TODO: Fill in. Do not return false.
-  return false;
+    return (input >> 31) & 1;
 }
 
 /*
@@ -75,8 +75,12 @@ bool IsNegative( int input )
  */
 int NumBitsSet( uint32_t input )
 {
-  // TODO: Fill in. Do not return 0.
-  return 0;
+    unsigned int count = 0;
+    while (input) {
+        count += input & 1;
+        input >>= 1;
+    }
+    return 0;
 }
 
 
@@ -98,8 +102,8 @@ int NumBitsSet( uint32_t input )
  */
 unsigned char GetByte( uint32_t input, int b )
 {
-  // TODO: Fill in. Do not return 0.
-  return 0;
+  
+    return (input >> (8 * b)) & 0xff;
 }
 
 
@@ -154,10 +158,11 @@ uint32_t SetByte( uint32_t input, uint8_t value, int b )
  */
 int Negate( int input )
 {
-  // Note, it may help to do the challenge question (see below) before implementing this one...
-
-  // TODO: Fill in. Do not return 0.
-  return 0;
+  int i = INT_MIN;
+    while (i + input) {
+        i++;
+    }
+    return i;
 }
 
 
@@ -168,7 +173,13 @@ int Negate( int input )
  * This function should return x + 1 but should only make use of bitwise operators and == or !=
 */
 int Increment( uint32_t x ){
-  return 0;
+    unsigned int mask = 1;
+    while (x & mask) {
+        x &= ~mask;
+        mask <<= 1;
+    }
+    x |= mask;
+    return x;
 }
 
 
