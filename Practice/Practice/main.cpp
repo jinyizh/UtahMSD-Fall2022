@@ -38,17 +38,6 @@ void growMyVector(MyVector& vec) {
     temp = nullptr;
 }
 
-void set(const double val, size_t i) {
-    
-}
-
-MyVector operator+(const MyVector& v1, const MyVector& v2) {
-    MyVector output;
-    if (v1.size == v2.size) {
-        output
-    }
-}
-
 int main(int argc, const char * argv[]) {
     MyVector vec1;
     std::cout << "Input the array size: " << std::endl;

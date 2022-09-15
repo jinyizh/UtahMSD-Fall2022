@@ -124,10 +124,8 @@ unsigned char GetByte( uint32_t input, int b )
  *   SetByte( (unsigned int)-1, 0, 2 ) -> returns 0xff00ffff (4278255615 as unsigned int)
  *   SetByte( 0xabcd, 7, 1 )           -> returns 0x7cd (1997 as unsigned int)
  */
-uint32_t SetByte( uint32_t input, uint8_t value, int b )
-{
-  // TODO: Fill in. Do not return 0.
-  return 0;
+uint32_t SetByte( uint32_t input, uint8_t value, int b ) {
+    return input = (input & ~(1UL << 8*b)) | (value << 8*b);
 }
 
 
