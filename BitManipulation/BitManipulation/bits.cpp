@@ -39,7 +39,8 @@ using std::string;
  */
 bool GetBit( uint32_t input, int b )
 {
-    return input >> (b - 1) & input;
+    input = input << (32 - b - 1);
+    return input >> 31;
 }
 
 
