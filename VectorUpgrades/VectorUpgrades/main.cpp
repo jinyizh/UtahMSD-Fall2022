@@ -111,7 +111,7 @@ public:
         this->capacity = 2 * this->capacity;
         temp = nullptr;
     }
-    void freeVector() {
+    ~MyVector() {
         delete [] this->data;
         this->data = nullptr;
         this->size = 0;
@@ -139,7 +139,7 @@ int main(int argc, const char * argv[]) {
 //    for (int i = 0; i < vec1.size; i++) {
 //        std::cout << vec1.data[i] << std::endl;
 //    }
-//    
+//
 //    popBack(vec1);
 //    std::cout << "After popping back, the elements in the struct vec1 are now: " << std::endl;
 //    for (int i = 0; i < vec1.size; i++) {
