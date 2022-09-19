@@ -1,0 +1,3 @@
+/Users/jinyizhou/myGithubRepo/CS6010/DrawAnythingWithSFML/xcode/CMakeFiles/testSFML.dir
+/Users/jinyizhou/myGithubRepo/CS6010/DrawAnythingWithSFML/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/jinyizhou/myGithubRepo/CS6010/DrawAnythingWithSFML/xcode/CMakeFiles/ZERO_CHECK.dir
