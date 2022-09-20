@@ -22,7 +22,7 @@ private:
     
 public:
     MyVector() {
-        capacity_ = 10;
+        capacity_ = 0;
         size_ = 0;
         data_ = new T[capacity_];
     }
