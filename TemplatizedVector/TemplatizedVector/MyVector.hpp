@@ -32,7 +32,7 @@ public:
         capacity_ = initialCapacity;
         size_ = 0;
     }
-
+    
     MyVector(T data[], size_t size) {
         size_ = size;
         capacity_ = size;
@@ -60,8 +60,9 @@ public:
         capacity_ = 0;
         std::cout << "Destructor excuted!\n";
     }
-
-    // getters
+    
+    // getters and setters:
+    
     size_t getSize() const {
         return size_;
     }
@@ -111,7 +112,7 @@ public:
     MyVector<T>& operator=(const MyVector<T>& rhs) {
         std::cout << "using operator =\n";
         if (this == &rhs) return *this;
-        // if this object is not empty, we'll delete old data to avoid memory leak
+        // if object not empty, delete old data to avoid memory leak
         if (capacity_ != 0) {
             delete [] data_;
             data_ = nullptr;
