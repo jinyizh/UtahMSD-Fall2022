@@ -2,7 +2,7 @@
 //  main.cpp
 //  TemplatizedVector
 //
-//  Created by Jinyi Zhou on 9/20/22.
+//  Created by Jinyi Zhou & Junming Jin on 9/15/22.
 //
 
 #include "MyVector.hpp"
