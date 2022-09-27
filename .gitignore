@@ -8,13 +8,11 @@ Objective-C.gitignore & Swift.gitignore
 ## User settings
 **/xcuserdata/
 
-## compatibility with Xcode 8 and earlier (ignoring not required starting 
-Xcode 9)
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
 
-## compatibility with Xcode 3 and earlier (ignoring not required starting 
-Xcode 4)
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 **/build/
 **/DerivedData/
 *.moved-aside
@@ -32,3 +30,20 @@ Xcode 4)
 
 ## obnoxious file that has thumbnails and stuff
 .DS_Store
+
+## Java
+
+**/target/
+/target/
+*/target/*
+.classpath
+.project
+.settings
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.iml
+*.idea
