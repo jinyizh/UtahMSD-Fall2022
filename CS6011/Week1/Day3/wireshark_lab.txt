@@ -1,0 +1,41 @@
+
+My IPv4 address is 10.17.140.139.
+My partner's IPv4 address is 10.17.241.107
+
+In Wireshark, in the Internet protocol version 4 section, the source address is 10.17.241.107, and the destination address: 10.17.140.139.
+
+In Wireshark, under the data section, it says:
+Data: 08090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b…
+
+And in terminal, the lines look like this:
+64 bytes from 10.17.241.107: icmp_seq=0 ttl=64 time=127.379 ms
+
+Does it match anything that we have seen before? The data in Wireshark is hexadecimal number.
+
+How long does it take a ping packet to travel to your classmate's machine and back?
+It differs, the first packet took time=127.379 ms as shown in the terminal.
+
+Try ping google.com. How long does it take these ping packets to travel?
+time=53.431 ms for the first packet.
+
+Try ping www.louvre.fr How long does this take?
+
+time=153.545 ms for the first packet. These numbers tell me how long it takes these ping packets to travel.
+
+Did you see more than you expected in the output?
+yes, there are more output for Source 93.184.216.34 than other source.
+
+Can you figure out what other data was sent/received?
+
+No, because they are encrypted.
+
+What is the purpose of the curl program?
+
+curl is a tool for transfering data from or to a server. It supports these protocols: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET or TFTP. The command is designed to work without user interaction.
+
+How are your results different / similar?
+When running the curl command, there are more data in the output. There are Hypertext Transfer Protocol and Line-based text data: text/html.
+
+Finally, try going to http://github.com using Safari or Firefox (not Chrome! It does its own weird thing), and see what happens. (What URL actually show's up when GitHub is loaded? It's not exactly what you typed in.) Can you understand the output from Wireshark? Why can you only read the first couple of messages?
+
+In the output data, there is a sentence: "Moved Permanently". The reason that we can read the first couple of messages is that they are not encrypted. After that all the conversations are encrypted so we can't read them.
