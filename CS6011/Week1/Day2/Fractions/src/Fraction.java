@@ -20,6 +20,10 @@ public class Fraction {
         this.denominator = 1;
     }
     public Fraction(long n, long d) {
+        if (d < 0 && n > 0) {
+            d = d * (-1);
+            n = n * (-1);
+        }
         this.numerator = n;
         this.denominator = d;
     }
@@ -48,14 +52,17 @@ public class Fraction {
     public Fraction dividedBy(Fraction rhs) {
         return this.times(rhs.reciprocal());
     }
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        if (this.numerator * this.denominator < 0) {
-            sb.append("-");
+    public String to_String() {
+        reduce();
+        if (denominator < 0 && numerator > 0) {
+            denominator *= -1;
+            numerator *= -1;
         }
-        return sb.toString();
+        String new_denominator = Long.toString(denominator);
+        String new_numerator = Long.toString(numerator);
+        return numerator + "/" + denominator;
     }
     public double toDouble() {
-
+        return (double) this.numerator / this.denominator;
     }
 }
