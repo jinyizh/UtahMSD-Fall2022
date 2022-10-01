@@ -24,9 +24,13 @@ public class Fraction {
             d = d * (-1);
             n = n * (-1);
         }
+        if (d == 0) {
+            throw new IllegalArgumentException("the denominator must not be zero!");
+        }
         this.numerator = n;
         this.denominator = d;
     }
+
     public Fraction plus(Fraction rhs) {
         long newDenominator = this.denominator * rhs.denominator;
         long newNumerator = this.numerator * rhs.denominator + rhs.numerator * this.denominator;
