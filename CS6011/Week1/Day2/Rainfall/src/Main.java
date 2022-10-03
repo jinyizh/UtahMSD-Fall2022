@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<String> months = new ArrayList<>();
-        ArrayList<Float> tempRainfalls = new ArrayList<>(12);
         float[] rainfalls = new float[12];
         ArrayList<RainData> rainDataList = new ArrayList<>();
         HashMap<String, Integer> map = new HashMap<>();
