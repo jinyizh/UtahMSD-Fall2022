@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<String> months = new ArrayList<>();
-        ArrayList<Float> rainfalls = new ArrayList<>(12);
+        ArrayList<Float> tempRainfalls = new ArrayList<>(12);
+        float[] rainfalls = new float[12];
         ArrayList<RainData> rainDataList = new ArrayList<>();
         HashMap<String, Integer> map = new HashMap<>();
         map.put("January", 0);
@@ -43,8 +44,15 @@ public class Main {
         }
         float averageRainfall = (float) totalRainfall / 240;
         System.out.println("The overall average rainfall amount is " + averageRainfall + " inches.");
-        PrintWriter pw = new PrintWriter("rainfall_results.txt");
-        
+        PrintWriter pw = new PrintWriter
+                ("/Users/jinyizhou/myGithubRepo/UtahMSD/CS6011/Week1/Day2/Rainfall/src/rainfall_results.txt");
+        for (int i = 0; i < rainDataList.size(); i++) {
+//            tempRainfalls.set(map.get(rainDataList.get(i).month), rainDataList.get(i).rainfall);
+            rainfalls[map.get(rainDataList.get(i).month)] += rainDataList.get(i).rainfall;
+        }
+        for (int i = 0; i < rainfalls.length; i++) {
+            pw.println("The average rainfall amount for " + months.get(i) + " is " + (rainfalls[i] / 20) + " inches.");
+        }
         pw.close();
     }
 }
