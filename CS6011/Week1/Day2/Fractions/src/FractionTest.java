@@ -2,6 +2,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 class FractionTest {
 
     @Test
@@ -79,5 +83,25 @@ class FractionTest {
                 }
         );
         assertEquals("the denominator must not be zero!", exception.getMessage());
+    }
+
+    @Test
+    public void testCompareTo() {
+        Fraction f32 = new Fraction(1, 2);
+        Fraction f33 = new Fraction(1, 2);
+        Assertions.assertEquals(f32.compareTo(f33), 0);
+    }
+
+    @Test
+    public void testSort() {
+        Fraction f34 = new Fraction(1, 4);
+        Fraction f35 = new Fraction(1, 3);
+        Fraction f36 = new Fraction(1, 2);
+        ArrayList<Fraction> fractions = new ArrayList<>();
+        fractions.add(f35);
+        fractions.add(f36);
+        fractions.add(f34);
+        Collections.sort(fractions);
+        Assertions.assertEquals(fractions.get(0).to_String(), "1/4");
     }
 }
