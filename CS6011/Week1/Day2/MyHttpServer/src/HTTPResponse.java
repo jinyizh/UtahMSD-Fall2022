@@ -16,7 +16,6 @@ public class HTTPResponse {
             byte[] fBytes = new byte[accessFileLength];
             fis.read(fBytes);
             fis.close();
-
             dos.writeBytes("HTTP/1.1 200 OK \r\n");
             String extension = filename.substring(filename.lastIndexOf('.') + 1);
             dos.writeBytes("Content-Type: text/" + extension + "; charset=utf-8;\r\n");
