@@ -1,9 +1,8 @@
-interface Animal {
-    public void animalSound();
-    public void sleep();
-}
+import java.io.PrintWriter;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        PrintWriter pw = new PrintWriter("d");
+        pw.fl
     }
 }
