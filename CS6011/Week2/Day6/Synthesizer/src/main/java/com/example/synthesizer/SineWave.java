@@ -2,15 +2,15 @@ package com.example.synthesizer;
 
 public class SineWave implements AudioComponent {
     int frequency; // in Hz
-//    final int maxValue = Short.MAX_VALUE; // maximum volume
-    int maxValue;
+    final int maxValue = Short.MAX_VALUE; // maximum volume
+//    int maxValue;
 
     @Override
     public AudioClip getClip() {
         AudioClip ac = new AudioClip();
         // sample[i] = maxValue * sine(2 * pi * frequency * i / sampleRate) -- sine curve within 1 second
-        for (int i = 0; i < 44100; i++) {
-            ac.setSample(i, this.maxValue * (int) Math.sin((2 * Math.PI * this.frequency * i) / 44100));
+        for (int i = 0; i < AudioClip.sampleRate * AudioClip.duration; i++) {
+            ac.setSample(i, (int)(this.maxValue * Math.sin(2 * Math.PI * this.frequency * i /AudioClip.sampleRate)));
         }
         return ac;
     }
@@ -25,8 +25,7 @@ public class SineWave implements AudioComponent {
         // !hasInput
     }
 
-    public SineWave(int frequency, int maxValue) {
+    public SineWave(int frequency) {
         this.frequency = frequency;
-        this.maxValue = maxValue;
     }
 }

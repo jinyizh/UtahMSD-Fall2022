@@ -23,4 +23,12 @@ class AudioClipTest {
         ac.setSample(1, 0);
         Assertions.assertEquals(ac.getSample(0), 1);
     }
+
+    @Test
+    void testAll() {
+        AudioClip ac = new AudioClip();
+        for (int i = Short.MIN_VALUE; i <= Short.MAX_VALUE; i++) {
+            ac.setSample(0, 1);
+        }
+    }
 }

@@ -17,6 +17,10 @@ public class AudioClip {
         return firstByte | secondByte; // in the form of bigEnd+LittleEnd (little endian)
     }
 
+    public byte[] getData() {
+        return this.byteArray;
+    }
+
     public void setSample(int index, int value) {
         byte firstByte = (byte) value;
         byte secondByte = (byte) (value >> 8);
