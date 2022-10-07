@@ -19,9 +19,9 @@ class FilterTest {
         AudioClip clip = vl.getClip();
         byte[] data = clip.getData();
         c.open(format16, data, 0, data.length); // Reads data from our byte array to play it.
-        System.out.println( "About to play..." );
+        System.out.println("About to play...");
         c.start();
-//        c.loop( 2 );
+//        c.loop(2);
         // Makes sure the program doesn't quit before the sound plays.
         while (c.getFramePosition() < AudioClip.totalSample || c.isActive() || c.isRunning()) {
             // Do nothing while we wait for the note to play.
@@ -32,8 +32,6 @@ class FilterTest {
 
     @Test
     void thoroughTest() throws LineUnavailableException {
-        Clip c = AudioSystem.getClip();
-        AudioFormat format16 = new AudioFormat(44100, 16, 1, true, false);
         AudioComponent gen = new SineWave(220);
         double scale = 0.1;
         Filter vl = new Filter(scale, gen);
