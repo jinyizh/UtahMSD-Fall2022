@@ -18,7 +18,7 @@ public class Main {
 
         System.out.println( "About to play..." );
         c.start(); // Plays it.
-        //c.loop( 2 ); // Plays it 2 more times if desired, so 6 seconds total
+//        c.loop( 2 ); // Plays it 2 more times if desired, so 6 seconds total
 
         // Makes sure the program doesn't quit before the sound plays.
         while (c.getFramePosition() < AudioClip.totalSample || c.isActive() || c.isRunning()) {

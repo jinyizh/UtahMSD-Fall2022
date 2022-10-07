@@ -3,7 +3,7 @@ package com.example.synthesizer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-//import static org.junit.jupiter.api.Assertions.*; // unused
+import static org.junit.jupiter.api.Assertions.*; // unused
 
 class AudioClipTest {
     @Test
