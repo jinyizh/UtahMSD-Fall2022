@@ -30,5 +30,4 @@ public class Volume implements AudioComponent { // type of filters
     public void connectInput(AudioComponent input) {
         assert false;
     }
-
 }
