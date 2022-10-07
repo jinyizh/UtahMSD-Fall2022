@@ -21,7 +21,7 @@ public class Main {
         //c.loop( 2 ); // Plays it 2 more times if desired, so 6 seconds total
 
         // Makes sure the program doesn't quit before the sound plays.
-        while( c.getFramePosition() < 88200 || c.isActive() || c.isRunning() ){
+        while (c.getFramePosition() < AudioClip.totalSample || c.isActive() || c.isRunning()) {
             // Do nothing while we wait for the note to play.
         }
 
