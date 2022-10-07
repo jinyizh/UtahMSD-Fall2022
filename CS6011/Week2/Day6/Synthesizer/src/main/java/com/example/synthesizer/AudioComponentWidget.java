@@ -16,6 +16,7 @@
 //        audioComponent_ = ac;
 //        parent_ = parent;
 //        name_ = name;
+//        widgetIamSendingOutputTo_ = null;
 //
 //        baseLayout = new HBox();
 //        baseLayout.setStyle("-fx-border-color: black; -fx-border-image-width: 8; -fx-background-color: white");
@@ -57,6 +58,7 @@
 //    private AnchorPane parent_;
 //    private HBox baseLayout;
 //    private AudioComponent audioComponent_;
+//    private  AudioComponentWidget widgetIamSendingOutputTo_;
 //    private String name_;
 //
 //}

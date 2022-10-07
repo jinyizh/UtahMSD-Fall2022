@@ -2,16 +2,11 @@ package com.example.synthesizer;
 
 public class Filter implements AudioComponent { // changes volume
     private final double scale;
-    private final AudioComponent input;
+    private AudioComponent input;
 
     public Filter(double scale) {
         this.scale = scale;
         this.input = null;
-    }
-
-    public Filter(double scale, AudioComponent input) {
-        this.scale = scale;
-        this.input = input;
     }
 
     @Override
@@ -20,7 +15,7 @@ public class Filter implements AudioComponent { // changes volume
             AudioClip original = this.input.getClip();
             AudioClip result = new AudioClip();
             for (int i = 0; i < AudioClip.totalSample; i++) {
-                if ((int) (result.getSample(i) * scale) > Short.MAX_VALUE) {
+                if ((result.getSample(i) * scale) > Short.MAX_VALUE) {
                     result.setSample(i, Short.MAX_VALUE);
                 } else if (result.getSample(i) < Short.MIN_VALUE) {
                     result.setSample(i, Short.MIN_VALUE);
@@ -39,7 +34,7 @@ public class Filter implements AudioComponent { // changes volume
     }
 
     @Override
-    public void connectInput(AudioComponent input) {
-        assert false;
+    public void connectInput(AudioComponent input) { // use this method to connect to input(s)
+        this.input  = input;
     }
 }
