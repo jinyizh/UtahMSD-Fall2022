@@ -9,17 +9,17 @@ public class Mixer implements AudioComponent{
         this.inputs.add(input);
     }
 
-    public Mixer(ArrayList<AudioComponent> inputs) { // more convenient
+    public Mixer(ArrayList<AudioComponent> inputs) {
         this.inputs = inputs;
     }
 
     @Override
     public AudioClip getClip() {
         AudioClip result = new AudioClip();
-        if (this.inputs != null && this.inputs.size() != 0) {
-            for (int i = 0; i < AudioClip.totalSample; i++) {
-                for (AudioComponent input : inputs) {
-                    AudioClip original = input.getClip();
+        if (this.inputs.size() != 0) {
+            for (AudioComponent input : inputs) { // writing for each loop inside turns out to be much slower!
+                AudioClip original = input.getClip();
+                for (int i = 0; i < AudioClip.totalSample; i++) {
                     if (result.getSample(i) + original.getSample(i) > Short.MAX_VALUE) { // clamping max
                         result.setSample(i, Short.MAX_VALUE);
                     } else if (result.getSample(i) + original.getSample(i) < Short.MIN_VALUE) { // clamping min
