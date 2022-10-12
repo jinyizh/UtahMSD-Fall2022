@@ -26,7 +26,7 @@ class FilterTest {
 //        c.loop(2);
         // Makes sure the program doesn't quit before the sound plays.
         while (c.getFramePosition() < AudioClip.totalSample || c.isActive() || c.isRunning()) {
-            System.out.println(c.getFramePosition()); // Do nothing while we wait for the note to play.
+//            System.out.println(c.getFramePosition()); // Do nothing while we wait for the note to play.
         }
         System.out.println("Done.");
         c.close();
@@ -38,7 +38,6 @@ class FilterTest {
         double scale = 0.1;
         Filter vl = new Filter(scale);
         vl.connectInput(gen);
-
         for (int i = 0; i < AudioClip.totalSample; i += 20) { // would be too slow if i++
             Assertions.assertEquals((int) Math.abs(vl.getClip().getSample(i) - scale * gen.getClip().getSample(i)), 0);
         }

@@ -9,7 +9,7 @@ public class Mixer implements AudioComponent{
         this.inputs.add(input);
     }
 
-    public Mixer(ArrayList<AudioComponent> inputs) {
+    public Mixer(ArrayList<AudioComponent> inputs) { // another constructor
         this.inputs = inputs;
     }
 

@@ -9,18 +9,16 @@ import javax.sound.sampled.LineUnavailableException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MixerTest {
+class VFSineWaveTest {
     @Test
     void simpleTest() throws LineUnavailableException {
         Clip c = AudioSystem.getClip();
         AudioFormat format16 = new AudioFormat(44100, 16, 1, true, false);
-        AudioComponent wave0 = new SineWave(220);
-        AudioComponent wave1 = new SineWave(110);
+        AudioComponent lr = new LinearRamp(50, 10000);
 
-        Mixer mx = new Mixer(wave0);
-        mx.connectInput(wave1);
+        VFSineWave vf = new VFSineWave(lr);
 
-        AudioClip clip = mx.getClip();
+        AudioClip clip = vf.getClip();
         byte[] data = clip.getData();
         c.open(format16, data, 0, data.length); // Reads data from our byte array to play it.
         System.out.println("About to play...");
