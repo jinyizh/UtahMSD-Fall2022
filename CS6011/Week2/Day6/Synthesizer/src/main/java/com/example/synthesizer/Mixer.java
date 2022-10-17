@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Mixer implements AudioComponent{
     ArrayList<AudioComponent> inputs = new ArrayList<>();
 
+    public Mixer() {}
+
     public Mixer(AudioComponent input) {
         this.inputs.add(input);
     }
