@@ -10,8 +10,8 @@ public class Main {
         // This is the format that we're following, 44.1 KHz mono audio, 16 bits per sample.
         AudioFormat format16 = new AudioFormat(44100, 16, 1, true, false);
 
-//        AudioComponent gen = new SineWave(220); // Your code
-        AudioComponent gen = new LinearRamp(50, 2000);
+        AudioComponent gen = new SineWave(440); // Your code
+//        AudioComponent gen = new LinearRamp(50, 2000);
         AudioClip clip = gen.getClip();         // Your code
 
         byte[] data = clip.getData();

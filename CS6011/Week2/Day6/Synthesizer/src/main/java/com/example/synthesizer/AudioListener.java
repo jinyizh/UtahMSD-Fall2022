@@ -5,6 +5,8 @@ import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 
 public class AudioListener implements LineListener {
+    private Clip clip_;
+
     public AudioListener(Clip c) {
         clip_ = c;
     }
@@ -16,6 +18,4 @@ public class AudioListener implements LineListener {
             clip_.close();
         }
     }
-
-    private Clip clip_;
 }

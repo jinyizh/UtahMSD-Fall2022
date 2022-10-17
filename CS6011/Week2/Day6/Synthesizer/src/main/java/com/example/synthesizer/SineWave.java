@@ -26,4 +26,8 @@ public class SineWave implements AudioComponent {
     public void connectInput(AudioComponent input) {
         assert false; // !hasInput
     }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
 }

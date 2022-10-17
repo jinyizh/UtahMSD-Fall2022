@@ -40,7 +40,7 @@ public class SynthesizeApplication extends Application {
 
         Button sineWaveBtn = new Button("Since Wave");
         rightPanel.getChildren().add(sineWaveBtn);
-        sineWaveBtn.setOnAction(e -> createComponent("SineWave"));
+        sineWaveBtn.setOnAction(e -> createComponent("Sine Wave (440 Hz)"));
 
         // center panel stuff:
         mainCanvas_ = new AnchorPane();
@@ -102,10 +102,10 @@ public class SynthesizeApplication extends Application {
         };
     }
 
-    private void createComponent(String sineWave) {
+    private void createComponent(String name) {
         System.out.println("creating component");
         AudioComponent sw = new SineWave(440);
-        AudioComponentWidget acw = new AudioComponentWidget(sw, mainCanvas_, "Sine Wave (440 Hz)");
+        AudioComponentWidget acw = new AudioComponentWidget(sw, mainCanvas_, name);
         widgets_.add(acw);
     }
 

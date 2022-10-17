@@ -15,7 +15,7 @@ class MixerTest {
         Clip c = AudioSystem.getClip();
         AudioFormat format16 = new AudioFormat(44100, 16, 1, true, false);
         AudioComponent wave0 = new SineWave(220);
-        AudioComponent wave1 = new SineWave(110);
+        AudioComponent wave1 = new SineWave(220);
 
         Mixer mx = new Mixer(wave0);
         mx.connectInput(wave1);

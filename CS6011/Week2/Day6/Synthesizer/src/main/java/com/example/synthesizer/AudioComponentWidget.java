@@ -38,8 +38,8 @@ public class AudioComponentWidget extends Pane {
 
         // Right side
         VBox rightSide = new VBox();
-        rightSide.setAlignment(Pos.CENTER);
-        rightSide.setPadding(new Insets(5));
+        rightSide.setAlignment(Pos.CENTER_RIGHT);
+        rightSide.setPadding(new Insets(3));
         rightSide.setSpacing(5);
         
         Button closeBtn = new Button("x");
@@ -70,10 +70,10 @@ public class AudioComponentWidget extends Pane {
         center.setOnMousePressed(e -> startDrag(e));
         center.setOnMouseDragged(e -> handleDrag(e));
 
-        baseLayout.getChildren().add(rightSide);
         baseLayout.getChildren().add(center);
+        baseLayout.getChildren().add(rightSide);
 
-        this.setLayoutX(300);
+        this.setLayoutX(50);
         this.setLayoutY(100);
 
         parent_.getChildren().add(this);
@@ -102,6 +102,7 @@ public class AudioComponentWidget extends Pane {
     private void handleDrag(MouseEvent e) {
         double mouseDelX = e.getSceneX() - mouseStartDragX_;
         double mouseDelY = e.getSceneY() - mouseStartDragY_;
+//        this.relocate(e.getSceneX(), e.getSceneY());
         this.relocate(widgetStartDragX_ + mouseDelX, widgetStartDragY_ + mouseDelY);
     }
 
@@ -114,6 +115,9 @@ public class AudioComponentWidget extends Pane {
     }
 
     private void handleSlider(MouseEvent e, Slider slider) {
+        int freq = (int) slider.getValue();
+        nameLable_.setText("Sine Wave (" + freq + " Hz)");
+        ((SineWave) audioComponent_).setFrequency(freq);
     }
 
     private void startConnection(MouseEvent e, Circle outputCircle) {
