@@ -31,6 +31,10 @@ public class SquareWave implements AudioComponent {
         assert false;
     }
 
+    public int getFrequency() {
+        return this.frequency;
+    }
+
     public void setFrequency(int frequency) {
         this.frequency = frequency;
     }

@@ -1,6 +1,6 @@
 package com.example.synthesizer;
 
-public class Filter implements AudioComponent { // changes volume
+public class Filter implements AudioComponent { // changes frequency
     private final double scale;
     private AudioComponent input;
 
@@ -15,9 +15,9 @@ public class Filter implements AudioComponent { // changes volume
             AudioClip original = this.input.getClip();
             AudioClip result = new AudioClip();
             for (int i = 0; i < AudioClip.totalSample; i++) {
-                if ((result.getSample(i) * scale) > Short.MAX_VALUE) {
+                if ((result.getSample(i) * scale) > Short.MAX_VALUE) { // clamping max
                     result.setSample(i, Short.MAX_VALUE);
-                } else if (result.getSample(i) < Short.MIN_VALUE) {
+                } else if (result.getSample(i) < Short.MIN_VALUE) { // clamping min
                     result.setSample(i, Short.MIN_VALUE);
                 } else {
                     result.setSample(i, (int) (original.getSample(i) * scale));

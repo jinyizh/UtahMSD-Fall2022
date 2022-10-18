@@ -1,10 +1,10 @@
 package com.example.synthesizer;
 
 public class LinearRamp implements AudioComponent {
-    int start; // in Hz
-    int stop; // in Hz
+    float start; // in Hz
+    float stop; // in Hz
 
-    public LinearRamp(int start, int stop) {
+    public LinearRamp(float start, float stop) {
         this.start = start;
         this.stop = stop;
     }
@@ -13,7 +13,8 @@ public class LinearRamp implements AudioComponent {
     public AudioClip getClip() {
         AudioClip ac = new AudioClip();
         for (int i = 0; i < AudioClip.totalSample; i++) {
-            ac.setSample(i, (this.start * (AudioClip.totalSample - i ) + this.stop * i ) / AudioClip.totalSample);
+            ac.setSample(i,
+                    (int) ((this.start * (AudioClip.totalSample - i ) + this.stop * i ) / AudioClip.totalSample));
         }
         return ac;
     }

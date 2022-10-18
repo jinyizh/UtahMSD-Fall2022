@@ -35,7 +35,7 @@ public class SynthesizeApplication extends Application {
         // right
         VBox rightPanel = new VBox();
         rightPanel.setPadding(new Insets(5));
-        rightPanel.setStyle("-fx-background-color: lightblue");
+        rightPanel.setStyle("-fx-background-color: blue");
         rightPanel.setSpacing(5);
 
         Button sineWaveBtn = new Button("Since Wave");

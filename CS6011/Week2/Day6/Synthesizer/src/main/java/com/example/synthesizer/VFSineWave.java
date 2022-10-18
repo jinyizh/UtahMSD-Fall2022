@@ -3,7 +3,6 @@ package com.example.synthesizer;
 import java.util.ArrayList;
 
 public class VFSineWave implements AudioComponent {
-    int frequency; // in Hz
     final int maxValue = Short.MAX_VALUE; // max volume
     ArrayList<AudioComponent> inputs = new ArrayList<>();
 

@@ -1,7 +1,7 @@
 package com.example.synthesizer;
 import javax.sound.sampled.*;
 
-public class Main {
+public class Main { // this class is used to test SineWave
     public static void main(String[] args) throws LineUnavailableException {
         // Get properties from the system about samples rates, etc.
         // AudioSystem is a class from the Java standard library.
