@@ -14,9 +14,9 @@ public class VFSineWave implements AudioComponent {
     public AudioClip getClip() {
         AudioClip result = new AudioClip();
         if (this.inputs.size() != 0) {
-            for (AudioComponent input : inputs) { // writing for each loop inside turns out to be much slower!
+            for (AudioComponent input : inputs) { // writing for each loop inside turns out to be much slower
                 AudioClip original = input.getClip();
-                int phase = 0;
+                float phase = 0; // be careful with the datatype
                 for (int i = 0; i < AudioClip.totalSample; i++) {
                     phase += (2 * Math.PI * original.getSample(i)) / AudioClip.sampleRate;
                     result.setSample(i, (int) (this.maxValue * Math.sin(phase)));
