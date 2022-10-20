@@ -84,12 +84,13 @@ public class AudioComponentWidget extends Pane {
         Bounds speakerBounds = speaker.localToScreen(speaker.getBoundsInLocal());
         double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
                 Math.pow(speakerBounds.getCenterY() - e.getSceneY(), 2.0));
-        if (distance < 10) {
+        if (distance < 50) {
             // handle actually connecting to speaker
             SynthesizeApplication.widgets_.add(this);
         } else {
             parent_.getChildren().remove(line_);
             line_ = null;
+            SynthesizeApplication.widgets_.remove(this);
         }
     }
 
