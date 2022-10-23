@@ -49,7 +49,7 @@ public class SynthesizeApplication extends Application {
         Circle speakerCircle = new Circle(450, 50, 10);
         speaker_ = speakerCircle;
         speakerCircle.setFill(Color.BLACK);
-        mainCanvas_.getChildren().add(speakerCircle); // add to main canvas
+        mainCanvas_.getChildren().add(speaker_); // add to main canvas
 
         // bottom panel stuff:
         HBox bottomPanel = new HBox();

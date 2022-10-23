@@ -31,15 +31,23 @@ function main() {
 window.onload = main;
 
 function animate() {
+
+	let gameOver = false;
+	erase();
+
+	ctx.drawImage(honeyImg, honeyImg.xPos, honeyImg.yPos);
+
 	for (let i = 0; i < bees.length; i++) {
-		eraseBee(bees[i]);
+
+
 		ctx.drawImage(bees[i], bees[i].xPos, bees[i].yPos); // 2th and 3th par are x, y locations
 
 		if (bees[i].xPos - honeyImg.xPos < -50) {
 			bees[i].xPos += 5 * Math.random();
 		} else if (bees[i].xPos - honeyImg.xPos > 20) {
 			bees[i].xPos -= 5 * Math.random();
-		} else {
+		} 
+		else {
 			bees[i].xPos += 5 * (Math.random() - 0.5);
 		}
 
@@ -47,9 +55,21 @@ function animate() {
 			bees[i].yPos += 5 * Math.random();
 		} else if (bees[i].yPos - honeyImg.yPos > 20) {
 			bees[i].yPos -= 5 * Math.random();
-		} else {
+		} 
+		// else if (bees[i].yPos - honeyImg.yPos >= -50 && bees[i].yPos - honeyImg.yPos < 20) {
+		// 	alert("game over");
+		// } 
+		else {
 			bees[i].yPos += 5 * (Math.random() - 0.5);
 		}
+
+		if (bees[i].xPos - honeyImg.xPos <= 20 && bees[i].xPos - honeyImg.xPos > -50 &&
+			bees[i].yPos - honeyImg.yPos <= 20 && bees[i].yPos - honeyImg.yPos > -50) {
+			alert("game over");
+			gameOver = true;
+		} 
+
+
 
 		if (bees[i].xPos > cWidth - 50) {
 			bees[i].xPos -= 5 * (Math.random() - 0.5);
@@ -62,15 +82,17 @@ function animate() {
 		}
 	}
 
-	document.onmousemove = function(e) {
-		erase();
-		ctx.drawImage(honeyImg, e.x - 15, e.y - 15);
-		honeyImg.xPos = e.x - 15;
-		honeyImg.yPos = e.y - 15;
-	}
-
-	window.requestAnimationFrame(animate);
+	if( !gameOver ) {
+	    window.requestAnimationFrame(animate);
+    }
 }
+
+
+document.onmousemove = function(e) {
+	honeyImg.xPos = e.x - 15;
+	honeyImg.yPos = e.y - 15;
+}
+
 
 function erase() {
 	ctx.fillStyle = "#FFFFFF"; // cover the screen with same color (like erase)
