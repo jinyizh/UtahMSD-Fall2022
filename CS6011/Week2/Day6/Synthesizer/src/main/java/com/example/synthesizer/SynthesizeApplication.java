@@ -32,37 +32,35 @@ public class SynthesizeApplication extends Application {
         Scene scene = new Scene(root, 600, 400);
         stage.setTitle("My Synthesizer");
 
-        // right
+        // right panel
         VBox rightPanel = new VBox();
         rightPanel.setPadding(new Insets(5));
         rightPanel.setStyle("-fx-background-color: blue");
         rightPanel.setSpacing(5);
-
+        // buttons
         Button sineWaveBtn = new Button("Since Wave");
         rightPanel.getChildren().add(sineWaveBtn);
         sineWaveBtn.setOnAction(e -> createComponent("Sine Wave (440 Hz)"));
+        root.setRight(rightPanel);
 
-        // center panel stuff:
+        // center panel stuff
         mainCanvas_ = new AnchorPane();
-        mainCanvas_.setStyle("-fx-background-color: white");
-
-        Circle speakerCircle = new Circle(450, 50, 10);
-        speaker_ = speakerCircle;
-        speakerCircle.setFill(Color.BLACK);
+        mainCanvas_.setStyle("-fx-background-color: lightblue");
+        // speaker
+        Circle speaker = new Circle(450, 50, 10);
+        speaker_ = speaker;
+        speaker.setFill(Color.BLACK);
         mainCanvas_.getChildren().add(speaker_); // add to main canvas
+        root.setCenter(mainCanvas_);
 
-        // bottom panel stuff:
+        // bottom panel stuff
         HBox bottomPanel = new HBox();
         Button playBtn = new Button("Play");
         playBtn.setOnAction(e -> playNetwork());
         bottomPanel.getChildren().add(playBtn);
-
-        // put the panels into te BorderPane (root)
-        root.setRight(rightPanel);
-        root.setCenter(mainCanvas_);
         root.setBottom(bottomPanel);
 
-        // last thing to do...
+        // last thing to do
         stage.setScene(scene);
         stage.show();
     }

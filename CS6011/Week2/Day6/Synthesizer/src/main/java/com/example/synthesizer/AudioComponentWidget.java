@@ -4,7 +4,6 @@ import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.IndexedCell;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
@@ -18,64 +17,61 @@ import javafx.scene.shape.Line;
 
 public class AudioComponentWidget extends Pane {
     private AnchorPane parent_;
-    private HBox baseLayout;
     private AudioComponent audioComponent_;
-    private  AudioComponentWidget widgetIamSendingOutputTo_;
-    private String name_;
+    private AudioComponentWidget widgetIamSendingOutputTo_;
+    private HBox baseLayout;
     private Line line_;
-    private Label nameLable_;
+    private Label nameLabel_;
+    private String name_;
     double mouseStartDragX_, mouseStartDragY_, widgetStartDragX_, widgetStartDragY_;
 
-    AudioComponentWidget(AudioComponent ac, AnchorPane parent, String name) {
+    public AudioComponentWidget(AudioComponent ac, AnchorPane parent, String name) {
         audioComponent_ = ac;
         parent_ = parent;
         name_ = name;
         widgetIamSendingOutputTo_ = null;
+
+        // base layout of widget
         baseLayout = new HBox();
         baseLayout.setStyle("-fx-border-color: black; -fx-border-image-width: 8; -fx-background-color: white");
-
         this.getChildren().add(baseLayout);
 
-        // Right side
+        // right side of widget
         VBox rightSide = new VBox();
         rightSide.setAlignment(Pos.CENTER_RIGHT);
         rightSide.setPadding(new Insets(3));
         rightSide.setSpacing(5);
-        
+        // close button
         Button closeBtn = new Button("x");
         closeBtn.setOnAction(e -> closeWidget());
-        Circle outputCircle = new Circle(10);
-        outputCircle.setFill(Color.BLUE);
-        outputCircle.setOnMousePressed(e -> startConnection(e, outputCircle));
-        outputCircle.setOnMouseDragged(e -> moveConnection(e, outputCircle));
-        outputCircle.setOnMouseReleased(e -> endConnection(e));
-        
-        rightSide.getChildren().add(outputCircle);
         rightSide.getChildren().add(closeBtn);
+        // output circle
+        Circle output = new Circle(10);
+        output.setFill(Color.BLUE);
+        output.setOnMousePressed(e -> startConnection(e, output));
+        output.setOnMouseDragged(e -> moveConnection(e, output));
+        output.setOnMouseReleased(e -> endConnection(e));
+        rightSide.getChildren().add(output);
+        baseLayout.getChildren().add(rightSide);
 
-        // Center portion of widget
+        // center portion of widget
         VBox center = new VBox();
         center.setAlignment(Pos.CENTER);
-
-        nameLable_ = new Label();
-        nameLable_.setMouseTransparent(true);
-        nameLable_.setText(name_);
-
+        // name label
+        nameLabel_ = new Label();
+        nameLabel_.setMouseTransparent(true);
+        nameLabel_.setText(name_);
+        // slider
         Slider slider = new Slider(220, 880, 440);
         slider.setOnMouseDragged(e -> handleSlider(e, slider));
-
-        center.getChildren().add(nameLable_);
+        center.getChildren().add(nameLabel_);
         center.getChildren().add(slider);
-        
         center.setOnMousePressed(e -> startDrag(e));
         center.setOnMouseDragged(e -> handleDrag(e));
-
         baseLayout.getChildren().add(center);
-        baseLayout.getChildren().add(rightSide);
 
         this.setLayoutX(50);
         this.setLayoutY(100);
-
         parent_.getChildren().add(this);
     }
 
@@ -117,7 +113,7 @@ public class AudioComponentWidget extends Pane {
 
     private void handleSlider(MouseEvent e, Slider slider) {
         int freq = (int) slider.getValue();
-        nameLable_.setText("Sine Wave (" + freq + " Hz)");
+        nameLabel_.setText("Sine Wave (" + freq + " Hz)");
         ((SineWave) audioComponent_).setFrequency(freq);
     }
 
@@ -136,7 +132,6 @@ public class AudioComponentWidget extends Pane {
         line_.setStartY(bounds.getCenterY() - parentBounds.getMinY());
         line_.setEndX(e.getSceneX());
         line_.setEndY(e.getSceneY());
-
         // for any widget we have to add it to the parent
         parent_.getChildren().add(line_);
     }

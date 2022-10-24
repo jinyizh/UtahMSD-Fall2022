@@ -1,24 +1,7 @@
 package com.example.synthesizer;
 
-public class BaseAudioComponentWidget implements AudioComponent {
+import javafx.scene.layout.Pane;
 
-    @Override
-    public AudioClip getClip() {
-        return null;
-    }
+public class BaseAudioComponentWidget extends Pane {
 
-    @Override
-    public boolean hasInput() {
-        return false;
-    }
-
-    @Override
-    public void connectInput(AudioComponent input) {
-
-    }
-
-    @Override
-    public void removeInput(AudioComponent input) {
-        AudioComponent.super.removeInput(input);
-    }
 }
