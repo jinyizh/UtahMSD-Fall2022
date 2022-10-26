@@ -45,7 +45,7 @@ public class Main {
         for (Thread thread : threads) {
             thread.join();
         }
-        System.out.println("coumputed answer: " + answer);
+        System.out.println("computed answer: " + answer);
         System.out.println("correct answer: " + (maxValue * (maxValue - 1)) / 2);
     }
 
