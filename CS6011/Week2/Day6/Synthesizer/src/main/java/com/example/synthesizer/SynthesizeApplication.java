@@ -47,7 +47,7 @@ public class SynthesizeApplication extends Application {
         mainCanvas_ = new AnchorPane();
         mainCanvas_.setStyle("-fx-background-color: lightblue");
         // speaker
-        Circle speaker = new Circle(450, 50, 10);
+        Circle speaker = new Circle(400, 50, 10);
         speaker_ = speaker;
         speaker.setFill(Color.BLACK);
         mainCanvas_.getChildren().add(speaker_); // add to main canvas
@@ -105,7 +105,7 @@ public class SynthesizeApplication extends Application {
         System.out.println("creating component");
         AudioComponent sw = new SineWave(440);
         AudioComponentWidget acw = new AudioComponentWidget(sw, mainCanvas_, name);
-//        widgets_.add(acw);
+        widgets_.add(acw);
     }
 
     public static void main(String[] args) {
