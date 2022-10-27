@@ -7,7 +7,7 @@ public class HTTPRequest {
 
     private String filename;
     private Socket clientSocket;
-    public HTTPRequest(Socket socket){
+    public HTTPRequest(Socket socket) {
         clientSocket = socket;
         System.out.println("Client joined : " + socket);
         Scanner sc;
@@ -22,16 +22,16 @@ public class HTTPRequest {
         System.out.println(sc.nextLine());
         String[] lineSplit = line.split(" ");
         filename = lineSplit[1];
-        if (Objects.equals(filename, "/")){
+        if (Objects.equals(filename, "/")) {
             filename = "/index.html";
         }
     }
 
-    public String getFilename(){
+    public String getFilename() {
         return filename;
     }
 
-    public Socket getClientSocket(){
+    public Socket getClientSocket() {
         return clientSocket;
     }
 }

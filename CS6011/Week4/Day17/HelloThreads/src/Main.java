@@ -31,16 +31,24 @@ public class Main {
         int numThreads = threads.length;
         for (int i = 0; i < numThreads; i++) {
             final int finalI = i;
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (int j = finalI * maxValue / numThreads; j < Math.min((finalI + 1) * maxValue/ numThreads, maxValue); j++) {
-                        answer += j;
-                    }
+            threads[i] = new Thread(() -> {
+                for (int j = finalI * maxValue / numThreads; j < Math.min((finalI + 1) * maxValue/ numThreads, maxValue); j++) {
+                    answer += j;
                 }
             });
-            threads[i] = thread;
             threads[i].start();
+
+            // or as suggested in problem description:
+//            Thread thread = new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    for (int j = finalI * maxValue / numThreads; j < Math.min((finalI + 1) * maxValue/ numThreads, maxValue); j++) {
+//                        answer += j;
+//                    }
+//                }
+//            });
+//            threads[i] = thread;
+//            threads[i].start();
         }
         for (Thread thread : threads) {
             thread.join();
