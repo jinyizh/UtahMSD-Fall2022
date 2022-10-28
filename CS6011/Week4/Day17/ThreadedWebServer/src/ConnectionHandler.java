@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.Socket;
 
 public class ConnectionHandler implements Runnable {
@@ -10,10 +11,13 @@ public class ConnectionHandler implements Runnable {
 
     @Override
     public void run() {
-        // handle the request headers
+        MyHttpRequest request = new MyHttpRequest(clientSocket);
+        try {
+            MyHttpResponse response = new MyHttpResponse(request);
+            clientSocket.close();
 
-        // send the response
-
-        // done using client socket
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -22,13 +22,11 @@ public class MyHttpResponse {
             dos.writeBytes("Content-Length: " + accessFileLength + "\r\n");
             dos.writeBytes("\r\n");
             dos.write(fBytes, 0, accessFileLength);
-            dos.writeBytes("\r\n");
-            dos.flush();
         } else {
             dos.writeBytes("HTTP/1.0 404 Not Found \r\n");
             dos.writeBytes("Connection: close\r\n");
-            dos.writeBytes("\r\n");
-            dos.flush();
         }
+        dos.writeBytes("\r\n");
+        dos.flush();
     }
 }
