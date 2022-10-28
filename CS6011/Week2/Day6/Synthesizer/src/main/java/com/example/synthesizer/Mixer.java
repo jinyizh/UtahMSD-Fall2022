@@ -1,5 +1,6 @@
 package com.example.synthesizer;
 
+import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 
 public class Mixer implements AudioComponent{
@@ -45,4 +46,8 @@ public class Mixer implements AudioComponent{
     public void connectInput(AudioComponent input) { // connect to 1 input every time
         this.inputs.add(input);
     }
+
+    public void removeInput(AudioComponent input) {
+        this.inputs.remove(input);
+    };
 }

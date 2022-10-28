@@ -37,4 +37,8 @@ public class Filter implements AudioComponent { // changes frequency
     public void connectInput(AudioComponent input) { // use this method to connect to input(s)
         this.input  = input;
     }
+
+    public void removeInput(AudioComponent input) {
+        this.input = null;
+    };
 }

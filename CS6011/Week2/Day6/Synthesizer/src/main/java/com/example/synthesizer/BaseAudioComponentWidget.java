@@ -102,20 +102,19 @@ public class BaseAudioComponentWidget extends Pane {
     }
 
     private void endConnection(MouseEvent e, Circle output) {
-        Circle speaker = SynthesizeApplication.speaker_;
-        Bounds speakerBounds = speaker.localToScreen(speaker.getBoundsInLocal());
-        double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
-                Math.pow(speakerBounds.getCenterY() - e.getScreenY(), 2.0));
-
-        System.out.println("dist: " + distance);
-        if (distance < 10) {
-            // handle actually connecting to speaker
-            SynthesizeApplication.widgets_.add(this);
-        } else {
-            parent_.getChildren().remove(line_);
-            line_ = null;
-//            SynthesizeApplication.widgets_.remove(this);
-        }
+//        Circle speaker = SynthesizeApplication.speaker_;
+//        Bounds speakerBounds = speaker.localToScreen(speaker.getBoundsInLocal());
+//        double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
+//                Math.pow(speakerBounds.getCenterY() - e.getScreenY(), 2.0));
+//
+//        System.out.println("dist: " + distance);
+//        if (distance < 10) {
+//            // handle actually connecting to speaker
+//            SynthesizeApplication.widgets_.add(this);
+//        } else {
+//            parent_.getChildren().remove(line_);
+//            line_ = null;
+//        }
     }
 
     private void moveConnection(MouseEvent e, Circle output) {

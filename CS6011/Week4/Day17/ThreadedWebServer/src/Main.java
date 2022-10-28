@@ -10,8 +10,8 @@ public class Main {
         while (true) {
             clientSocket = server.accept();
             try {
-                HTTPRequest request = new HTTPRequest(clientSocket);
-                HTTPResponse response = new  HTTPResponse(request);
+                MyHttpRequest request = new MyHttpRequest(clientSocket);
+                MyHttpResponse response = new MyHttpResponse(request);
             }
             finally {
                 clientSocket.close();

@@ -1,4 +1,5 @@
-function findSmallestIndex(array, iteration) {
+// this function is used to find the index of the smallest value in a array
+function findMinLocation(array, iteration) {
     // let smallest = array[iteration];
     let smallestIndex = iteration;
     for (let i= iteration + 1; i < array.length; i++) {
@@ -10,7 +11,7 @@ function findSmallestIndex(array, iteration) {
 function selectionSort(array) {
     for (let i = 0; i < array.length; i++) {
         // Swap smallest value with the current location
-        let sIndex = findSmallestIndex(array, i);
+        let sIndex = findMinLocation(array, i);
         let temp = array[i];
         array[i] = array[sIndex];
         array[sIndex] = temp;
@@ -24,8 +25,31 @@ selectionSort(myArray1);
 console.log(myArray);
 console.log(myArray1);
 
-// Finally, make your multiplication table incredibly obnoxious. 
-// Use window.setInterval to animate the background color of your page. 
-// For example, you could slowly transition from blue to red (through purple), and back. 
-// Create some text at the bottom of the page that says "Click here to toggle background color." 
-// Allow the user to toggle the updating of the background by clicking on the text.
+function compareTo(a, b) {
+    return a < b;
+}
+
+function newSelectionSort(array, compareTo) {
+    function newFindMinLocation(array, iteration) {
+        let smallestIndex = iteration;
+        for (let i= iteration + 1; i < array.length; i++) {
+            if (compareTo(array[i], array[smallestIndex])) {
+                smallestIndex = i;
+            }
+        }
+        return smallestIndex;
+    }
+    for (let i = 0; i < array.length; i++) {
+        let sIndex = newFindMinLocation(array, i);
+        let temp = array[i];
+        array[i] = array[sIndex];
+        array[sIndex] = temp;
+    }
+}
+
+let newMyArray = [1, 9, 4];
+let newMyArray1 = ['abc', 1, 9, 2.22, -2, 'abd', 0];
+newSelectionSort(myArray);
+newSelectionSort(myArray1);
+console.log(myArray);
+console.log(myArray1);
