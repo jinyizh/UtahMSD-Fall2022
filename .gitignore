@@ -31,6 +31,11 @@ Objective-C.gitignore & Swift.gitignore
 ## obnoxious file that has thumbnails and stuff
 .DS_Store
 
+## XCode project folder
+*.pbxproj
+*.xcworkspacedata
+*.plist
+
 ## Java
 
 **/target/

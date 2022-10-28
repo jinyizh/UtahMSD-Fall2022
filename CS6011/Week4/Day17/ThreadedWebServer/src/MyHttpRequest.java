@@ -7,12 +7,12 @@ public class MyHttpRequest {
 
     private String filename;
     private Socket clientSocket;
-    public MyHttpRequest(Socket socket) {
-        clientSocket = socket;
-        System.out.println("Client joined : " + socket);
+    public MyHttpRequest(Socket clientSocket) {
+        this.clientSocket = clientSocket;
+        System.out.println("Client joined : " + clientSocket);
         Scanner sc;
         try {
-            sc = new Scanner(socket.getInputStream());
+            sc = new Scanner(clientSocket.getInputStream());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
