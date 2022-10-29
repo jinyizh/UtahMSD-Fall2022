@@ -5,7 +5,7 @@ let wsOpen = false;
 
 // <enter> or "click"
 function handleKeyPressCB(event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode == 13 || event.type == "click") {
         let username = usernameTA.value;
         let roomName = roomnameTA.value
         let message = messageTA.value;
@@ -28,9 +28,13 @@ function handleKeyPressCB(event) {
             if (name < 'a' || name > 'z') {
                 alert("Room name must consist of lowercase alphabets only!");
                 return;
-            }
+            } 
+            // else if (wsOpen) {
+            //     alert("Room already created!");
+            //     return;
+            // }
         }
-        
+
         if (ws == null) {
             ws = new WebSocket("ws://localhost:8080");
             ws.onopen = handleConnectCB;
@@ -51,31 +55,16 @@ function handleConnectCB() {
 // parse the message
 function handleMessageFromWsCB(event) {
     let obj = event.data;
-    console.log( "just got msg: '" + event.data + "'");
     let myMsgObj = JSON.parse(obj); // turn it into JSON
     console.log(myMsgObj);
     if (myMsgObj.type == "join") {
-        document.getElementById("nameList").innerHTML += "<p>" + myMsgObj.username + "</p>" + "</br>";
-        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.username + "joins" + "</p>" + "</br>";
+        document.getElementById("nameList").innerHTML += "<p>" + myMsgObj.user + "</p>" + "</br>";
+        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + " joins" + "</p>" + "</br>";
     } else if (myMsgObj.type == "message") {
-        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.username + ": " + myMsgObj.message + "</p>" + "</br>";
+        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + ": " + myMsgObj.message + "</p>" + "</br>";
     } else if ((myMsgObj).type == "leave") {
-        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.username + ": " + "has left" + "</p>" + "</br>";
+        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + ": " + "has left" + "</p>" + "</br>";
     }
-
-    // let realMsg = myMsgObj.message;
-
-    // console.log("real msg: " + realMsg);
-
-    // let msgDiv = document.getElementById("column right");
-    // let myPar = document.createElement('p');
-    // msgDiv.innerText = realMsg;
-
-    // msgDiv.appendChild(myPar);
-}
-
-function addPeople() {
-    namelist.innerHTML += "";
 }
 
 let usernameTA = document.getElementById("usernameTA");

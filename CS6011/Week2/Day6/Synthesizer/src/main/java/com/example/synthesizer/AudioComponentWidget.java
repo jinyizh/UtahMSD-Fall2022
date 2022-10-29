@@ -101,7 +101,6 @@ public class AudioComponentWidget extends Pane {
         } else {
             parent_.getChildren().remove(line_);
             line_ = null;
-//            SynthesizeApplication.widgets_.remove(this);
         }
     }
 

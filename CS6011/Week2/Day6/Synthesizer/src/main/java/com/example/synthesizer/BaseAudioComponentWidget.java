@@ -53,7 +53,16 @@ public class BaseAudioComponentWidget extends Pane {
         output.setOnMouseDragged(e -> moveConnection(e, output));
         output.setOnMouseReleased(e -> endConnection(e, output));
         rightSide.getChildren().add(output);
-        baseLayout.getChildren().add(rightSide);
+
+        // left side of widget
+        VBox leftSide = new VBox();
+        leftSide.setAlignment(Pos.CENTER_LEFT);
+        leftSide.setPadding(new Insets(3));
+        leftSide.setSpacing(5);
+        // input circle
+        Circle input = new Circle(10);
+        input.setFill(Color.GREEN);
+        leftSide.getChildren().add(input);
 
         // center portion of widget
         VBox center = new VBox();
@@ -69,9 +78,13 @@ public class BaseAudioComponentWidget extends Pane {
         center.getChildren().add(slider);
         center.setOnMousePressed(e -> startDrag(e));
         center.setOnMouseDragged(e -> handleDrag(e));
-        baseLayout.getChildren().add(center);
 
-        this.setLayoutX(50);
+        // add panels (from left to right) to base layout
+        baseLayout.getChildren().add(leftSide);
+        baseLayout.getChildren().add(center);
+        baseLayout.getChildren().add(rightSide);
+
+        this.setLayoutX(160);
         this.setLayoutY(100);
         parent_.getChildren().add(this);
     }
