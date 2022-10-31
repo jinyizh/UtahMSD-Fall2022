@@ -146,6 +146,11 @@ public class AudioComponentWidget extends Pane {
         double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
                                     Math.pow(speakerBounds.getCenterY() - e.getScreenY(), 2.0));
 
+        // previously created an arraylist of AudioCompentWidget
+        // for each comp in components
+        //      comp.get circles <- returns no circles if the ac widg has no inputs
+        //      do the abov distan cod on this  circle
+
         System.out.println("dist: " + distance);
         if (distance < 10) {
             // handle actually connecting to speaker
