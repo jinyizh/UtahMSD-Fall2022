@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -23,12 +26,13 @@ public class SynthesizeApplication extends Application {
     private AnchorPane mainCanvas_;
     public static Circle speaker_;
     public static ArrayList<AudioComponentWidget> widgets_ = new ArrayList<>(); // list of widgets; private is safer
+    public int volume = 100;
 
     @Override
     public void start(Stage stage) throws IOException {
 
         BorderPane root = new BorderPane();
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, 800, 600);
         stage.setTitle("My Synthesizer");
 
         // right panel
@@ -43,13 +47,16 @@ public class SynthesizeApplication extends Application {
         Button squareWaveBtn = new Button("Square Wave");
         rightPanel.getChildren().add(squareWaveBtn);
         squareWaveBtn.setOnAction((e -> createSquareWave("Square Wave (440 Hz)")));
+        Button linearRampBtn = new Button("Linear Ramp");
+        rightPanel.getChildren().add(linearRampBtn);
+        linearRampBtn.setOnAction(e -> createLinearRamp("Linear Ramp (start: 50 Hz, stop: 2000 Hz)"));
         root.setRight(rightPanel);
 
         // center panel stuff
         mainCanvas_ = new AnchorPane();
         mainCanvas_.setStyle("-fx-background-color: lightblue");
         // speaker
-        Circle speaker = new Circle(400, 50, 10);
+        Circle speaker = new Circle(350, 50, 10);
         speaker_ = speaker;
         speaker.setFill(Color.BLACK);
         mainCanvas_.getChildren().add(speaker_); // add to main canvas
@@ -57,14 +64,27 @@ public class SynthesizeApplication extends Application {
 
         // bottom panel stuff
         HBox bottomPanel = new HBox();
+        // play button
         Button playBtn = new Button("Play");
         playBtn.setOnAction(e -> playNetwork());
+        // volume slider
+        Slider volumeSlider = new Slider(0, 100, 100);
+        Label volumeLabel = new Label();
+        volumeLabel.setText("Volume: 100%");
+        volumeSlider.setOnMouseDragged(e -> handleVolume(e, volumeSlider, volumeLabel));
         bottomPanel.getChildren().add(playBtn);
+        bottomPanel.getChildren().add(volumeLabel);
+        bottomPanel.getChildren().add(volumeSlider);
         root.setBottom(bottomPanel);
 
         // last thing to do
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void handleVolume(MouseEvent e, Slider volumeSlider, Label volumeLabel) {
+        this.volume = (int) volumeSlider.getValue();
+        volumeLabel.setText("Volume: " + this.volume + "%");
     }
 
     private void playNetwork() {
@@ -81,6 +101,7 @@ public class SynthesizeApplication extends Application {
                 AudioComponent ac = w.getAudioComponent();
                 mixer.connectInput(ac);
             }
+            mixer.setVolume(this.volume);
 
             AudioFormat format16 = new AudioFormat(44100, 16, 1, true, false);
 
@@ -117,10 +138,10 @@ public class SynthesizeApplication extends Application {
         widgets_.add(acw);
     }
 
-    private void createMixer(String name) {
-        System.out.println("creating mixer widget");
-        AudioComponent sw = new SquareWave(440);
-        AudioComponentWidget acw = new MixerWidget(sw, mainCanvas_, name); // inheritance
+    private void createLinearRamp(String name) {
+        System.out.println("creating linear ramp widget");
+        AudioComponent lr = new LinearRamp(50, 2000);
+        AudioComponentWidget acw = new LinearRampWidget(lr, mainCanvas_, name);
         widgets_.add(acw);
     }
 

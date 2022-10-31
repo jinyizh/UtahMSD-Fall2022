@@ -19,6 +19,14 @@ public class LinearRamp implements AudioComponent {
         return ac;
     }
 
+    public void setStart(float start) {
+        this.start = start;
+    }
+
+    public void setStop(float stop) {
+        this.stop = stop;
+    }
+
     @Override
     public boolean hasInput() {
         return false;

@@ -21,6 +21,7 @@ public class AudioComponentWidget extends Pane {
     private AudioComponentWidget widgetIamSendingOutputTo_;
     private AudioComponentWidget WidgetIamReceivingInputFrom_;
     protected HBox baseLayout;
+    protected VBox center;
     private Line line_;
     protected Label nameLabel_;
     private String name_;
@@ -56,17 +57,14 @@ public class AudioComponentWidget extends Pane {
         rightSide.getChildren().add(output);
 
         // center portion of widget
-        VBox center = new VBox();
+        center = new VBox();
         center.setAlignment(Pos.CENTER);
         // name label
         nameLabel_ = new Label();
         nameLabel_.setMouseTransparent(true);
         nameLabel_.setText(name_);
-        // slider
-        Slider slider = new Slider(220, 880, 440);
-        slider.setOnMouseDragged(e -> handleSlider(e, slider));
         center.getChildren().add(nameLabel_);
-        center.getChildren().add(slider);
+        // dragging
         center.setOnMousePressed(e -> startDrag(e));
         center.setOnMouseDragged(e -> handleDrag(e));
 
@@ -115,9 +113,7 @@ public class AudioComponentWidget extends Pane {
         widgetStartDragY_ = this.getLayoutY();
     }
 
-    protected void handleSlider(MouseEvent e, Slider slider) {
-
-    }
+    protected void handleSlider(MouseEvent e, Slider slider) {}
 
     protected void startConnection(MouseEvent e, Circle outputCircle) {
         // if line exists (connected to others), remove that line

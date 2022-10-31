@@ -4,23 +4,21 @@ import java.util.ArrayList;
 
 public class VFSineWave implements AudioComponent {
     final int maxValue = Short.MAX_VALUE; // max volume
-    ArrayList<AudioComponent> inputs = new ArrayList<>();
+    AudioComponent input = null;
 
     public VFSineWave(AudioComponent input) {
-        this.inputs.add(input);
+        this.input = input;
     }
 
     @Override
     public AudioClip getClip() {
         AudioClip result = new AudioClip();
-        if (this.inputs.size() != 0) {
-            for (AudioComponent input : inputs) { // writing for each loop inside turns out to be much slower
-                AudioClip original = input.getClip();
-                float phase = 0; // be careful with the datatype
-                for (int i = 0; i < AudioClip.totalSample; i++) {
-                    phase += (2 * Math.PI * original.getSample(i)) / AudioClip.sampleRate;
-                    result.setSample(i, (int) (this.maxValue * Math.sin(phase)));
-                }
+        if (this.input != null) {
+            AudioClip original = input.getClip();
+            float phase = 0; // be careful with the datatype
+            for (int i = 0; i < AudioClip.totalSample; i++) {
+                phase += (2 * Math.PI * original.getSample(i)) / AudioClip.sampleRate;
+                result.setSample(i, (int) (this.maxValue * Math.sin(phase)));
             }
             return result;
         }
@@ -34,6 +32,6 @@ public class VFSineWave implements AudioComponent {
 
     @Override
     public void connectInput(AudioComponent input) {
-        this.inputs.add(input);
+        this.input = input;
     }
 }

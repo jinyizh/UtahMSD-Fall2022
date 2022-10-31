@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Mixer implements AudioComponent{
     ArrayList<AudioComponent> inputs = new ArrayList<>();
+    int volume = 100;
 
     public Mixer() {}
 
@@ -12,6 +13,7 @@ public class Mixer implements AudioComponent{
         this.inputs.add(input);
     }
 
+    // another constructor:
     public Mixer(ArrayList<AudioComponent> inputs) { // another constructor
         this.inputs = inputs;
     }
@@ -30,6 +32,9 @@ public class Mixer implements AudioComponent{
                     } else {
                         result.setSample(i, result.getSample(i) + original.getSample(i));
                     }
+                }
+                for (int i = 0; i < AudioClip.totalSample; i++) { // set volume
+                    result.setSample(i, (int) (result.getSample(i) * volume * 0.01));
                 }
             }
             return result;
@@ -50,4 +55,8 @@ public class Mixer implements AudioComponent{
     public void removeInput(AudioComponent input) {
         this.inputs.remove(input);
     };
+
+    public void setVolume(int volume) { // used for volume control
+        this.volume = volume;
+    }
 }
