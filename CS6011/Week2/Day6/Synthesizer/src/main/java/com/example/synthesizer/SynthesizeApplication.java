@@ -1,7 +1,6 @@
 package com.example.synthesizer;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -37,10 +36,13 @@ public class SynthesizeApplication extends Application {
         rightPanel.setPadding(new Insets(5));
         rightPanel.setStyle("-fx-background-color: blue");
         rightPanel.setSpacing(5);
-        // buttons
+        // buttons (list of audio component widgets)
         Button sineWaveBtn = new Button("Since Wave");
         rightPanel.getChildren().add(sineWaveBtn);
-        sineWaveBtn.setOnAction(e -> createComponent("Sine Wave (440 Hz)"));
+        sineWaveBtn.setOnAction(e -> createSineWave("Sine Wave (440 Hz)"));
+        Button squareWaveBtn = new Button("Square Wave");
+        rightPanel.getChildren().add(squareWaveBtn);
+        squareWaveBtn.setOnAction((e -> createSquareWave("Square Wave (440 Hz)")));
         root.setRight(rightPanel);
 
         // center panel stuff
@@ -101,10 +103,24 @@ public class SynthesizeApplication extends Application {
         };
     }
 
-    private void createComponent(String name) {
-        System.out.println("creating component");
+    private void createSineWave(String name) {
+        System.out.println("creating sine wave widget");
         AudioComponent sw = new SineWave(440);
-        AudioComponentWidget acw = new AudioComponentWidget(sw, mainCanvas_, name);
+        AudioComponentWidget acw = new SineWaveWidget(sw, mainCanvas_, name); // inheritance
+//        widgets_.add(acw);
+    }
+
+    private void createSquareWave(String name) {
+        System.out.println("creating square wave widget");
+        AudioComponent sw = new SquareWave(440);
+        AudioComponentWidget acw = new SquareWaveWidget(sw, mainCanvas_, name); // inheritance
+        widgets_.add(acw);
+    }
+
+    private void createMixer(String name) {
+        System.out.println("creating mixer widget");
+        AudioComponent sw = new SquareWave(440);
+        AudioComponentWidget acw = new MixerWidget(sw, mainCanvas_, name); // inheritance
         widgets_.add(acw);
     }
 

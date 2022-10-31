@@ -3,6 +3,23 @@
 let ws = null;
 let wsOpen = false;
 
+let usernameTA = document.getElementById("usernameTA");
+usernameTA.addEventListener("keypress", handleKeyPressCB);
+
+let roomnameTA = document.getElementById("roomnameTA");
+roomnameTA.addEventListener("keypress", handleKeyPressCB);
+
+let namelist = document.getElementById("namelist"); // left panel
+
+let messageTA = document.getElementById("messageTA"); // botton panel
+messageTA.addEventListener("keypress", handleKeyPressCB);
+
+let createBtn = document.getElementById("createBtn");
+createBtn.addEventListener("click", handleKeyPressCB);
+
+let sendBtn = document.getElementById("sendBtn");
+sendBtn.addEventListener("click", handleKeyPressCB);
+
 // <enter> or "click"
 function handleKeyPressCB(event) {
     if (event.keyCode == 13 || event.type == "click") {
@@ -45,6 +62,10 @@ function handleKeyPressCB(event) {
     }
 }
 
+function handleMessage() {
+    
+}
+
 function handleConnectCB() {
     wsOpen = true;
     let username = usernameTA.value;
@@ -66,18 +87,3 @@ function handleMessageFromWsCB(event) {
         document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + ": " + "has left" + "</p>" + "</br>";
     }
 }
-
-let usernameTA = document.getElementById("usernameTA");
-usernameTA.addEventListener("keypress", handleKeyPressCB);
-let roomnameTA = document.getElementById("roomnameTA");
-roomnameTA.addEventListener("keypress", handleKeyPressCB);
-let namelist = document.getElementById("namelist"); // left panel
-let messageTA = document.getElementById("messageTA"); // botton panel
-messageTA.addEventListener("keypress", handleKeyPressCB);
-let createBtn = document.getElementById("createBtn");
-let sendBtn = document.getElementById("sendBtn");
-
-createBtn.addEventListener("click", handleKeyPressCB);
-sendBtn.addEventListener("click", handleKeyPressCB);
-
-// let ws = new WebSocket("ws://localhost:8080");

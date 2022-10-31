@@ -17,11 +17,12 @@ import javafx.scene.shape.Line;
 
 public class AudioComponentWidget extends Pane {
     private AnchorPane parent_;
-    private AudioComponent audioComponent_;
+    protected AudioComponent audioComponent_;
     private AudioComponentWidget widgetIamSendingOutputTo_;
-    private HBox baseLayout;
+    private AudioComponentWidget WidgetIamReceivingInputFrom_;
+    protected HBox baseLayout;
     private Line line_;
-    private Label nameLabel_;
+    protected Label nameLabel_;
     private String name_;
     double mouseStartDragX_, mouseStartDragY_, widgetStartDragX_, widgetStartDragY_;
 
@@ -30,6 +31,7 @@ public class AudioComponentWidget extends Pane {
         parent_ = parent;
         name_ = name;
         widgetIamSendingOutputTo_ = null;
+        WidgetIamReceivingInputFrom_ = null;
 
         // base layout of widget
         baseLayout = new HBox();
@@ -53,16 +55,6 @@ public class AudioComponentWidget extends Pane {
         output.setOnMouseReleased(e -> endConnection(e, output));
         rightSide.getChildren().add(output);
 
-        // left side of widget
-        VBox leftSide = new VBox();
-        leftSide.setAlignment(Pos.CENTER_LEFT);
-        leftSide.setPadding(new Insets(3));
-        leftSide.setSpacing(5);
-        // input circle
-        Circle input = new Circle(10);
-        input.setFill(Color.GREEN);
-        leftSide.getChildren().add(input);
-
         // center portion of widget
         VBox center = new VBox();
         center.setAlignment(Pos.CENTER);
@@ -79,7 +71,6 @@ public class AudioComponentWidget extends Pane {
         center.setOnMouseDragged(e -> handleDrag(e));
 
         // add panels (from left to right) to base layout
-        baseLayout.getChildren().add(leftSide);
         baseLayout.getChildren().add(center);
         baseLayout.getChildren().add(rightSide);
 
@@ -88,7 +79,7 @@ public class AudioComponentWidget extends Pane {
         parent_.getChildren().add(this);
     }
 
-    private void endConnection(MouseEvent e, Circle outputCircle) {
+    protected void endConnection(MouseEvent e, Circle outputCircle) {
         Circle speaker = SynthesizeApplication.speaker_;
         Bounds speakerBounds = speaker.localToScreen(speaker.getBoundsInLocal());
         double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
@@ -104,20 +95,19 @@ public class AudioComponentWidget extends Pane {
         }
     }
 
-    private void moveConnection(MouseEvent e, Circle outputCircle) {
+    protected void moveConnection(MouseEvent e, Circle outputCircle) {
         Bounds parentBounds = parent_.getBoundsInParent();
         line_.setEndX(e.getSceneX() - parentBounds.getMinX());
         line_.setEndY(e.getSceneY() - parentBounds.getMinY());
     }
 
-    private void handleDrag(MouseEvent e) {
+    protected void handleDrag(MouseEvent e) {
         double mouseDelX = e.getSceneX() - mouseStartDragX_;
         double mouseDelY = e.getSceneY() - mouseStartDragY_;
-//        this.relocate(e.getSceneX(), e.getSceneY());
         this.relocate(widgetStartDragX_ + mouseDelX, widgetStartDragY_ + mouseDelY);
     }
 
-    private void startDrag(MouseEvent e) {
+    protected void startDrag(MouseEvent e) {
         mouseStartDragX_ = e.getSceneX();
         mouseStartDragY_ = e.getSceneY();
 
@@ -125,13 +115,11 @@ public class AudioComponentWidget extends Pane {
         widgetStartDragY_ = this.getLayoutY();
     }
 
-    private void handleSlider(MouseEvent e, Slider slider) {
-        int freq = (int) slider.getValue();
-        nameLabel_.setText("Sine Wave (" + freq + " Hz)");
-        ((SineWave) audioComponent_).setFrequency(freq);
+    protected void handleSlider(MouseEvent e, Slider slider) {
+
     }
 
-    private void startConnection(MouseEvent e, Circle outputCircle) {
+    protected void startConnection(MouseEvent e, Circle outputCircle) {
         // if line exists (connected to others), remove that line
         if (line_ != null) {
             parent_.getChildren().remove(line_);
@@ -150,9 +138,12 @@ public class AudioComponentWidget extends Pane {
         parent_.getChildren().add(line_);
     }
 
-    private void closeWidget() {
+    protected void closeWidget() {
         parent_.getChildren().remove(this);
         SynthesizeApplication.widgets_.remove(this);
+        if (line_ != null) {
+            parent_.getChildren().remove(line_);
+        }
     }
 
     public AudioComponent getAudioComponent() {
