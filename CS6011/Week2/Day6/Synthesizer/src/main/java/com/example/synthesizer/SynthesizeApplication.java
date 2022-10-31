@@ -27,6 +27,7 @@ public class SynthesizeApplication extends Application {
     public static Circle speaker_;
     public static ArrayList<AudioComponentWidget> widgets_ = new ArrayList<>(); // list of widgets; private is safer
     public int volume = 100;
+    public Mixer mixer;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -50,6 +51,12 @@ public class SynthesizeApplication extends Application {
         Button linearRampBtn = new Button("Linear Ramp");
         rightPanel.getChildren().add(linearRampBtn);
         linearRampBtn.setOnAction(e -> createLinearRamp("Linear Ramp (start: 50 Hz, stop: 2000 Hz)"));
+        Button vfSineWaveBtn = new Button("VF Sine Wave");
+        rightPanel.getChildren().add(vfSineWaveBtn);
+        vfSineWaveBtn.setOnAction(e -> creatVFSineWave("VF Sine Wave"));
+        Button filterBtn = new Button("Filter");
+        rightPanel.getChildren().add(filterBtn);
+        filterBtn.setOnAction((e -> creatFilter("Filter (scale: 1.0)")));
         root.setRight(rightPanel);
 
         // center panel stuff
@@ -96,7 +103,7 @@ public class SynthesizeApplication extends Application {
             Clip c = AudioSystem.getClip();
             AudioListener listener = new AudioListener(c);
 
-            Mixer mixer = new Mixer();
+            this.mixer = new Mixer();
             for (AudioComponentWidget w : widgets_) {
                 AudioComponent ac = w.getAudioComponent();
                 mixer.connectInput(ac);
@@ -142,6 +149,18 @@ public class SynthesizeApplication extends Application {
         System.out.println("creating linear ramp widget");
         AudioComponent lr = new LinearRamp(50, 2000);
         AudioComponentWidget acw = new LinearRampWidget(lr, mainCanvas_, name);
+        widgets_.add(acw);
+    }
+
+    private void creatVFSineWave(String name) {
+        System.out.println("creating linear ramp widget");
+        AudioComponentWidget acw = new VFSineWaveWidget(mainCanvas_, name);
+        widgets_.add(acw);
+    }
+
+    private void creatFilter(String name) {
+        System.out.println("creating filter widget");
+        AudioComponentWidget acw = new FilterWidget(mainCanvas_, name);
         widgets_.add(acw);
     }
 

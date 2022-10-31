@@ -1,7 +1,7 @@
 package com.example.synthesizer;
 
 public class Filter implements AudioComponent { // changes frequency
-    private final double scale;
+    private double scale;
     private AudioComponent input;
 
     public Filter(double scale) {
@@ -26,6 +26,10 @@ public class Filter implements AudioComponent { // changes frequency
             return result;
         }
         return null;
+    }
+
+    public void setScale(double scale) {
+        this.scale = scale;
     }
 
     @Override

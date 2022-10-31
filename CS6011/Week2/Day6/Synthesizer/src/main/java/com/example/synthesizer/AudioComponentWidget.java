@@ -22,7 +22,8 @@ public class AudioComponentWidget extends Pane {
     private AudioComponentWidget WidgetIamReceivingInputFrom_;
     protected HBox baseLayout;
     protected VBox center;
-    private Line line_;
+    private Line line_; // for output
+    private Line inputLine_;
     protected Label nameLabel_;
     private String name_;
     double mouseStartDragX_, mouseStartDragY_, widgetStartDragX_, widgetStartDragY_;
@@ -38,6 +39,68 @@ public class AudioComponentWidget extends Pane {
         baseLayout = new HBox();
         baseLayout.setStyle("-fx-border-color: black; -fx-border-image-width: 8; -fx-background-color: white");
         this.getChildren().add(baseLayout);
+
+        // right side of widget
+        VBox rightSide = new VBox();
+        rightSide.setAlignment(Pos.CENTER_RIGHT);
+        rightSide.setPadding(new Insets(3));
+        rightSide.setSpacing(5);
+        // close button
+        Button closeBtn = new Button("x");
+        closeBtn.setOnAction(e -> closeWidget());
+        rightSide.getChildren().add(closeBtn);
+        // output circle
+        Circle output = new Circle(10);
+        output.setFill(Color.BLUE);
+        output.setOnMousePressed(e -> startConnection(e, output));
+        output.setOnMouseDragged(e -> moveConnection(e, output));
+        output.setOnMouseReleased(e -> endConnection(e, output));
+        rightSide.getChildren().add(output);
+
+        // center portion of widget
+        center = new VBox();
+        center.setAlignment(Pos.CENTER);
+        // name label
+        nameLabel_ = new Label();
+        nameLabel_.setMouseTransparent(true);
+        nameLabel_.setText(name_);
+        center.getChildren().add(nameLabel_);
+        // dragging
+        center.setOnMousePressed(e -> startDrag(e));
+        center.setOnMouseDragged(e -> handleDrag(e));
+
+        // add panels (from left to right) to base layout
+        baseLayout.getChildren().add(center);
+        baseLayout.getChildren().add(rightSide);
+
+        this.setLayoutX(160);
+        this.setLayoutY(100);
+        parent_.getChildren().add(this);
+    }
+
+    // constructor for input-only widgets (filters, VF Sine Wave)
+    public AudioComponentWidget(AnchorPane parent, String name) {
+        audioComponent_ = null;
+        parent_ = parent;
+        name_ = name;
+        widgetIamSendingOutputTo_ = null;
+        WidgetIamReceivingInputFrom_ = null;
+
+        // base layout of widget
+        baseLayout = new HBox();
+        baseLayout.setStyle("-fx-border-color: black; -fx-border-image-width: 8; -fx-background-color: white");
+        this.getChildren().add(baseLayout);
+
+        // left side of widget
+        VBox leftSide = new VBox();
+        leftSide.setAlignment(Pos.CENTER_LEFT);
+        leftSide.setPadding(new Insets(3));
+        leftSide.setSpacing(5);
+        // input circle
+        Circle input = new Circle(10);
+        input.setFill(Color.GREEN);
+        leftSide.getChildren().add(input);
+        baseLayout.getChildren().add(leftSide);
 
         // right side of widget
         VBox rightSide = new VBox();
