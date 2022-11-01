@@ -26,6 +26,7 @@ public class AudioComponentWidget extends Pane {
     private Line inputLine_;
     protected Label nameLabel_;
     private String name_;
+    protected Circle input_ = null; // for widgets with input circle (2nd constructor)
     double mouseStartDragX_, mouseStartDragY_, widgetStartDragX_, widgetStartDragY_;
 
     public AudioComponentWidget(AudioComponent ac, AnchorPane parent, String name) {
@@ -78,7 +79,7 @@ public class AudioComponentWidget extends Pane {
         parent_.getChildren().add(this);
     }
 
-    // constructor for input-only widgets (filters, VF Sine Wave)
+    // constructor for in/out widgets (filters, VF Sine Wave)
     public AudioComponentWidget(AnchorPane parent, String name) {
         audioComponent_ = null;
         parent_ = parent;
@@ -97,9 +98,9 @@ public class AudioComponentWidget extends Pane {
         leftSide.setPadding(new Insets(3));
         leftSide.setSpacing(5);
         // input circle
-        Circle input = new Circle(10);
-        input.setFill(Color.GREEN);
-        leftSide.getChildren().add(input);
+        input_ = new Circle(10);
+        input_.setFill(Color.GREEN);
+        leftSide.getChildren().add(input_);
         baseLayout.getChildren().add(leftSide);
 
         // right side of widget
@@ -116,7 +117,7 @@ public class AudioComponentWidget extends Pane {
         output.setFill(Color.BLUE);
         output.setOnMousePressed(e -> startConnection(e, output));
         output.setOnMouseDragged(e -> moveConnection(e, output));
-        output.setOnMouseReleased(e -> endConnection(e, output));
+        output.setOnMouseReleased(e -> endConnectionInOut(e, output));
         rightSide.getChildren().add(output);
 
         // center portion of widget
@@ -140,13 +141,55 @@ public class AudioComponentWidget extends Pane {
         parent_.getChildren().add(this);
     }
 
+    // used for output circle connection
     protected void endConnection(MouseEvent e, Circle outputCircle) {
         Circle speaker = SynthesizeApplication.speaker_;
         Bounds speakerBounds = speaker.localToScreen(speaker.getBoundsInLocal());
         double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
                                     Math.pow(speakerBounds.getCenterY() - e.getScreenY(), 2.0));
 
-        // previously created an arraylist of AudioCompentWidget
+        // previously created an arraylist of AudioComponentWidget
+        // for each comp in components
+        //      comp.get circles <- returns no circles if the ac widg has no inputs
+        //      do the abov distan cod on this  circle
+
+        System.out.println("dist: " + distance);
+        if (distance < 10) {
+            // handle actually connecting to speaker
+            SynthesizeApplication.widgets_.add(this);
+        } else {
+            parent_.getChildren().remove(line_);
+            line_ = null;
+        }
+
+        if (SynthesizeApplication.widgetList_.size() != 0) {
+            for (AudioComponentWidget acw : SynthesizeApplication.widgetList_) {
+                if (acw.getInput_() != null) {
+                    Bounds acwBounds = acw.getInput_().localToScreen(acw.getInput_().getBoundsInLocal());
+                    double acwDistance = Math.sqrt(Math.pow(acwBounds.getCenterX() - e.getScreenX(), 2.0) +
+                                                   Math.pow(acwBounds.getCenterY() - e.getScreenY(), 2.0));
+                    if (acwDistance < 10) {
+                        // when doing connection, start from the widget connected to speaker first
+                        acw.WidgetIamReceivingInputFrom_ = this;
+                        this.widgetIamSendingOutputTo_ = acw;
+                        this.widgetIamSendingOutputTo_.getAudioComponent().connectInput(this.getAudioComponent());
+                        SynthesizeApplication.widgets_.add(this.widgetIamSendingOutputTo_);
+                    } else {
+                        parent_.getChildren().remove(line_);
+                        line_ = null;
+                    }
+                }
+            }
+        }
+    }
+
+    protected void endConnectionInOut(MouseEvent e, Circle outputCircle) { // for in/out widgets
+        Circle speaker = SynthesizeApplication.speaker_;
+        Bounds speakerBounds = speaker.localToScreen(speaker.getBoundsInLocal());
+        double distance = Math.sqrt(Math.pow(speakerBounds.getCenterX() - e.getScreenX(), 2.0) +
+                Math.pow(speakerBounds.getCenterY() - e.getScreenY(), 2.0));
+
+        // previously created an arraylist of AudioComponentWidget
         // for each comp in components
         //      comp.get circles <- returns no circles if the ac widg has no inputs
         //      do the abov distan cod on this  circle
@@ -212,5 +255,10 @@ public class AudioComponentWidget extends Pane {
 
     public AudioComponent getAudioComponent() {
         return audioComponent_;
+    }
+
+    // used to get the input circle for filters, VF Sine waves, etc.
+    public Circle getInput_() {
+        return input_;
     }
 }

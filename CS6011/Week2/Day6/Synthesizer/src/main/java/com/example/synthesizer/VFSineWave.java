@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class VFSineWave implements AudioComponent {
     final int maxValue = Short.MAX_VALUE; // max volume
-    AudioComponent input = null;
+    AudioComponent input;
 
     public VFSineWave(AudioComponent input) {
         this.input = input;

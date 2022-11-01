@@ -25,7 +25,8 @@ import java.util.ArrayList;
 public class SynthesizeApplication extends Application {
     private AnchorPane mainCanvas_;
     public static Circle speaker_;
-    public static ArrayList<AudioComponentWidget> widgets_ = new ArrayList<>(); // list of widgets; private is safer
+    public static ArrayList<AudioComponentWidget> widgets_ = new ArrayList<>(); // list of widgets that PLAYS SOUND
+    public static ArrayList<AudioComponentWidget> widgetList_ = new ArrayList<>(); // widgets that have both in/out btns
     public int volume = 100;
     public Mixer mixer;
 
@@ -142,7 +143,7 @@ public class SynthesizeApplication extends Application {
         System.out.println("creating square wave widget");
         AudioComponent sw = new SquareWave(440);
         AudioComponentWidget acw = new SquareWaveWidget(sw, mainCanvas_, name); // inheritance
-        widgets_.add(acw);
+//        widgets_.add(acw);
     }
 
     private void createLinearRamp(String name) {
@@ -155,7 +156,7 @@ public class SynthesizeApplication extends Application {
     private void creatVFSineWave(String name) {
         System.out.println("creating linear ramp widget");
         AudioComponentWidget acw = new VFSineWaveWidget(mainCanvas_, name);
-        widgets_.add(acw);
+        SynthesizeApplication.widgetList_.add(acw);
     }
 
     private void creatFilter(String name) {

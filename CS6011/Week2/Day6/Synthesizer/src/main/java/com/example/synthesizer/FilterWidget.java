@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class FilterWidget extends AudioComponentWidget {
-    Filter filter;
+    AudioComponent filter;
     public FilterWidget(AnchorPane parent, String name) {
         super(parent, name);
         this.filter = new Filter(1.0);
@@ -23,6 +23,6 @@ public class FilterWidget extends AudioComponentWidget {
         super.handleSlider(e, slider);
         double scale = slider.getValue();
         nameLabel_.setText("Filter (scale: " + scale + ")");
-        this.filter.setScale(scale);
+        this.filter = new Filter(scale);
     }
 }
