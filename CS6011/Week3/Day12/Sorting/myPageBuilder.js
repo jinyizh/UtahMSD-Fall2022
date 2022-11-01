@@ -18,12 +18,22 @@ function selectionSort(array) {
     }
 }
 
+// array of ints, floating point numbers, strings, and a mix of these
 let myArray = [1, 9, 4];
-let myArray1 = ['abc', 1, 9, 2.22, -2, 'abd', 0];
+let myArray1 = [-0.2, -9, 3.2, 1.8];
+let myArray2 = ['abs', 'aadvark', 'apple', 'zebra', 'monkey']
+let myArray3 = ['Abs', 'aadvark', 'apple', 'zebra', 'monkey']
+let myArray4 = ['abc', 1, 9, 2.22, -2, 'abd', 0];
 selectionSort(myArray);
 selectionSort(myArray1);
+selectionSort(myArray2);
+selectionSort(myArray3);
+selectionSort(myArray4);
 console.log(myArray);
 console.log(myArray1);
+console.log(myArray2);
+console.log(myArray3);
+selectionSort(myArray4);
 
 function compareTo(a, b) {
     return a < b;
@@ -46,6 +56,18 @@ function newSelectionSort(array, compareTo) {
         array[sIndex] = temp;
     }
 }
+
+let person = {}; // person object
+bee.first = "John";
+bee.last = "Smith";
+
+let person1 = {};
+person1.first = "John";
+person1.last = "Doe";
+
+let person2 = {};
+person2.first = "Jane";
+person2.last = "Doe";
 
 let newMyArray = [1, 9, 4];
 let newMyArray1 = ['abc', 1, 9, 2.22, -2, 'abd', 0];

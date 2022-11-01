@@ -9,8 +9,8 @@ import javafx.scene.shape.Circle;
 
 public class MixerWidget extends AudioComponentWidget {
     private Mixer mixer;
-    public MixerWidget(AnchorPane parent, String name) {
-        super(parent, name);
+    public MixerWidget(AudioComponent ac, AnchorPane parent, String name) {
+        super(ac, parent, name);
         this.mixer = new Mixer();
     }
 }

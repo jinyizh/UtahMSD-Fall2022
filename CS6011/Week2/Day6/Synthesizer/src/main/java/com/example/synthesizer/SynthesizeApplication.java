@@ -57,7 +57,7 @@ public class SynthesizeApplication extends Application {
         vfSineWaveBtn.setOnAction(e -> creatVFSineWave("VF Sine Wave"));
         Button filterBtn = new Button("Filter");
         rightPanel.getChildren().add(filterBtn);
-        filterBtn.setOnAction((e -> creatFilter("Filter (scale: 1.0)")));
+        filterBtn.setOnAction((e -> creatFilter("Filter (scale: 1.00)")));
         root.setRight(rightPanel);
 
         // center panel stuff
@@ -155,14 +155,16 @@ public class SynthesizeApplication extends Application {
 
     private void creatVFSineWave(String name) {
         System.out.println("creating linear ramp widget");
-        AudioComponentWidget acw = new VFSineWaveWidget(mainCanvas_, name);
+        AudioComponent ac = new VFSineWave(null);
+        AudioComponentWidget acw = new VFSineWaveWidget(ac, mainCanvas_, name);
         SynthesizeApplication.widgetList_.add(acw);
     }
 
     private void creatFilter(String name) {
         System.out.println("creating filter widget");
-        AudioComponentWidget acw = new FilterWidget(mainCanvas_, name);
-        widgets_.add(acw);
+        AudioComponent ac = new Filter(1.0);
+        AudioComponentWidget acw = new FilterWidget(ac, mainCanvas_, name);
+        widgetList_.add(acw);
     }
 
     public static void main(String[] args) {

@@ -11,7 +11,7 @@ public class MyHttpRequest {
     public MyHttpRequest(Socket clientSocket) {
 
         this.clientSocket = clientSocket;
-        System.out.println("Client joined : " + clientSocket);
+        System.out.println("Client joined: " + clientSocket);
 
         Scanner sc;
         try {
