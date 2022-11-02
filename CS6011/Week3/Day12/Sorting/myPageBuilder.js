@@ -36,14 +36,20 @@ console.log(myArray3);
 selectionSort(myArray4);
 
 function compareTo(a, b) {
-    return a < b;
+    if (a < b) {
+        return 1;
+    } else if (a > b) {
+        return 0;
+    } else {
+        return -1;
+    }
 }
 
 function newSelectionSort(array, compareTo) {
     function newFindMinLocation(array, iteration) {
         let smallestIndex = iteration;
         for (let i= iteration + 1; i < array.length; i++) {
-            if (compareTo(array[i], array[smallestIndex])) {
+            if (compareTo(array[i], array[smallestIndex]) == 1) {
                 smallestIndex = i;
             }
         }

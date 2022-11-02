@@ -10,6 +10,7 @@ public class SineWave implements AudioComponent {
 
     @Override
     public AudioClip getClip() {
+        System.out.println("sine wave get clip");
         AudioClip ac = new AudioClip();
         for (int i = 0; i < AudioClip.totalSample; i++) {
             ac.setSample(i, (int) (this.maxValue * Math.sin(2 * Math.PI * this.frequency * i / AudioClip.sampleRate)));

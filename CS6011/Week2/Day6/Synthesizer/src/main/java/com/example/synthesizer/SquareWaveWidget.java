@@ -12,6 +12,7 @@ import javafx.scene.shape.Circle;
 public class SquareWaveWidget extends AudioComponentWidget {
     public SquareWaveWidget(AudioComponent ac, AnchorPane parent, String name) {
         super(ac, parent, name);
+        // add slider
         Slider slider = new Slider(220, 880, 440);
         slider.setOnMouseDragged(e -> handleSlider(e, slider));
         center.getChildren().add(slider);
@@ -25,7 +26,7 @@ public class SquareWaveWidget extends AudioComponentWidget {
         output.setFill(Color.ORANGE);
         output.setOnMousePressed(e -> startConnection(e, output));
         output.setOnMouseDragged(e -> moveConnection(e, output));
-        output.setOnMouseReleased(e -> endConnectionInOut(e, output));
+        output.setOnMouseReleased(e -> endConnection(e, output));
         rightSide.getChildren().add(output);
         baseLayout.getChildren().add(rightSide);
     }

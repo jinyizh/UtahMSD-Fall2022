@@ -13,7 +13,7 @@ class FilterTest {
     void simpleTest() throws LineUnavailableException {
         Clip c = AudioSystem.getClip();
         AudioFormat format16 = new AudioFormat(44100, 16, 1, true, false);
-        AudioComponent gen = new SineWave(220);
+        AudioComponent gen = new SineWave(440);
         double scale = 0.1;
         Filter vl = new Filter(scale);
         vl.connectInput(gen);

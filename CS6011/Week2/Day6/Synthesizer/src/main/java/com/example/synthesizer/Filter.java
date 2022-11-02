@@ -11,6 +11,7 @@ public class Filter implements AudioComponent { // changes frequency
 
     @Override
     public AudioClip getClip() {
+        System.out.println("filter get clip, scale is " + scale);
         if (this.input != null) {
             AudioClip original = this.input.getClip();
             AudioClip result = new AudioClip();

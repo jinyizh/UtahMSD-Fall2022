@@ -23,6 +23,7 @@ public class Mixer implements AudioComponent{
         AudioClip result = new AudioClip();
         if (this.inputs.size() != 0) {
             for (AudioComponent input : inputs) { // writing for each loop inside turns out to be much slower!
+                System.out.println("mixer getting a clip");
                 AudioClip original = input.getClip();
                 for (int i = 0; i < AudioClip.totalSample; i++) {
                     if (result.getSample(i) + original.getSample(i) > Short.MAX_VALUE) { // clamping max

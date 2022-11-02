@@ -11,11 +11,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class FilterWidget extends AudioComponentWidget {
-    AudioComponent filter;
+    Filter filter_;
     public FilterWidget(AudioComponent ac, AnchorPane parent, String name) {
         super(ac, parent, name);
-        this.filter = ac;
-        Slider slider = new Slider(0, 10, 1);
+        // center portion of widget
+        filter_ = (Filter) ac;
+        Slider slider = new Slider(0, 15, 1);
         slider.setOnMouseDragged(e -> handleSlider(e, slider));
         center.getChildren().add(slider);
         // right side of widget
@@ -32,7 +33,7 @@ public class FilterWidget extends AudioComponentWidget {
         output.setFill(Color.ORANGE);
         output.setOnMousePressed(e -> startConnection(e, output));
         output.setOnMouseDragged(e -> moveConnection(e, output));
-        output.setOnMouseReleased(e -> endConnectionInOut(e, output));
+        output.setOnMouseReleased(e -> endConnection(e, output));
         rightSide.getChildren().add(output);
         baseLayout.getChildren().add(rightSide);
     }
@@ -42,7 +43,7 @@ public class FilterWidget extends AudioComponentWidget {
         super.handleSlider(e, slider);
         double scale = slider.getValue();
         nameLabel_.setText("Filter (scale: " + String.format("%.2f", scale) + ")");
-        this.filter = new Filter(scale);
+        filter_.setScale(scale);
     }
 
     @Override
@@ -55,7 +56,6 @@ public class FilterWidget extends AudioComponentWidget {
         if (distance < 10) {
             // handle actually connecting to speaker
             SynthesizeApplication.widgets_.add(this);
-            SynthesizeApplication.widgetList_.add(this); // widgets that accept input
         } else {
             parent_.getChildren().remove(line_);
             line_ = null;

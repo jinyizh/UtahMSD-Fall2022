@@ -10,6 +10,7 @@ public class SquareWave implements AudioComponent {
 
     @Override
     public AudioClip getClip() {
+        System.out.println("square wave get clip");
         AudioClip ac = new AudioClip();
         for (int i = 0; i < AudioClip.totalSample; i++) {
             if (((double) this.frequency * i / AudioClip.sampleRate) % 1 > 0.5) { // beware of the location of casting

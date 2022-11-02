@@ -31,7 +31,7 @@ public class LinearRampWidget extends AudioComponentWidget{
         output.setFill(Color.ORANGE);
         output.setOnMousePressed(e -> startConnection(e, output));
         output.setOnMouseDragged(e -> moveConnection(e, output));
-        output.setOnMouseReleased(e -> endConnectionInOut(e, output));
+        output.setOnMouseReleased(e -> endConnection(e, output));
         rightSide.getChildren().add(output);
         baseLayout.getChildren().add(rightSide);
     }

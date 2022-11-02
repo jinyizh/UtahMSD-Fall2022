@@ -25,25 +25,23 @@ import java.util.ArrayList;
 public class SynthesizeApplication extends Application {
     private AnchorPane mainCanvas_;
     public static Circle speaker_;
-    public static ArrayList<AudioComponentWidget> widgets_ = new ArrayList<>(); // list of widgets that PLAYS SOUND
+    public static ArrayList<AudioComponentWidget> widgets_ = new ArrayList<>(); // list of widgets connected to speaker
     public static ArrayList<AudioComponentWidget> widgetList_ = new ArrayList<>(); // widgets that have both in/out btns
     public int volume = 100;
     public Mixer mixer;
 
     @Override
     public void start(Stage stage) throws IOException {
-
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("My Synthesizer");
-
+        stage.setTitle("Jinyi Zhou's Synthesizer");
         // right panel
         VBox rightPanel = new VBox();
         rightPanel.setPadding(new Insets(5));
         rightPanel.setStyle("-fx-background-color: blue");
         rightPanel.setSpacing(5);
         // buttons (list of audio component widgets)
-        Button sineWaveBtn = new Button("Since Wave");
+        Button sineWaveBtn = new Button("Sine Wave");
         rightPanel.getChildren().add(sineWaveBtn);
         sineWaveBtn.setOnAction(e -> createSineWave("Sine Wave (440 Hz)"));
         Button squareWaveBtn = new Button("Square Wave");
@@ -54,10 +52,13 @@ public class SynthesizeApplication extends Application {
         linearRampBtn.setOnAction(e -> createLinearRamp("Linear Ramp (start: 50 Hz, stop: 2000 Hz)"));
         Button vfSineWaveBtn = new Button("VF Sine Wave");
         rightPanel.getChildren().add(vfSineWaveBtn);
-        vfSineWaveBtn.setOnAction(e -> creatVFSineWave("VF Sine Wave"));
+        vfSineWaveBtn.setOnAction(e -> createVFSineWave("VF Sine Wave"));
         Button filterBtn = new Button("Filter");
         rightPanel.getChildren().add(filterBtn);
-        filterBtn.setOnAction((e -> creatFilter("Filter (scale: 1.00)")));
+        filterBtn.setOnAction((e -> createFilter("Filter (scale: 1.00)")));
+        Button mixerBtn = new Button("Mixer");
+        rightPanel.getChildren().add(mixerBtn);
+        mixerBtn.setOnAction((e -> createMixer("Mixer")));
         root.setRight(rightPanel);
 
         // center panel stuff
@@ -105,6 +106,7 @@ public class SynthesizeApplication extends Application {
             AudioListener listener = new AudioListener(c);
 
             this.mixer = new Mixer();
+            System.out.println( widgets_.size() + " widgets connected to speaker");
             for (AudioComponentWidget w : widgets_) {
                 AudioComponent ac = w.getAudioComponent();
                 mixer.connectInput(ac);
@@ -135,35 +137,40 @@ public class SynthesizeApplication extends Application {
     private void createSineWave(String name) {
         System.out.println("creating sine wave widget");
         AudioComponent sw = new SineWave(440);
+        // even tho acw is not used, it is added to the mainCanvas_
         AudioComponentWidget acw = new SineWaveWidget(sw, mainCanvas_, name); // inheritance
-//        widgets_.add(acw);
     }
 
     private void createSquareWave(String name) {
         System.out.println("creating square wave widget");
         AudioComponent sw = new SquareWave(440);
-        AudioComponentWidget acw = new SquareWaveWidget(sw, mainCanvas_, name); // inheritance
-//        widgets_.add(acw);
+        AudioComponentWidget acw = new SquareWaveWidget(sw, mainCanvas_, name);
     }
 
     private void createLinearRamp(String name) {
         System.out.println("creating linear ramp widget");
         AudioComponent lr = new LinearRamp(50, 2000);
         AudioComponentWidget acw = new LinearRampWidget(lr, mainCanvas_, name);
-        widgets_.add(acw);
     }
 
-    private void creatVFSineWave(String name) {
+    private void createVFSineWave(String name) {
         System.out.println("creating linear ramp widget");
         AudioComponent ac = new VFSineWave(null);
         AudioComponentWidget acw = new VFSineWaveWidget(ac, mainCanvas_, name);
         SynthesizeApplication.widgetList_.add(acw);
     }
 
-    private void creatFilter(String name) {
+    private void createFilter(String name) {
         System.out.println("creating filter widget");
         AudioComponent ac = new Filter(1.0);
         AudioComponentWidget acw = new FilterWidget(ac, mainCanvas_, name);
+        widgetList_.add(acw);
+    }
+
+    private void createMixer(String name) {
+        System.out.println("creating filter widget");
+        AudioComponent ac = new Mixer();
+        AudioComponentWidget acw = new MixerWidget(ac, mainCanvas_, name);
         widgetList_.add(acw);
     }
 
