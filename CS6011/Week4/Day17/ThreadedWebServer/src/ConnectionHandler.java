@@ -16,7 +16,7 @@ public class ConnectionHandler implements Runnable {
             MyHttpResponse response = new MyHttpResponse(request);
             clientSocket.close();
 
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

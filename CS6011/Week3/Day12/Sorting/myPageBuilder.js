@@ -1,83 +1,115 @@
-// this function is used to find the index of the smallest value in a array
-function findMinLocation(array, iteration) {
-    // let smallest = array[iteration];
-    let smallestIndex = iteration;
-    for (let i= iteration + 1; i < array.length; i++) {
-        if (array[i] < array[smallestIndex]) smallestIndex = i;
-    }
-    return smallestIndex;
-}
+'use strict';
 
-function selectionSort(array) {
-    for (let i = 0; i < array.length; i++) {
-        // Swap smallest value with the current location
-        let sIndex = findMinLocation(array, i);
-        let temp = array[i];
-        array[i] = array[sIndex];
-        array[sIndex] = temp;
+function selectionSort(inputArray, comparator) {
+    for (let i = 0; i < inputArray.length; i++) {
+        let smallLocation = findMinLocation(inputArray, i, comparator);
+        let temp = inputArray[i];
+        inputArray[i] = inputArray[smallLocation];
+        inputArray[smallLocation] = temp;
     }
 }
 
-// array of ints, floating point numbers, strings, and a mix of these
-let myArray = [1, 9, 4];
-let myArray1 = [-0.2, -9, 3.2, 1.8];
-let myArray2 = ['abs', 'aadvark', 'apple', 'zebra', 'monkey']
-let myArray3 = ['Abs', 'aadvark', 'apple', 'zebra', 'monkey']
-let myArray4 = ['abc', 1, 9, 2.22, -2, 'abd', 0];
-selectionSort(myArray);
-selectionSort(myArray1);
-selectionSort(myArray2);
-selectionSort(myArray3);
-selectionSort(myArray4);
-console.log(myArray);
-console.log(myArray1);
-console.log(myArray2);
-console.log(myArray3);
-selectionSort(myArray4);
+function findMinLocation(inputArray, startingIndex, comparator) {
+    let minValue = inputArray[startingIndex];
+    let location = startingIndex;
+    for (let i = startingIndex; i < inputArray.length; i++) {
+        if (comparator(inputArray[i], minValue) == -1) {
+            minValue = inputArray[i];
+            location = i;
+        }
+    }
+    return location;
+}
 
 function compareTo(a, b) {
-    if (a < b) {
+    if (a > b) {
         return 1;
-    } else if (a > b) {
-        return 0;
-    } else {
-        return -1;
     }
+    else if (a == b) {
+        return 0;
+    }
+    return -1;
 }
 
-function newSelectionSort(array, compareTo) {
-    function newFindMinLocation(array, iteration) {
-        let smallestIndex = iteration;
-        for (let i= iteration + 1; i < array.length; i++) {
-            if (compareTo(array[i], array[smallestIndex]) == 1) {
-                smallestIndex = i;
+// Q: Try changing the comparison in compareTo() from "<" to ">".
+//    What happens when you sort now?
+// A: selectionSort() will sort the array same as before.
+
+let testArray = [2, 10, 3, 1];
+selectionSort(testArray, compareTo);
+console.log(testArray);
+
+let testArray2 = [2, -3, -10, 3];
+selectionSort(testArray2, compareTo);
+console.log(testArray2);
+
+let testFloatArray = [3.14, 0.0, 2.5, -4.3];
+selectionSort(testFloatArray, compareTo);
+console.log(testFloatArray);
+
+let testStringArray = ["Hello ", "ni", "hao", "you"];
+selectionSort(testStringArray, compareTo);
+console.log(testStringArray);
+
+let testMixedArray = ["Hi, ", 2.5, -1, "xs"];
+selectionSort(testMixedArray, compareTo);
+console.log(testMixedArray);
+
+let people = [
+    { first: "Donald", last: "Trump" },
+    { first: "Andrew", last: "Yang" },
+    { first: "Joe", last: "Biden" },
+    { first: "Kris", last: "Wu" },
+    { first: "Sam", last: "Uncle" }
+]
+
+let people1 = [
+    { first: "Donald", last: "Trump" },
+    { first: "Andrew", last: "Yang" },
+    { first: "Joe", last: "Biden" },
+    { first: "Kris", last: "Yang" },
+    { first: "Sam", last: "Uncle" }
+]
+
+function sortPeopleLast(array) {
+
+    for (let i = 0; i < array.length; i++) {
+        let minLocation = i;
+
+        for (let j = i + 1; j < array.length; j++) {
+            if ((array[j].last < array[minLocation].last) ||
+                ((array[j].last == array[minLocation].last) && (array[j].first < array[minLocation].first)))
+                minLocation = j; 
+        }
+        if (minLocation != i) {
+            let temp = array[i]; 
+            array[i] = array[minLocation];
+            array[minLocation] = temp;      
+        }
+    }
+    return array;
+}
+
+function sortPeopleByFirst(array) {
+    for (let i = 0; i < array.length; i++) {
+        let minLocation = i;
+
+        for (let j = i + 1; j < array.length; j++) {
+            if ((array[j].first < array[minLocation].first) ||
+                ((array[j].first == array[minLocation].first) && (array[j].last < array[minLocation].last))) {
+                minLocation = j; 
             }
         }
-        return smallestIndex;
+        if (minLocation != i) {
+            let tmp = array[i]; 
+            array[i] = array[minLocation];
+            array[minLocation] = tmp;      
+        }
     }
-    for (let i = 0; i < array.length; i++) {
-        let sIndex = newFindMinLocation(array, i);
-        let temp = array[i];
-        array[i] = array[sIndex];
-        array[sIndex] = temp;
-    }
+    return array;
 }
 
-let person = {}; // person object
-bee.first = "John";
-bee.last = "Smith";
-
-let person1 = {};
-person1.first = "John";
-person1.last = "Doe";
-
-let person2 = {};
-person2.first = "Jane";
-person2.last = "Doe";
-
-let newMyArray = [1, 9, 4];
-let newMyArray1 = ['abc', 1, 9, 2.22, -2, 'abd', 0];
-newSelectionSort(myArray);
-newSelectionSort(myArray1);
-console.log(myArray);
-console.log(myArray1);
+sortPeopleLast(people);
+sortPeopleByFirst(people1);
+console.log(people);
+console.log(people1);

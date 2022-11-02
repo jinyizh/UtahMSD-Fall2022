@@ -2,7 +2,7 @@ import java.io.*;
 
 public class MyHttpResponse {
 
-    public MyHttpResponse(MyHttpRequest request) throws IOException {
+    public MyHttpResponse(MyHttpRequest request) throws IOException, InterruptedException {
         OutputStream os = request.getClientSocket().getOutputStream();
         DataOutputStream dos = new DataOutputStream(os);
 
@@ -27,6 +27,7 @@ public class MyHttpResponse {
             dos.writeBytes("Connection: close\r\n");
         }
         dos.writeBytes("\r\n");
+        Thread.sleep(10000);
         dos.flush();
     }
 }
