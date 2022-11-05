@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page Jinyi Zhou</title>
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
 
-    <h1>This is a heading</h1>
+    <h1 id="header">
+        Chat Room
+    </h1>
 
-    <p>This is a test page created by Jinyi Zhou.</p>
+    <div id="upDiv">
+        <p> User name: <textarea id="usernameTA"></textarea>
+            Room name: <textarea id="roomnameTA"></textarea>
+        </p>
+        <p><button id="createBtn">create room</button></p>
+    </div>
 
-    <p><strong>This text is very important!</strong></p>
+    <div class="row">
+        <div class="column left" style="background-color:#aaa;">
+          <h3 id="nameList">People in the room:</h3>
+        </div>
+        <div class="column right" style="background-color:#bbb;">
+            <h3 id="messageList"></h3>
+        </div>
+    </div>
 
-    <ol>
-        <li>Monday</li>
-        <li>Tuesday</li>
-        <li>Wednesday</li>
-    </ol>
+    <div id="downDiv">
+        <p> Message: <textarea id="messageTA"></textarea>
+        </p>
+        <p><button id="sendBtn">send</button></p>
+    </div>
 
-    <p>The last word of this sentence is <del>deleted</del>.</p>
-
-    <img src="images/apple.jpg">
-    <a href=https://apple.com> link to Apple </a>
-
+    <script
+    type="text/javascript"
+    src="src.js">
+    </script>
 </body>
 </html>

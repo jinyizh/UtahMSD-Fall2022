@@ -64,3 +64,20 @@ const tblBody = document.createElement("tbody");
   document.body.appendChild(tbl);
   // set border
   tbl.setAttribute("border", "5");
+
+var i = 0;
+function change() {
+  var doc = document.body;
+  var color = ["white", "blue", "brown", "green"];
+  doc.style.backgroundColor = color[i];
+  i = (i + 1) % color.length;
+}
+setInterval(change, 1000);
+
+let btn = document.getElementById("btn");
+btn.onclick = toggle;
+
+function toggle() {
+  document.body.style.backgroundColor = "red";
+}
+window.onload(change);

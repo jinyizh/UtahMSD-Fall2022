@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.Socket;
+import java.security.NoSuchAlgorithmException;
 
 public class ConnectionHandler implements Runnable {
 
@@ -16,7 +17,7 @@ public class ConnectionHandler implements Runnable {
             MyHttpResponse response = new MyHttpResponse(request);
             clientSocket.close();
 
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException | NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
     }

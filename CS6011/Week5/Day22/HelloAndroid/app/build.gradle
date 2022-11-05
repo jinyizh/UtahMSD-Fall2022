@@ -2,6 +2,10 @@ plugins {
     id 'com.android.application'
 }
 
+dependencies {
+    compile 'com.neovisionaries:nv-websocket-client:2.14'
+}
+
 android {
     namespace 'com.example.myapplication'
     compileSdk 32

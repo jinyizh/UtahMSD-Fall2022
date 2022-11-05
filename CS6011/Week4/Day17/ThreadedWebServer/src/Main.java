@@ -3,7 +3,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Main {
-
     public static void main(String[] args) throws IOException {
 
         ServerSocket server = new ServerSocket(8080);
@@ -13,7 +12,6 @@ public class Main {
             ConnectionHandler ch = new ConnectionHandler(clientSocket);
             Thread thread = new Thread (ch);
             thread.start();
-            System.out.print(Thread.currentThread().threadId());
         }
     }
 }
