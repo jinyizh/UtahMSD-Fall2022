@@ -1,7 +1,4 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,11 +14,11 @@ public class MyHttpRequest {
     private HashMap<String, String> map = new HashMap<>();
 
     public String getFilename() {
-        return filename;
+        return this.filename;
     }
 
     public Socket getClientSocket() {
-        return clientSocket;
+        return this.clientSocket;
     }
 
     public HashMap<String, String> getMap() {
@@ -82,8 +79,6 @@ public class MyHttpRequest {
         printWriter.print("Upgrade: websocket\r\n");
         printWriter.print("Connection: Upgrade\r\n");
         printWriter.print("Sec-WebSocket-Accept: " + result + "\r\n");
-//        printWriter.print("Sec-WebSocket-Extensions: permessage-deflate; client_no_context_takeover\r\n");
-        //printWriter.print("Sec-WebSocket-Extensions:\r\n");
         printWriter.print("\r\n");
         printWriter.flush();
         System.out.println("done sending handshake");
@@ -93,5 +88,24 @@ public class MyHttpRequest {
             byte[] x = in.readNBytes(2);
             System.out.println( "read: " + x[0] + ", " + x[1] );
         }
+    }
+
+    private static void sendMessage(String asciiMsg, Socket client) throws IOException {
+        DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
+        // send the ascii msg as a ws msg
+        outputStream.writeByte(0x81); // 1st byte: 1000 0001
+        // 2st byte is maskBit lengthOfMsg
+        // 0_______
+        if (asciiMsg.length() > 65000) {
+            outputStream.writeByte(127);
+            outputStream.writeLong(asciiMsg.length());
+        } else if (asciiMsg.length() >= 126) {
+            // 2nd byte: assume msg length < 65K
+            outputStream.writeByte(126);
+            outputStream.writeShort(asciiMsg.length());
+        } else {
+            outputStream.writeByte(asciiMsg.length());
+        }
+        outputStream.writeBytes(asciiMsg);
     }
 }
