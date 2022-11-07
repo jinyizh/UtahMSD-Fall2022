@@ -62,12 +62,12 @@ function handleKeyPressCB(event) {
     }
 }
 
-function handleMessage() {
-    
+function handleMessage(event) {
+    console.log(event.data);
 }
 
 function handleConnectCB() {
-    console.log("WS connectd");
+    console.log("WS connected");
     wsOpen = true;
     let username = usernameTA.value;
     let roomName = roomnameTA.value;

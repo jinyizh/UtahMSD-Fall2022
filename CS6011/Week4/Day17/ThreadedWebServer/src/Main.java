@@ -10,7 +10,7 @@ public class Main {
         while (true) {
             Socket clientSocket = server.accept();
             ConnectionHandler ch = new ConnectionHandler(clientSocket);
-            Thread thread = new Thread (ch);
+            Thread thread = new Thread(ch);
             thread.start();
         }
     }

@@ -82,30 +82,5 @@ public class MyHttpRequest {
         printWriter.print("\r\n");
         printWriter.flush();
         System.out.println("done sending handshake");
-        while( true ) {
-            InputStream in = clientSocket.getInputStream();
-            System.out.println("about to read");
-            byte[] x = in.readNBytes(2);
-            System.out.println( "read: " + x[0] + ", " + x[1] );
-        }
-    }
-
-    private static void sendMessage(String asciiMsg, Socket client) throws IOException {
-        DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
-        // send the ascii msg as a ws msg
-        outputStream.writeByte(0x81); // 1st byte: 1000 0001
-        // 2st byte is maskBit lengthOfMsg
-        // 0_______
-        if (asciiMsg.length() > 65000) {
-            outputStream.writeByte(127);
-            outputStream.writeLong(asciiMsg.length());
-        } else if (asciiMsg.length() >= 126) {
-            // 2nd byte: assume msg length < 65K
-            outputStream.writeByte(126);
-            outputStream.writeShort(asciiMsg.length());
-        } else {
-            outputStream.writeByte(asciiMsg.length());
-        }
-        outputStream.writeBytes(asciiMsg);
     }
 }
