@@ -1,4 +1,4 @@
-Lab 1 Worksheet
+Lab 1 Worksheet Jinyi Zhou u1424752
 
 Answer the following questions in a text file(NOT A WORD DOCUMENT!). Add your answer below each question.
 
@@ -27,3 +27,5 @@ For test 4, I initialized a array with only one element (arr4 = new int[1]), and
 My test 5 tests the case where all the elements of the array are negative number. The array used for this test is declared as arr5 = new int[] {-7, -5, -3, -1}; and the call to assertEquals is: public void negativeElement() {assertEquals(2, DiffUtil.findSmallestDiff(arr5));}
 
 7. Briefly describe your unit tests for Assignment 1.
+
+To sum up, test 1 tests if the method works with empty arrays arrays with only one element. Test 2 tests if the method works with arrays where all elements is the same. Test 3 tests if the method works with randomly ordered arrays. My test 4 tests if the method works with arrays that have only one element, and test 5 tests if the method works with arrays that have only negative numbers as elements.
