@@ -8,6 +8,7 @@ public class Main {
         ServerSocket server = new ServerSocket(8080);
 
         while (true) {
+            System.out.println("waiting for client to join...");
             Socket clientSocket = server.accept();
             ConnectionHandler ch = new ConnectionHandler(clientSocket);
             Thread thread = new Thread(ch);

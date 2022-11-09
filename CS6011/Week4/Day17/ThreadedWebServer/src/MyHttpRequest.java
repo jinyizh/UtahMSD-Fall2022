@@ -39,7 +39,8 @@ public class MyHttpRequest {
 
         // handle 1st line of header
         String line = sc.nextLine();
-        System.out.println("just got: " + line);
+        System.out.println("parsing headers...");
+        System.out.println(line);
         String[] lineSplit = line.split(" ");
         filename = lineSplit[1];
         if (Objects.equals(filename, "/")) {
@@ -49,7 +50,7 @@ public class MyHttpRequest {
         // handle all the rest of the header (store in hashmap TODO)
         line = sc.nextLine();
         while (!line.equals("")) {
-            System.out.println("got line: " + line);
+            System.out.println(line);
             String[] restLineSplit = line.split(": ");
             map.put(restLineSplit[0], restLineSplit[1]);
             line = sc.nextLine();
@@ -67,9 +68,7 @@ public class MyHttpRequest {
         OutputStream outputStream = clientSocket.getOutputStream();
         PrintWriter printWriter = new PrintWriter(outputStream);
 
-        System.out.println("Key: " + key);
         key += "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"; // magic string
-        System.out.println("Key: '" + key + "'");
         MessageDigest md = MessageDigest.getInstance("SHA-1");
         byte[] data = key.getBytes();
         String result = Base64.getEncoder().encodeToString(md.digest(data));

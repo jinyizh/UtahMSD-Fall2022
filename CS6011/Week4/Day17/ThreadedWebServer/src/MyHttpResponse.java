@@ -8,15 +8,16 @@ public class MyHttpResponse {
     public MyHttpResponse(MyHttpRequest request) throws IOException, InterruptedException, NoSuchAlgorithmException {
         this.request = request;
         if (request.isWebSocketRequest()) {
-            // handshake(request.getClientSocket(), "key-");
             Socket clientSocket = request.getClientSocket();
             MyHttpRequest.handshake(clientSocket, request.getMap().get("Sec-WebSocket-Key"));
             // 1. decode the message -> payload (join / message/ leave);
-            while (true) {
-                InputStream in = clientSocket.getInputStream();
-                decodeMessage(in);
-            }
             // 2. handle the message / send message back
+            while (true) {
+                DataInputStream in = new DataInputStream(clientSocket.getInputStream());
+                String message = decodeMessage(in);
+                System.out.println("the message sent from client is " + message);
+                sendMessage(message, clientSocket);
+            }
         } else {
             OutputStream os = request.getClientSocket().getOutputStream();
             DataOutputStream dos = new DataOutputStream(os);
@@ -45,6 +46,40 @@ public class MyHttpResponse {
         }
     }
 
+    // decode websocket header + payload
+    private static String decodeMessage(DataInputStream in) throws IOException {
+        System.out.println("about to read message");
+        byte[] bytes = in.readNBytes(2); // FIN (1) RSV (1) RSV (1) RSV (1) OPC (4) | MSK (1) LEN (7)
+        int finBit = bytes[0] & 0xff >> 7;
+        int opcode = bytes[0] & 0x0F;
+        int maskBit = bytes[1] & 0x80;
+        int payloadLenBits = bytes[1] & 0x7f;
+        System.out.println("the fin bit is " + finBit);
+        System.out.println("the opcode is " + opcode);
+        if (maskBit != 0) System.out.println("message is masked");
+        long payloadLen = 0; // the actual payload length
+        if (payloadLenBits == 127) {
+            // highly unlikely
+            payloadLen = in.readLong();
+            System.out.println("payload length is so long, it is " + payloadLen);
+        } else if (payloadLenBits == 126) {
+            // unlikely
+            payloadLen = in.readShort();
+            System.out.println("payload length is longer, it is " + payloadLen);
+        } else {
+            // usually the message is very short
+            payloadLen = payloadLenBits;
+            System.out.println("payload length is " + payloadLen);
+        }
+        byte[] maskingKey = in.readNBytes(4);
+        byte[] encoded = in.readNBytes((int) payloadLen);
+        byte[] decoded = new byte[encoded.length];
+        for (int i = 0; i < encoded.length; i++) {
+            decoded[i] = (byte) (encoded[i] ^ maskingKey[i % 4]);
+        }
+        return new String(decoded);
+    }
+
     private static void sendMessage(String asciiMsg, Socket client) throws IOException {
         DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
         // send the ascii msg as a ws msg
@@ -63,12 +98,5 @@ public class MyHttpResponse {
         }
         outputStream.writeBytes(asciiMsg);
         outputStream.flush();
-    }
-
-    // decode websocket header + payload
-    private static void decodeMessage(InputStream in) throws IOException {
-        System.out.println("about to read message");
-        byte[] bytes = in.readNBytes(2);
-        System.out.println("read: " + bytes[0] + ", " + bytes[1]);
     }
 }
