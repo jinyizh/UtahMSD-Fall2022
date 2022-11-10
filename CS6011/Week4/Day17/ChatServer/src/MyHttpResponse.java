@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
+import java.util.Objects;
 
 public class MyHttpResponse {
     MyHttpRequest request;
@@ -10,13 +11,42 @@ public class MyHttpResponse {
         if (request.isWebSocketRequest()) {
             Socket clientSocket = request.getClientSocket();
             MyHttpRequest.handshake(clientSocket, request.getMap().get("Sec-WebSocket-Key"));
-            // 1. decode the message -> payload (join / message/ leave);
-            // 2. handle the message / send message back
             while (true) {
                 DataInputStream in = new DataInputStream(clientSocket.getInputStream());
-                String message = decodeMessage(in);
+                String message = decodeMessage(in); // message from client
                 System.out.println("the message sent from client is: " + message);
-                sendMessage(message, clientSocket);
+
+                // for joining a room, the message looks like: join username roomName
+
+                // list of message types client accepts:
+                // {type: "join", room: "room", user: "user"}
+                // {type: "message", user: "user", room: "room", message: "hi"}
+                // {type: "leave", room: "room", user: "user2"}
+
+                // reformat message
+                String[] messages = message.split(" ", 2);
+                if (Objects.equals(messages[0], "join")) {
+                    // create new room if not exists
+                    String[] restMessages = messages[1].split(" ", 2);
+                    Room room = Room.getRoom(restMessages[1]);
+                    assert room != null;
+                    room.setClient(clientSocket);
+                    String reformat = "";
+                    // FIXME object key should be quoted too?
+                    reformat = "{type: \"" + messages[0] +
+                            "\", room: \"" + restMessages[1] +
+                            "\", user: \"" + restMessages[0] + "\"}";
+                    System.out.println("reformat is: " + reformat);
+                    for (Socket client : room.clients) {
+                        sendMessage(reformat, client);
+                    }
+                } else if (Objects.equals(messages[0], "message")) {
+
+                } else if (Objects.equals(messages[0], "leave")) {
+
+                } else {
+
+                }
             }
         } else {
             OutputStream os = request.getClientSocket().getOutputStream();
@@ -98,5 +128,23 @@ public class MyHttpResponse {
         }
         outputStream.writeBytes(asciiMsg);
         outputStream.flush();
+    }
+
+    private static String reformatMessage(String message) { // reformat message to JSON style string
+        // messages sent from client:
+        // join user room
+
+        String result = "";
+        String[] messages = message.split(" ", 2);
+        if (Objects.equals(messages[0], "join")) {
+
+        } else if (Objects.equals(messages[0], "message")) {
+
+        } else if (Objects.equals(messages[0], "leave")) {
+
+        } else {
+
+        }
+        return result;
     }
 }
