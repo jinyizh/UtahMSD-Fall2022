@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="header">
+        Chat Room
+    </h1>
+
+    <div id="upDiv">
+        <p> User name: <textarea id="usernameTA"></textarea>
+            Room name: <textarea id="roomnameTA"></textarea>
+        </p>
+        <p><button id="createBtn">create room</button></p>
+    </div>
+
+    <div class="row">
+        <div class="column left" style="background-color:#aaa;">
+          <h3 id="nameList">People in the room:</h3>
+        </div>
+        <div class="column right" style="background-color:#bbb;">
+            <h3 id="messageList"></h3>
+        </div>
+    </div>
+
+    <div id="downDiv">
+        <p> Message: <textarea id="messageTA"></textarea>
+        </p>
+        <p><button id="sendBtn">send</button></p>
+    </div>
+
+    <script
+    type="text/javascript"
+    src="src.js">
+    </script>
+</body>
+</html>
