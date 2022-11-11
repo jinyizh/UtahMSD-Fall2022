@@ -124,7 +124,7 @@ class LibraryGenericTest {
     @Test
     public void testLargeLibrary() {
         var lib = new LibraryGeneric<String>();
-        lib.addAll("/Users/jinyizhou/myGithubRepo/UtahMSD/CS6012/Assignment2/GenericBooks/src/assignment02/Mushroom_Publishing.txt");
+        lib.addAll("Mushroom_Publishing.txt");
         var booksCheckOut = lib.lookup("John Smith");
         assertEquals(booksCheckOut, new ArrayList<>()); // If the specified holder has no books checked out, returns an empty list.
 
