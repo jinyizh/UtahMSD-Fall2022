@@ -54,6 +54,16 @@ class LibraryTest {
         // FILL IN MORE TESTS HERE!
         var booksCheckOut = lib.lookup("John Smith");
         assertEquals(booksCheckOut, new ArrayList<>()); // If the specified holder has no books checked out, returns an empty list.
+        lib.checkout(9781843192039L, "John Smith", 12, 31, 2000);
+        var booksCheckOut1 = lib.lookup("John Smith");
+        assertEquals(booksCheckOut1.size(), 1);
+        assertEquals(booksCheckOut1.get(0).getHolder(), "John Smith");
+
+        lib.checkout(9999999999999L, "John Doe", 12, 31, 2000); // does not exist
+        var bookCheckOut2 = lib.lookup("John Doe");
+        assertEquals(bookCheckOut2, new ArrayList<>());
+
+        assertFalse(lib.checkin(9999999999999L));
     }
 
 }

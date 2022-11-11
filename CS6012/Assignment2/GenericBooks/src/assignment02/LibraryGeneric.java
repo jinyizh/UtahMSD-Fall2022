@@ -12,14 +12,38 @@ public class LibraryGeneric<Type> {
     library = new ArrayList<LibraryBookGeneric<Type>>();
   }
 
+  /**
+   * Add the specified book to the library, assume no duplicates.
+   *
+   * @param isbn
+   *          -- ISBN of the book to be added
+   * @param author
+   *          -- author of the book to be added
+   * @param title
+   *          -- title of the book to be added
+   */
   public void add(long isbn, String author, String title) {
     library.add(new LibraryBookGeneric<>(isbn, author, title));
   }
 
+  /**
+   * Add the list of library books to the library, assume no duplicates.
+   *
+   * @param list
+   *          -- list of library books to be added
+   */
   public void addAll(ArrayList<LibraryBookGeneric<Type>> list) {
     library.addAll(list);
   }
 
+  /**
+   * Add books specified by the input file. One book per line with ISBN, author,
+   * and title separated by tabs.
+   *
+   * If file does not exist or format is violated, do nothing.
+   *
+   * @param filename
+   */
   public void addAll(String filename) {
     ArrayList<LibraryBookGeneric<Type>> toBeAdded = new ArrayList<LibraryBookGeneric<Type>>();
 
@@ -63,6 +87,14 @@ public class LibraryGeneric<Type> {
     library.addAll(toBeAdded);
   }
 
+  /**
+   * Returns the holder of the library book with the specified ISBN.
+   *
+   * If no book with the specified ISBN is in the library, returns null.
+   *
+   * @param isbn
+   *          -- ISBN of the book to be looked up
+   */
   public Type lookup(long isbn) {
     for (LibraryBookGeneric<Type> libraryBookGeneric : library) {
       if (libraryBookGeneric.getIsbn() == isbn) {
@@ -72,6 +104,14 @@ public class LibraryGeneric<Type> {
     return null;
   }
 
+  /**
+   * Returns the list of library books checked out to the specified holder.
+   *
+   * If the specified holder has no books checked out, returns an empty list.
+   *
+   * @param holder
+   *          -- holder whose checked out books are returned
+   */
   public ArrayList<LibraryBookGeneric<Type>> lookup(Type holder) {
     ArrayList<LibraryBookGeneric<Type>> libraryBookGenerics = new ArrayList<>(); // ArrayList of books of specified holder
     for (LibraryBookGeneric<Type> libraryBookGeneric : library) {
@@ -82,6 +122,27 @@ public class LibraryGeneric<Type> {
     return libraryBookGenerics;
   }
 
+  /**
+   * Sets the holder and due date of the library book with the specified ISBN.
+   *
+   * If no book with the specified ISBN is in the library, returns false.
+   *
+   * If the book with the specified ISBN is already checked out, returns false.
+   *
+   * Otherwise, returns true.
+   *
+   * @param isbn
+   *          -- ISBN of the library book to be checked out
+   * @param holder
+   *          -- new holder of the library book
+   * @param month
+   *          -- month of the new due date of the library book
+   * @param day
+   *          -- day of the new due date of the library book
+   * @param year
+   *          -- year of the new due date of the library book
+   *
+   */
   public boolean checkout(long isbn, Type holder, int month, int day, int year) {
     // FILL IN -- do not return false unless appropriate
     for (LibraryBookGeneric<Type> libraryBookGeneric : library) {
@@ -97,6 +158,18 @@ public class LibraryGeneric<Type> {
     return false; // can't find the book after running the loop
   }
 
+  /**
+   * Unsets the holder and due date of the library book.
+   *
+   * If no book with the specified ISBN is in the library, returns false.
+   *
+   * If the book with the specified ISBN is already checked in, returns false.
+   *
+   * Otherwise, returns true.
+   *
+   * @param isbn
+   *          -- ISBN of the library book to be checked in
+   */
   public boolean checkin(long isbn) {
     for (LibraryBookGeneric<Type> libraryBookGeneric : library) {
       if (Objects.equals(libraryBookGeneric.getIsbn(), isbn)) {
@@ -109,6 +182,17 @@ public class LibraryGeneric<Type> {
     return false; // default: no book with such ISBN
   }
 
+  /**
+   * Unsets the holder and due date for all library books checked out be the
+   * specified holder.
+   *
+   * If no books with the specified holder are in the library, returns false;
+   *
+   * Otherwise, returns true.
+   *
+   * @param holder
+   *          -- holder of the library books to be checked in
+   */
   public boolean checkin(Type holder) {
     for (LibraryBookGeneric<Type> libraryBookGeneric : library) {
       if (Objects.equals(libraryBookGeneric.getHolder(), holder)) {
@@ -161,7 +245,9 @@ public class LibraryGeneric<Type> {
     GregorianCalendar date = new GregorianCalendar(year, month, day); // pass the input
 
     for (LibraryBookGeneric<Type> libraryBookGeneric : library) {
-      if (libraryBookGeneric.getDueDate().before(date)) libraryCopy.add(libraryBookGeneric); // add books that are overdue
+      if (libraryBookGeneric.getDueDate() != null) {
+        if (libraryBookGeneric.getDueDate().before(date)) libraryCopy.add(libraryBookGeneric); // add books that are overdue
+      }
     }
 
     OrderByDueDate comparator = new OrderByDueDate();
