@@ -55,7 +55,7 @@ class MatrixTest {
         assertEquals(false, matrix0.equals(matrix1));
         assertEquals(false, matrix1.equals(matrix2));
         int[][] data = {{1, 2}, {3, 4}, {5, 6}}; // has the same data as matrix2
-        Matrix matrix = new Matrix(data);
+        Matrix matrix = new Matrix(data); // put into setup()
         assertEquals(true, matrix2.equals(matrix));
         assertEquals(true, matrix0.plus(matrix6).equals(matrix5)); // test both equals() and plus()
         assertEquals(false, matrix7.equals(matrix8));
