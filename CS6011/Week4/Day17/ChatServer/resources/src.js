@@ -57,7 +57,7 @@ function handleKeyPressCB(event) {
             ws.onopen = handleConnectCB;
             ws.onmessage = handleMessageFromWsCB;
         } else if (wsOpen) {
-            ws.send(`${username} ${message}`);
+            ws.send(`${username} ${roomName} ${message}`);
         }
     }
 }

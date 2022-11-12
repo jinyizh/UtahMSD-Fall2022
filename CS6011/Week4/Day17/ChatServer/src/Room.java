@@ -20,8 +20,9 @@ public class Room {
             Room room = new Room(name);
             Room.setMap(name, room); // put created room into map
             return room;
+        } else { // room exists
+            return Room.getMap().get(name);
         }
-        return null;
     }
 
     private Room(String name) { // constructor is only allowed to be accessed though getRoom;

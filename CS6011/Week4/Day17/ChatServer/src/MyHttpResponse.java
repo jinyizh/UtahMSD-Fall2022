@@ -16,32 +16,40 @@ public class MyHttpResponse {
                 String message = decodeMessage(in); // message from client
                 System.out.println("the message sent from client is: " + message);
 
-                // for joining a room, the message looks like: join username roomName
+                // list of messages from client:
+                // for joining a room: join username roomName
+                // for sending a message: username roomName message
 
                 // list of message types client accepts:
-                // {type: "join", room: "room", user: "user"}
-                // {type: "message", user: "user", room: "room", message: "hi"}
+                // {"type": "join", "room": "room", "user": "user"}
+                // {"type": "message", "user": "user", "room": "room", "message": "hi"}
                 // {type: "leave", room: "room", user: "user2"}
 
-                // reformat message
+                // reformat message from client message to message client accepts
                 String[] messages = message.split(" ", 2);
                 if (Objects.equals(messages[0], "join")) {
                     // create new room if not exists
                     String[] restMessages = messages[1].split(" ", 2);
                     Room room = Room.getRoom(restMessages[1]);
-                    assert room != null;
                     room.setClient(clientSocket);
-                    String reformat = "";
-                    // FIXME object key should be quoted too?
-                    reformat = "{type: \"" + messages[0] +
-                            "\", room: \"" + restMessages[1] +
-                            "\", user: \"" + restMessages[0] + "\"}";
+                    // object key should be quoted too
+                    String reformat = "{\"type\": \"" + messages[0] + // messages[0] is "join"
+                                   "\", \"room\": \"" + restMessages[1] +
+                                   "\", \"user\": \"" + restMessages[0] + "\"}";
                     System.out.println("reformat is: " + reformat);
                     for (Socket client : room.clients) {
                         sendMessage(reformat, client);
                     }
-                } else if (Objects.equals(messages[0], "message")) {
-
+                } else if (messages[1] != null) { // roomName message
+                    String[] restMessages = messages[1].split(" ", 2); // roomName + the real chat message
+                    Room room = Room.getRoom(restMessages[0]);
+                    String reformat = "{\"type\": \"message" +
+                                   "\", \"user\": \"" + messages[0] + // messages[0] is $username
+                                   "\", \"room\": \"" + restMessages[0] +
+                                   "\", \"message\": \"" + restMessages[1] + "\"}";
+                    for (Socket client : room.clients) {
+                        sendMessage(reformat, client);
+                    }
                 } else if (Objects.equals(messages[0], "leave")) {
 
                 } else {
