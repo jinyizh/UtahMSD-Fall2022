@@ -41,6 +41,13 @@ function handleKeyPressCB(event) {
             return;
         }
 
+        for (let char of username) {
+            if (char === ' ') {
+                alert("Username must not consist of space!");
+                return;;
+            }
+        }
+
         for (let name of roomName) {
             if (name < 'a' || name > 'z') {
                 alert("Room name must consist of lowercase alphabets only!");
@@ -62,10 +69,6 @@ function handleKeyPressCB(event) {
     }
 }
 
-function handleMessage() {
-    
-}
-
 function handleConnectCB() {
     wsOpen = true;
     let username = usernameTA.value;
@@ -82,7 +85,9 @@ function handleMessageFromWsCB(event) {
         document.getElementById("nameList").innerHTML += "<p>" + myMsgObj.user + "</p>" + "</br>";
         document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + " joins" + "</p>" + "</br>";
     } else if (myMsgObj.type == "message") {
-        document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + ": " + myMsgObj.message + "</p>" + "</br>";
+        let time = new Date();
+        let timeString = time.toLocaleTimeString();
+        document.getElementById("messageList").innerHTML += timeString + "</br>" + "<p>" + myMsgObj.user + ": " + myMsgObj.message + "</p>" + "</br>";
     } else if ((myMsgObj).type == "leave") {
         document.getElementById("messageList").innerHTML += "<p>" + myMsgObj.user + ": " + "has left" + "</p>" + "</br>";
     }

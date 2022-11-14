@@ -29,7 +29,10 @@ public class MyHttpResponse {
                 String[] messages = message.split(" ", 2);
                 if (Objects.equals(messages[0], "join")) {
                     // create new room if not exists
-                    String[] restMessages = messages[1].split(" ", 2);
+//                    String[] restMessages = messages[1].split(" ", 2); // problem with space in username
+                    // update: disallowed space in username to avoid further problems
+                    int s = messages[1].lastIndexOf(" ");
+                    String[] restMessages = {messages[1].substring(0, s), messages[1].substring(s + 1)};
                     Room room = Room.getRoom(restMessages[1]);
                     room.setClient(clientSocket);
                     // object key should be quoted too
@@ -50,10 +53,8 @@ public class MyHttpResponse {
                     for (Socket client : room.clients) {
                         sendMessage(reformat, client);
                     }
-                } else if (Objects.equals(messages[0], "leave")) {
-
                 } else {
-
+                    sendMessage("Someone leaves", clientSocket);
                 }
             }
         } else {
