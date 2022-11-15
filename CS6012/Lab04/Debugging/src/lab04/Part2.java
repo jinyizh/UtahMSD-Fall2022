@@ -16,7 +16,7 @@ public class Part2 {
       }
     }
 
-    // Loop #2
+//     Loop #2
     while (b < 10) {
       b *= a;
       a += c;

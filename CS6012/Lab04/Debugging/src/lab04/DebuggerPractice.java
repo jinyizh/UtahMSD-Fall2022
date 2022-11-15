@@ -21,14 +21,12 @@ public class DebuggerPractice {
 
     // Part 2
     // Uncomment this line when instructed to in the lab web page
-    // Part2.infiniteLoops();
+//     Part2.infiniteLoops();
 
     // Part 3
     // Uncomment this block of code when instructed to in the lab web page
-    /*
-     * if(Part3.checkPassword("a b c")) { System.out.println("Password accepted"); }
-     * else { System.out.println("Incorrect password"); }
-     */
+     if(Part3.checkPassword("1 4 9 16 25")) { System.out.println("Password accepted"); }
+     else { System.out.println("Incorrect password"); }
   }
 
 }
