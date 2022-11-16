@@ -9,6 +9,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
   private int size; // everytime an element is added, size++
   private int capacity = 1; // initial capacity, grows when reached
   private Comparator<? super E> comparator = null;
+  private Iterator<? super E> iterator;
 
   public BinarySearchSet() {
     this.data = (E[]) new Object[capacity];
@@ -43,22 +44,23 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
     if (this.contains(element) || element == null) return false; // prevent adding null
     if (size == capacity) grow(1); // add 1 element, so just grow 1 capacity
     data[size++] = (E) element;
-    inSort(); // sort the data array
+    bubSort(); // sort the data array
     return true;
   }
 
   @Override
-  public boolean addAll(Collection elements) { // if collection is subset then return false
+  public boolean addAll(Collection elements) {
     Iterator<? extends E> itr = elements.iterator();
-    return false;
+    int originalSize = size;
+    while (itr.hasNext()) add(itr.next());
+    return size != originalSize; // if collection is subset then return false
   }
 
   @Override
   public void clear() {
-    Iterator<? extends E> itr = this.iterator();
-    while (itr.hasNext()) {
-      itr.remove();
-    }
+    capacity = 0; // re-initialize
+    data = (E[]) new Object[capacity];
+    size = 0; // shouldn't be null as required
   }
 
   @Override
@@ -72,6 +74,9 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
   @Override
   public boolean containsAll(Collection elements) {
     Iterator<E> iterator = elements.iterator();
+    while (iterator.hasNext()) {
+
+    }
     return false;
   }
 
@@ -82,7 +87,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public Iterator iterator() {
-    return null;
+    return iterator;
   }
 
   @Override
@@ -118,7 +123,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
     return data;
   }
 
-  private void inSort() { // insertion sort method, sort data
+  private void bubSort() { // bubble sort method, sort data
     Comparator<? super E> comparator = this.comparator;
     if (data == null || isEmpty()) return; // can't sort null or empty array
     if (comparator == null) { // natural ordering
