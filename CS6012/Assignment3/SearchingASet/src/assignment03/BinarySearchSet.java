@@ -6,16 +6,18 @@ import java.util.function.Consumer;
 public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   private E[] data;
-  private int size;
-  private int capacity = 10;
+  private int size; // everytime an element is added, size++
+  private int capacity = 1; // initial capacity, grows when reached
   private Comparator<? super E> comparator = null;
 
   public BinarySearchSet() {
     this.data = (E[]) new Object[capacity];
+    this.size = 0;
   }
 
   public BinarySearchSet(Comparator<? super E> comparator) {
     this.data = (E[]) new Object[capacity];
+    this.size = 0;
     this.comparator = comparator;
   }
 
@@ -26,31 +28,27 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public Object first() throws NoSuchElementException {
+    if (isEmpty()) throw new NoSuchElementException();
     return data[0];
   }
 
   @Override
   public Object last() throws NoSuchElementException {
+    if (isEmpty()) throw new NoSuchElementException();
     return data[data.length - 1];
   }
 
   @Override
   public boolean add(Object element) {
-    if (this.contains(element) || element == null) return false;
-    if (this.comparator == null) { // ordered in natural ordering
-      Comparable<E> elementComparable = (Comparable<E>) element;
-      if (elementComparable.compareTo((E) this.last()) >= 0) { // add after end
-
-      }
-
-    } else { // ordered using provided comparator
-
-    }
-    return false;
+    if (this.contains(element) || element == null) return false; // prevent adding null
+    if (size == capacity) grow(1); // add 1 element, so just grow 1 capacity
+    data[size++] = (E) element;
+    inSort(); // sort the data array
+    return true;
   }
 
   @Override
-  public boolean addAll(Collection elements) {
+  public boolean addAll(Collection elements) { // if collection is subset then return false
     Iterator<? extends E> itr = elements.iterator();
     return false;
   }
@@ -65,9 +63,8 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public boolean contains(Object element) {
-    for (E e : this.data) {
-      if (e == null) return false;
-      if (e.equals(element)) return true;
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(element)) return true;
     }
     return false;
   }
@@ -100,6 +97,9 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public boolean remove(Object element) {
+    for (E e : data) {
+
+    }
     return false;
   }
 
@@ -115,19 +115,51 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public Object[] toArray() {
-    E[] array = (E[]) new Object[size];
-    System.arraycopy(data, 0, array, 0, size);
-    return array;
+    return data;
   }
 
-  public void ensureCapacity(int minCapacity) {
-    int current = data.length;
-    if (minCapacity > current) {
-      E[] newData = (E[]) new Object[Math.max(current * 2, minCapacity)];
-      System.arraycopy(data, 0, newData, 0, size);
-      data = newData;
+  private void inSort() { // insertion sort method, sort data
+    Comparator<? super E> comparator = this.comparator;
+    if (data == null || isEmpty()) return; // can't sort null or empty array
+    if (comparator == null) { // natural ordering
+      for (int i = 0; i < data.length - 1; i++) {
+        for (int j = 0; j < data.length - i - 1; j++) {
+          Comparable<E> jElement = (Comparable<E>) data[j];
+          Comparable<E> j1Element = (Comparable<E>) data[j + 1];
+          if (jElement.compareTo((E) j1Element) > 0) {
+            Comparable<E> temp = (Comparable<E>) data[j];
+            data[j] = (E) j1Element;
+            data[j + 1] = (E) temp;
+          }
+        }
+      }
+    } else { // ordering using comparator
+      for (int i = 0; i < data.length - 1; i++) {
+        for (int j = 0; j < data.length - i - 1; j++) {
+          if (comparator.compare(data[j], data[j + 1]) > 0) {
+            E temp = data[j];
+            data[j] = data[j + 1];
+            data[j + 1] = temp;
+          }
+        }
+      }
     }
   }
 
-  
+  private int smallestIndex(E[] data, E goal) { // use binary search, return the index of the smallest element of sorted array
+    return -1;
+  }
+
+  private void grow(int i) { // grow data capacity by i
+    capacity += i;
+    E[] newData = (E[]) new Object[capacity];
+    for (int j = 0; j < data.length; j++) {
+      newData[j] = data[j];
+    }
+    data = newData;
+  }
+
+  public E getValue(int i) {
+    return data[i];
+  }
 }
