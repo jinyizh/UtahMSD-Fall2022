@@ -215,19 +215,22 @@ class BinarySearchSetTest {
   void testContains() {
     // test the running time of .contains() method which implements binary search
     // used in analysis report
-    int count = 100000;
+    int loopTime = 10000;
+    long totalTime = 0;
     int size = 1024;
+
     for (long i = 0; i < size; i++) {
       integerBinarySearchSet.add(1);
     }
     integerBinarySearchSet.add(2); // the element to find
-    long lastTime = System.nanoTime();
-    int currentCount = 0;
-    while (currentCount < count) {
-      boolean contains = integerBinarySearchSet.contains(2);
-      currentCount++;
+
+    for (int i = 0; i < loopTime; i++) {
+      long lastTime = System.nanoTime();
+      boolean contains = integerBinarySearchSet.contains(2); // call
+      long currentTime = System.nanoTime();
+      totalTime += currentTime - lastTime;
     }
-    long currentTime = System.nanoTime();
-    System.out.println((currentTime - lastTime) / count);
+
+    System.out.println(totalTime / loopTime);
   }
 }
