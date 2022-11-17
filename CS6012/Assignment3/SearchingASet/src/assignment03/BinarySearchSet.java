@@ -198,7 +198,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
     return data[i];
   }
 
-  public class SetIterator implements Iterator<E> {
+  private class SetIterator implements Iterator<E> {
 
     int pos; // position
 
