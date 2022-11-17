@@ -9,7 +9,6 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
   private int size; // everytime an element is added, size++
   private int capacity = 1; // initial capacity, grows when reached
   private Comparator<? super E> comparator = null;
-  private Iterator<? super E> iterator;
 
   public BinarySearchSet() {
     this.data = (E[]) new Object[capacity];
@@ -42,7 +41,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
   @Override
   public boolean add(Object element) {
     if (this.contains(element) || element == null) return false; // prevent adding null
-    if (size == capacity) grow(1); // add 1 element, so just grow 1 capacity
+    if (size == capacity) grow(); // just grow 1 capacity
     data[size++] = (E) element;
     bubSort(); // sort the data array
     return true;
@@ -50,10 +49,10 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public boolean addAll(Collection elements) {
-    Iterator<? extends E> itr = elements.iterator();
-    int originalSize = size;
-    while (itr.hasNext()) add(itr.next());
-    return size != originalSize; // if collection is subset then return false
+    Iterator<? extends E> iterator = elements.iterator();
+    int originalSize = this.size;
+    while (iterator.hasNext()) add(iterator.next());
+    return this.size != originalSize; // if collection is subset then return false
   }
 
   @Override
@@ -73,11 +72,10 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public boolean containsAll(Collection elements) {
-    Iterator<E> iterator = elements.iterator();
-    while (iterator.hasNext()) {
-
+    for (Object object : elements) {
+      if (!contains(object)) return false;
     }
-    return false;
+    return true;
   }
 
   @Override
@@ -87,30 +85,37 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public Iterator iterator() {
-    return iterator;
-  }
-
-  @Override
-  public void forEach(Consumer action) {
-    Iterable.super.forEach(action);
-  }
-
-  @Override
-  public Spliterator spliterator() {
-    return Iterable.super.spliterator();
+    SetIterator setIterator = new SetIterator();
+    return setIterator;
   }
 
   @Override
   public boolean remove(Object element) {
-    for (E e : data) {
-
+    for (int i = 0; i < data.length; i++) {
+      if (data[i].equals(element)) { // then remove data[i]
+        capacity--;
+        E[] newData = (E[]) new Object[capacity];
+        // add elements before and after removed element to new array respectively
+        for (int j = 0; j < i; j++) {
+          newData[j] = data[j];
+        }
+        for (int k = i + 1; k < data.length; k++) {
+          newData[k - 1] = data[k]; // # of elements in newData is 1 fewer after data[i]
+        }
+        data = newData;
+        size--; // have to do this manually since size can only be changed in constructors, .add() and .addAll()
+        return true;
+      }
     }
     return false;
   }
 
   @Override
   public boolean removeAll(Collection elements) {
-    return false;
+    Iterator<E> iterator = elements.iterator();
+    int originalSize = size;
+    while (iterator.hasNext()) remove(iterator.next());
+    return size != originalSize;
   }
 
   @Override
@@ -151,12 +156,8 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
     }
   }
 
-  private int smallestIndex(E[] data, E goal) { // use binary search, return the index of the smallest element of sorted array
-    return -1;
-  }
-
-  private void grow(int i) { // grow data capacity by i
-    capacity += i;
+  private void grow() { // grow data capacity by 1)
+    capacity++;
     E[] newData = (E[]) new Object[capacity];
     for (int j = 0; j < data.length; j++) {
       newData[j] = data[j];
@@ -164,7 +165,36 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
     data = newData;
   }
 
-  public E getValue(int i) {
+  public E getValue(int i) { // for testing purpose
     return data[i];
   }
+
+  public class SetIterator implements Iterator<E> {
+
+    int pos; // position
+
+    public SetIterator() {
+      pos = 0;
+    }
+
+    @Override
+    public boolean hasNext() {
+      return this.pos < data.length;
+    }
+
+    @Override
+    public E next() throws NoSuchElementException {
+      if (this.hasNext()) {
+        return data[this.pos++];
+      } else {
+        return null;
+      }
+    }
+
+    @Override
+    public void remove() throws UnsupportedOperationException, IllegalStateException {
+      Iterator.super.remove();
+    }
+  }
+
 }

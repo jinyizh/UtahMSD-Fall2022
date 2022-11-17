@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,9 +16,9 @@ class BinarySearchSetTest {
   BinarySearchSet<String> stringBinarySearchSet;
   BinarySearchSet<Integer> integerBinarySearchSet;
   BinarySearchSet<Integer> comparatorIntegerSet;
-  Comparator<Integer> comparator;
   ArrayList<Integer> integerArrayList;
   ArrayList<Integer> integerArrayList1;
+  ArrayList<String> stringArrayList;
 
   @BeforeEach
   void setUp() {
@@ -29,9 +30,9 @@ class BinarySearchSetTest {
         return o2 - o1; // reversed order
       }
     });
-    comparator = comparatorIntegerSet.comparator(); // for testing comparator()
     integerArrayList = new ArrayList<>();
     integerArrayList1 = new ArrayList<>();
+    stringArrayList = new ArrayList<>();
   }
 
   @AfterEach
@@ -39,14 +40,9 @@ class BinarySearchSetTest {
     stringBinarySearchSet = null;
     integerBinarySearchSet = null;
     comparatorIntegerSet = null;
-    comparator = null;
     integerArrayList = null;
     integerArrayList1 = null;
-  }
-
-  @Test
-  void comparator() {
-    assertEquals(comparatorIntegerSet.comparator(), comparator);
+    stringArrayList = null;
   }
 
   @Test
@@ -85,9 +81,11 @@ class BinarySearchSetTest {
     assertEquals(integerBinarySearchSet.getValue(0), 4);
 
     // test if sorted (comparator)
+    comparatorIntegerSet.add(4);
     comparatorIntegerSet.add(1);
     comparatorIntegerSet.add(9);
     assertEquals(comparatorIntegerSet.getValue(0), 9);
+    assertEquals(comparatorIntegerSet.getValue(1), 4);
   }
 
   @Test
@@ -99,10 +97,18 @@ class BinarySearchSetTest {
     assertEquals(integerBinarySearchSet.size(), 3);
     assertEquals(integerBinarySearchSet.first(), 4);
     assertEquals(integerBinarySearchSet.last(), 12);
+
     // test adding subset
     integerArrayList1.add(12);
     integerArrayList1.add(4);
     assertFalse(integerBinarySearchSet.addAll(integerArrayList1));
+
+    // test union set
+    integerArrayList1.add(6);
+    assertTrue(integerBinarySearchSet.addAll(integerArrayList1));
+    integerBinarySearchSet.addAll(integerArrayList1);
+    assertEquals(integerBinarySearchSet.size(), 4);
+    assertEquals(integerBinarySearchSet.getValue(1), 6);
   }
 
   @Test
@@ -125,6 +131,15 @@ class BinarySearchSetTest {
 
   @Test
   void containsAll() {
+    stringBinarySearchSet.add("a");
+    stringBinarySearchSet.add("b");
+    stringBinarySearchSet.add("c");
+    stringArrayList.add("a");
+    stringArrayList.add("c");
+    assertTrue(stringBinarySearchSet.containsAll(stringArrayList));
+
+    stringArrayList.add("d");
+    assertFalse(stringBinarySearchSet.containsAll(stringArrayList));
   }
 
   @Test
@@ -135,23 +150,39 @@ class BinarySearchSetTest {
   }
 
   @Test
-  void iterator() {
-  }
-
-  @Test
-  void forEach() {
-  }
-
-  @Test
-  void spliterator() {
-  }
-
-  @Test
   void remove() {
+    stringBinarySearchSet.add("a");
+    stringBinarySearchSet.add("b");
+    stringBinarySearchSet.add("c");
+    stringBinarySearchSet.remove("b");
+    assertEquals(stringBinarySearchSet.size(), 2);
+    assertFalse(stringBinarySearchSet.remove("z"));
   }
 
   @Test
   void removeAll() {
+    integerBinarySearchSet.add(1);
+    integerBinarySearchSet.add(2);
+    integerBinarySearchSet.add(3);
+
+    // subset
+    integerArrayList.add(1);
+    integerArrayList.add(3);
+    assertTrue(integerBinarySearchSet.removeAll(integerArrayList));
+    assertEquals(integerBinarySearchSet.size(), 1);
+
+    integerArrayList1.add(9); // not in set
+    assertFalse(integerBinarySearchSet.removeAll(integerArrayList1));
+
+    // union set
+    stringBinarySearchSet.add("a");
+    stringBinarySearchSet.add("b");
+    stringBinarySearchSet.add("c");
+    stringArrayList.add("c");
+    stringArrayList.add("d");
+    stringBinarySearchSet.removeAll(stringArrayList); // a b c -> a b
+    assertEquals(stringBinarySearchSet.size(), 2);
+    assertEquals(stringBinarySearchSet.getValue(1), "b");
   }
 
   @Test
@@ -169,5 +200,14 @@ class BinarySearchSetTest {
     stringBinarySearchSet.add("b");
     stringBinarySearchSet.add("c");
     assertEquals(stringBinarySearchSet.toArray()[1], "b");
+  }
+
+  @Test
+  void iterator() {
+    stringBinarySearchSet.add("a");
+    stringBinarySearchSet.add("b");
+    stringBinarySearchSet.add("c");
+    Iterator<String> iterator = stringBinarySearchSet.iterator();
+    assertEquals(iterator.next(), "a");
   }
 }
