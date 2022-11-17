@@ -64,10 +64,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public boolean contains(Object element) {
-    for (int i = 0; i < size; i++) {
-      if (data[i].equals(element)) return true;
-    }
-    return false;
+    return binarySearch((E) element) != -1;
   }
 
   @Override
@@ -91,23 +88,24 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
 
   @Override
   public boolean remove(Object element) {
-    for (int i = 0; i < data.length; i++) {
-      if (data[i].equals(element)) { // then remove data[i]
-        capacity--;
-        E[] newData = (E[]) new Object[capacity];
-        // add elements before and after removed element to new array respectively
-        for (int j = 0; j < i; j++) {
-          newData[j] = data[j];
-        }
-        for (int k = i + 1; k < data.length; k++) {
-          newData[k - 1] = data[k]; // # of elements in newData is 1 fewer after data[i]
-        }
-        data = newData;
-        size--; // do this manually since size only changes in constructors, .add() and .addAll()
-        return true;
+    // used to write for loop to find index; now use binary search
+    int i = binarySearch((E) element); // index of element
+    if (i == -1) { // not found
+      return false;
+    } else {
+      capacity--;
+      E[] newData = (E[]) new Object[capacity];
+      // add elements before and after removed element to new array respectively
+      for (int j = 0; j < i; j++) {
+        newData[j] = data[j];
       }
+      for (int k = i + 1; k < data.length; k++) {
+        newData[k - 1] = data[k]; // # of elements in newData is 1 fewer after data[i]
+      }
+      data = newData;
+      size--; // do this manually since size only changes in constructors, .add() and .addAll()
+      return true;
     }
-    return false;
   }
 
   @Override
@@ -159,6 +157,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
   private int binarySearch(E goal) { // return index of smallest element, return -1 if not exists
     int low = 0, high = data.length - 1, i = 0; // left, right and middle pointers
     Comparator<? super E> comparator = this.comparator;
+    if (size == 0) return -1; // important, don't search in empty array
     if (comparator == null) { // natual ordering
       while (low <= high) {
         i = (low + high) / 2;
