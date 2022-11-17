@@ -80,7 +80,7 @@ class BinarySearchSetTest {
     integerBinarySearchSet.add(4);
     assertEquals(integerBinarySearchSet.getValue(0), 4);
 
-    // test if sorted (comparator)
+    // test if sorted (comparator, which is reverse ordered)
     comparatorIntegerSet.add(4);
     comparatorIntegerSet.add(1);
     comparatorIntegerSet.add(9);
@@ -207,7 +207,7 @@ class BinarySearchSetTest {
     stringBinarySearchSet.add("a");
     stringBinarySearchSet.add("b");
     stringBinarySearchSet.add("c");
-    Iterator<String> iterator = stringBinarySearchSet.iterator();
-    assertEquals(iterator.next(), "a");
+    Iterator<String> stringIterator = stringBinarySearchSet.iterator();
+    assertEquals(stringIterator.next(), "a");
   }
 }

@@ -103,7 +103,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
           newData[k - 1] = data[k]; // # of elements in newData is 1 fewer after data[i]
         }
         data = newData;
-        size--; // have to do this manually since size can only be changed in constructors, .add() and .addAll()
+        size--; // do this manually since size only changes in constructors, .add() and .addAll()
         return true;
       }
     }
@@ -156,6 +156,36 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
     }
   }
 
+  private int binarySearch(E goal) { // return index of smallest element, return -1 if not exists
+    int low = 0, high = data.length - 1, i = 0; // left, right and middle pointers
+    Comparator<? super E> comparator = this.comparator;
+    if (comparator == null) { // natual ordering
+      while (low <= high) {
+        i = (low + high) / 2;
+        Comparable<E> iElement = (Comparable<E>) data[i];
+        if (data[i] == goal) {
+          return i;
+        } else if (iElement.compareTo(goal) > 0) {
+          high = i -1;
+        } else {
+          low = i + 1;
+        }
+      }
+    } else { // ordering using comparator
+      while (low <= high) {
+        i = (low + high) / 2;
+        if (data[i] == goal) {
+          return i;
+        } else if (comparator.compare(data[i], goal) > 0) {
+          high = i - 1;
+        } else {
+          low = i + 1;
+        }
+      }
+    }
+    return -1;
+  }
+
   private void grow() { // grow data capacity by 1)
     capacity++;
     E[] newData = (E[]) new Object[capacity];
@@ -187,7 +217,7 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
       if (this.hasNext()) {
         return data[this.pos++];
       } else {
-        return null;
+        throw new NoSuchElementException();
       }
     }
 
@@ -196,5 +226,4 @@ public class BinarySearchSet<E> implements SortedSet, Iterable {
       Iterator.super.remove();
     }
   }
-
 }
