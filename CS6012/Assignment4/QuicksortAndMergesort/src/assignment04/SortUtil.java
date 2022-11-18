@@ -8,7 +8,7 @@ public class SortUtil {
 
   private static int mergesortThreshold;
   private static int quicksortThreshold;
-  public static int choose = 3;
+  //
 
    public static void setMergesortThreshold(int desiredThreshold) {
      mergesortThreshold = desiredThreshold;
@@ -51,7 +51,7 @@ public class SortUtil {
    private static <T> void mergeSortRecursive(ArrayList<T> list, ArrayList<T> temp, int start, int end, Comparator<? super T> comparator) {
      if (start < end) {
        if (end - start < mergesortThreshold) {
-         // insertionSort(list, start, end);
+         insertionSort(list, start, end, comparator);
        } else {
          int center = (start + end) / 2;
          mergeSortRecursive(list, temp, start, center, comparator);
@@ -104,12 +104,45 @@ public class SortUtil {
     if (end - start < quicksortThreshold) {
       insertionSort(list, start, end, comparator);
     } else {
-      // TODO
+      int middle = partition(list, start, end, comparator);
+      quickSortRecursive(list, start, middle - 1, comparator);
+      quickSortRecursive(list, middle + 1, end, comparator);
     }
   }
 
   private static <T> int partition(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
-    return -1; // TODO
+    int pivPos = bestPivotStrategy(list, start, end, comparator);
+    T pivot = list.get(pivPos);
+    swap(list, start, pivPos);
+
+    int left = start + 1;
+    int right = end;
+
+    while (true) {
+      while (left <= right) {
+        if (comparator.compare(list.get(left), pivot) < 0) {
+          left++;
+        } else {
+          break;
+        }
+      }
+
+      while (right > left) {
+        if (comparator.compare(list.get(right), pivot) > 0) {
+          right--;
+        } else {
+          break;
+        }
+      }
+
+      if (left >= right) break;
+      swap(list, left, right);
+    }
+
+    list.set(start, list.get(left - 1));
+    list.set(left - 1, pivot);
+
+    return left - 1;
   }
 
   public static <T> int goodPivotStrategy(ArrayList<T> list, int start, int end) {
