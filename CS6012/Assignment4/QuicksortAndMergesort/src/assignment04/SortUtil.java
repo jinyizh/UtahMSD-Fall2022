@@ -5,44 +5,114 @@ import java.util.Comparator;
 
 public class SortUtil {
 
-  private static int threshold;
+  private static int mergesortThreshold;
+  private static int quicksortThreshold;
+  public static int choose = 3;
 
-  public static <T> void mergesort(ArrayList<T> arrayList, Comparator<? super T> comparator) {
-    // create sub-arrays to be merged
-    int mid = arrayList.size() / 2;
-    ArrayList<T> lArrayList = new ArrayList<>(mid);
-    ArrayList<T> rArrayList = new ArrayList<>(arrayList.size() - mid);
+   public static void setMergesortThreshold(int desiredThreshold) {
+     mergesortThreshold = desiredThreshold;
+   }
 
-    // divide
-    for (int i = 0; i < mid; i++) {
-      lArrayList.add(arrayList.get(i));
-    }
-    for (int i = mid; i < arrayList.size(); i++) {
-      rArrayList.add(arrayList.get(i));
-    }
+   public static void setQuicksortThreshold(int desiredThreshold) {
+     quicksortThreshold = desiredThreshold;
+   }
 
-    // recursion
-    mergesort(lArrayList, comparator);
-    mergesort(rArrayList, comparator);
+  /**
+   * insertion sort method
+   * @param list
+   * @param comparator
+   * @param <T>
+   */
+   private static <T> void insertionSort(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+     int j;
+     for (int i = start; i <= end; i++) {
+       for (j = i; j > start && comparator.compare(list.get(i), list.get(j - 1)) < 0; j--) {
+         list.set(j, list.get(j - 1));
+       }
+       list.set(j, list.get(i));
+     }
+   }
 
+  /**
+   * merge sort driver method
+   * @param list
+   * @param comparator
+   * @param <T>
+   */
+   public static <T> void mergesort(ArrayList<T> list, Comparator<? super T> comparator) {
+     ArrayList<T> temp = new ArrayList<>(list.size());
+     for (int i = 0; i < list.size(); i++) {
+       temp.add(null);
+     }
+     mergeSortRecursive(list, temp, 0, list.size() - 1, comparator);
+   }
+
+   private static <T> void mergeSortRecursive(ArrayList<T> list, ArrayList<T> temp, int start, int end, Comparator<? super T> comparator) {
+     if (start < end) {
+       if (end - start < mergesortThreshold) {
+         // insertionSort(list, start, end);
+       } else {
+         int center = (start + end) / 2;
+         mergeSortRecursive(list, temp, start, center, comparator);
+         mergeSortRecursive(list, temp, center + 1, end, comparator);
+         merge(list, temp, start, end, comparator);
+       }
+     }
+   }
+
+   private static <T> void merge(ArrayList<T> list, ArrayList<T> temp, int start, int end, Comparator<? super T> comparator) {
+     int middle = (start + end) / 2 + 1;
+     int right = middle - 1;
+     int numElements = end - start + 1;
+     int tempPos = start;
+
+     while (start <= right && middle <= end) {
+       if (comparator.compare(list.get(start), list.get(middle)) <= 0) {
+         temp.set(tempPos++, list.get(start++));
+       } else {
+         temp.set(tempPos++, list.get(middle++));
+       }
+     }
+
+     while (start <= right) {
+       temp.set(tempPos++, list.get(start++));
+     }
+
+     while (middle <= end) {
+       temp.set(tempPos++, list.get(middle++));
+     }
+
+     for (int i = 0; i < numElements; i++, end--) {
+       list.set(end, temp.get(end));
+     }
+   }
+
+  /**
+   * quicksort driver method
+   * @param list
+   * @param comparator
+   * @param <T>
+   */
+  public static <T> void quicksort(ArrayList<T> list, Comparator<? super T> comparator) {
+     if (list.size() <= 1) return;
+     quickSortRecursive(list, 0, list.size() - 1, comparator);
   }
 
-  private static <T> void merge
-      (ArrayList<T> arrayList, ArrayList<T> lArrayList, ArrayList<T> rArrayList, int left, int right) {
-    int i = 0, j = 0, k = 0;
-    while (i < left && j < right) {
-      Comparable<T> li = (Comparable<T>) lArrayList.get(i);
-      if (li.compareTo(rArrayList.get(j)) <= 0) {
-        arrayList.set(k++, lArrayList.get(i++));
-      } else {
-        arrayList.set(k++, rArrayList.get(j++));
-      }
-    }
-    while (i < left) {
-      arrayList.set(k++, lArrayList.get(i++));
-    }
-    while (j < right) {
-      arrayList.set(k++, rArrayList.get(j++));
+  private static <T> void quickSortRecursive(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+    if (end - start <= 0) return;
+    if (end - start < quicksortThreshold) {
+      insertionSort(list, start, end, comparator);
+    } else {
+      // TODO
     }
   }
+
+  private static <T> int partition(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+    return -1; // TODO
+  }
+
+  public static <T> int goodPivotStrategy(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+    return (start + end) / 2;
+  }
+
 }
