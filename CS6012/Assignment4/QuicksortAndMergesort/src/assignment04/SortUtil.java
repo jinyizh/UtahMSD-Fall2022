@@ -2,6 +2,7 @@ package assignment04;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Random;
 
 public class SortUtil {
 
@@ -111,8 +112,67 @@ public class SortUtil {
     return -1; // TODO
   }
 
-  public static <T> int goodPivotStrategy(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+  public static <T> int goodPivotStrategy(ArrayList<T> list, int start, int end) {
     return (start + end) / 2;
+  }
+
+  public static <T> int betterPivotStrategy(ArrayList<T> list, int start, int end) {
+    Random rng = new Random();
+    return start + rng.nextInt(end - start);
+  }
+
+  public static <T> int bestPivotStrategy(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+    int middle = (end + start) / 2;
+
+    if (comparator.compare(list.get(middle), list.get(start)) < 0) {
+      swap(list, start, middle);
+    }
+    if (comparator.compare(list.get(end), list.get(start)) < 0) {
+      swap(list, start, end);
+    }
+    if (comparator.compare(list.get(end), list.get(middle)) < 0) {
+      swap(list, middle, end);
+    }
+    return middle;
+  }
+
+  public static ArrayList<Integer> generateBestCase(int size) {
+    ArrayList<Integer> temp = new ArrayList<>();
+
+    for (int i = 1; i <= size; i++) {
+      temp.add(i);
+    }
+
+    return temp;
+  }
+
+  public static ArrayList<Integer> generateAverageCase(int size) {
+    Random rng = new Random();
+    ArrayList<Integer> temp = generateBestCase(size);
+
+    for (int i = 0; i < size; i++) {
+      swap(temp, i, rng.nextInt(size));
+    }
+
+    return temp;
+  }
+
+  public static ArrayList<Integer> generateWorstCase(int size) {
+    ArrayList<Integer> temp = new ArrayList<>();
+
+    for (int i = size; i > 0; i--) {
+      temp.add(i);
+    }
+
+    return temp;
+  }
+
+  //
+
+  private static <T> void swap(ArrayList<T> list, int index1, int index2) {
+    T temp = list.get(index1);
+    list.set(index1, list.get(index2));
+    list.set(index2, temp);
   }
 
 }
