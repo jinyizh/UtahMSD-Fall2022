@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidChatClient</string>
+    <string name="room_name">Chat Room</string>
+    <string name="user_name">Username:</string>
+    <string name="room_id">Room name:</string>
+    <string name="button_name">Log in</string>
+    <string name="send_button">Send</string>
+    <string name="leave_button">Leave</string>
+    <string name="hint">Type and press "send" to chat!</string>
+</resources>
