@@ -58,3 +58,6 @@ Objective-C.gitignore & Swift.gitignore
 *.properties
 *.pdf
 *.zip
+*.rtf
+*/out/production/*
+
