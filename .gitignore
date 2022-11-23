@@ -52,3 +52,9 @@ Objective-C.gitignore & Swift.gitignore
 
 *.iml
 *.idea
+
+## for MSD Assignment submission
+*.pages
+*.properties
+*.pdf
+*.zip

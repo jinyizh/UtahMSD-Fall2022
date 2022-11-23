@@ -124,13 +124,53 @@ class SortUtilTest {
 
   @Test
   void testMergeRunTime() {
+    for (int i = 10; i < 21; i++) {
+      double size = Math.pow(2, i); // size of array
 
+      ArrayList<Integer> bestCase = SortUtil.generateBestCase((int) size);
+      ArrayList<Integer> averageCase = SortUtil.generateAverageCase((int) size);
+      ArrayList<Integer> worstCase = SortUtil.generateWorstCase((int) size);
+
+      int loops = 100;
+
+      long totalTime = 0;
+      for (int k = 0; k < loops; k++) {
+        ArrayList<Integer> test = (ArrayList<Integer>) bestCase.clone();
+        long startTime = System.nanoTime();
+        SortUtil.mergesort(test, integerComparator);
+        long endTime = System.nanoTime();
+        totalTime += endTime - startTime;
+      }
+
+      System.out.println("merge sort best case running time: " + (int) size + " " + totalTime / loops);
+
+      totalTime = 0; // re-initialize
+      for (int k = 0; k < loops; k++) {
+        ArrayList<Integer> test = (ArrayList<Integer>) averageCase.clone();
+        long startTime = System.nanoTime();
+        SortUtil.mergesort(test, integerComparator);
+        long endTime = System.nanoTime();
+        totalTime += endTime - startTime;
+      }
+
+      System.out.println("merge sort average case running time: " + i + " " + totalTime / loops);
+
+      for (int k = 0; k < loops; k++) {
+        ArrayList<Integer> test = (ArrayList<Integer>) worstCase.clone();
+        long startTime = System.nanoTime();
+        SortUtil.mergesort(test, integerComparator);
+        long endTime = System.nanoTime();
+        totalTime += endTime - startTime;
+      }
+
+      System.out.println("merge sort worst case running time: " + (int) size + " " + totalTime / loops);
+    }
   }
 
   @Test
   void testQuickRunTime() {
-    for (int i = 0; i < 18; i++) {
-      double size = Math.pow(2, i);
+    for (int i = 10; i < 21; i++) {
+      double size = Math.pow(2, i); // size of array
 
       ArrayList<Integer> bestCase = SortUtil.generateBestCase((int) size);
       ArrayList<Integer> averageCase = SortUtil.generateAverageCase((int) size);
@@ -147,7 +187,7 @@ class SortUtilTest {
         totalTime += endTime - startTime;
       }
 
-      System.out.println("quick sort best case running time: " + totalTime / loops);
+      System.out.println("quick sort best case running time: " + (int) size + " " + totalTime / loops);
 
       totalTime = 0; // re-initialize
       for (int k = 0; k < loops; k++) {
@@ -158,7 +198,7 @@ class SortUtilTest {
         totalTime += endTime - startTime;
       }
 
-      System.out.println("quick sort average case running time: " + totalTime / loops);
+      System.out.println("quick sort average case running time: " + (int) size + " " + totalTime / loops);
 
       for (int k = 0; k < loops; k++) {
         ArrayList<Integer> test = (ArrayList<Integer>) worstCase.clone();
@@ -168,7 +208,7 @@ class SortUtilTest {
         totalTime += endTime - startTime;
       }
 
-      System.out.println("quick sort worst case running time: " + totalTime / loops);
+      System.out.println("quick sort worst case running time: " + (int) size + " " + totalTime / loops);
     }
   }
 }

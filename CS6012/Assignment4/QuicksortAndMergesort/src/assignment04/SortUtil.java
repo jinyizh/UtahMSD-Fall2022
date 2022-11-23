@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class SortUtil {
 
-  private static int mergesortThreshold;
-  private static int quicksortThreshold;
+  private static int mergesortThreshold = 100;
+  private static int quicksortThreshold = 100;
   //
 
    public static void setMergesortThreshold(int desiredThreshold) {
@@ -111,7 +111,7 @@ public class SortUtil {
   }
 
   private static <T> int partition(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
-    int pivPos = bestPivotStrategy(list, start, end, comparator);
+    int pivPos = pivot3(list, start, end, comparator);
     T pivot = list.get(pivPos);
     swap(list, start, pivPos);
 
@@ -145,16 +145,17 @@ public class SortUtil {
     return left - 1;
   }
 
-  public static <T> int goodPivotStrategy(ArrayList<T> list, int start, int end) {
+  public static <T> int pivot1(ArrayList<T> list, int start, int end) { // pivot is the middle element
     return (start + end) / 2;
   }
 
-  public static <T> int betterPivotStrategy(ArrayList<T> list, int start, int end) {
+  public static <T> int pivot2(ArrayList<T> list, int start, int end) { // pivot is randomly selected
     Random rng = new Random();
     return start + rng.nextInt(end - start);
   }
 
-  public static <T> int bestPivotStrategy(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+  public static <T> int pivot3(ArrayList<T> list, int start, int end, Comparator<? super T> comparator) {
+    // pivot is the smallest between the start element, the middle element and the ending element
     int middle = (end + start) / 2;
 
     if (comparator.compare(list.get(middle), list.get(start)) < 0) {
