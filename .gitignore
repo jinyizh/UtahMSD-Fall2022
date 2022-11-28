@@ -1,11 +1,4 @@
-# Adapted from 
-https://github.com/github/gitignore/blob/master/Global/Xcode.gitignore
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, 
-Objective-C.gitignore & Swift.gitignore
-
-## User settings
+# User settings
 **/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
@@ -37,7 +30,6 @@ Objective-C.gitignore & Swift.gitignore
 *.plist
 
 ## Java
-
 **/target/
 /target/
 */target/*
@@ -49,7 +41,6 @@ Objective-C.gitignore & Swift.gitignore
 *.jar
 *.war
 *.ear
-
 *.iml
 *.idea
 

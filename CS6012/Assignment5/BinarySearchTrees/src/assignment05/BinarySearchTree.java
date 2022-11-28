@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 public class BinarySearchTree<T extends Comparable<? super T>> implements SortedSet<T> {
 
   private Node<T> root; // root node
+  int size;
 
   /**
    * Inner class representing nodes in the BST
@@ -14,10 +15,11 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    * @param <T> - type of node value
    */
   private class Node<T extends Comparable<? super T>> {
-    T value;
-    Node<T> left, right;
+    T value; // value of the tree node
+    Node<T> left, right; // nodes to the left and right of the current node
 
-    public Node(T value) { // constructor for node
+    // Constructor for Node. When a Node is created, its left and right nodes are set to null
+    public Node(T value) {
       this.value = value;
       this.left = this.right = null;
     }
@@ -28,19 +30,45 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   BinarySearchTree() {
     this.root = null;
+    this.size = 0;
   }
 
   /**
    * Ensures that this set contains the specified item.
    *
-   * @param item - the item whose presence is ensured in this set
+   * @param value - the item whose presence is ensured in this set
    * @return true if this set changed as a result of this method call (that is, if
    * the input item was actually inserted); otherwise, returns false
    * @throws NullPointerException if the item is null
    */
   @Override
-  public boolean add(T item) {
-    return false;
+  public boolean add(T value) throws NullPointerException {
+    if (value == null) throw new NullPointerException();
+    if (contains(value)) { // if the value is already in the BST
+      return false;
+    } else {
+      this.root = addRecursive(root, value); // add the value, start from the root node
+      this.size++;
+      return true;
+    }
+  }
+
+  /**
+   * Recursive function to add a new Node
+   * @param node - the node to which the value is added
+   * @param value - the value to be added into the BST
+   * @return
+   */
+  private Node addRecursive(Node<T> node, T value) {
+    if (node == null) {
+      node = new Node<>(value);
+      return node;
+    } else if (value.compareTo(node.value) < 0) { // recurs down to the left node
+      node.left = addRecursive(node.left, value);
+    } else if (value.compareTo(node.value) > 0) { // recurs down to the right node
+      node.right = addRecursive(node.right, value);
+    }
+    return node; // otherwise, value equals the node value
   }
 
   /**
@@ -63,7 +91,8 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public void clear() {
-
+    this.root = null;
+    this.size = 0;
   }
 
   /**
@@ -155,7 +184,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public int size() {
-    return 0;
+    return this.size;
   }
 
   /**
