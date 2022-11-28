@@ -2,6 +2,7 @@ package assignment05;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class BinarySearchTree<T extends Comparable<? super T>> implements SortedSet<T> {
@@ -43,13 +44,13 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean add(T value) throws NullPointerException {
+    int originalSize = this.size;
     if (value == null) throw new NullPointerException();
     if (contains(value)) { // if the value is already in the BST
       return false;
     } else {
       this.root = addRecursive(root, value); // add the value, start from the root node
-      this.size++;
-      return true;
+      return this.size > originalSize; // should be true if value was added
     }
   }
 
@@ -57,18 +58,18 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    * Recursive function to add a new Node
    * @param node - the node to which the value is added
    * @param value - the value to be added into the BST
-   * @return
+   * @return - the value added to the node
    */
   private Node addRecursive(Node<T> node, T value) {
     if (node == null) {
-      node = new Node<>(value);
-      return node;
+      node = new Node<>(value); // if the current node is null, add node here
+      this.size++; // size increases
     } else if (value.compareTo(node.value) < 0) { // recurs down to the left node
       node.left = addRecursive(node.left, value);
     } else if (value.compareTo(node.value) > 0) { // recurs down to the right node
       node.right = addRecursive(node.right, value);
     }
-    return node; // otherwise, value equals the node value
+    return node;
   }
 
   /**
@@ -82,7 +83,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean addAll(Collection<? extends T> items) {
-    return false;
+    int originalSize = this.size;
+    Iterator<? extends T> iterator = items.iterator();
+    if (iterator.hasNext()) add(iterator.next());
+    return this.size > originalSize;
   }
 
   /**
