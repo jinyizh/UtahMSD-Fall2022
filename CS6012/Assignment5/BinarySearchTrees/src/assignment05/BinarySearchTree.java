@@ -8,14 +8,14 @@ import java.util.NoSuchElementException;
 public class BinarySearchTree<T extends Comparable<? super T>> implements SortedSet<T> {
 
   private Node<T> root; // root node
-  int size;
+  private int size; // size of BST
 
   /**
    * Inner class representing nodes in the BST
    *
    * @param <T> - type of node value
    */
-  private class Node<T extends Comparable<? super T>> {
+  private static class Node<T extends Comparable<? super T>> {
     T value; // value of the tree node
     Node<T> left, right; // nodes to the left and right of the current node
 
@@ -44,8 +44,8 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean add(T value) throws NullPointerException {
-    int originalSize = this.size;
     if (value == null) throw new NullPointerException();
+    int originalSize = this.size;
     if (contains(value)) { // if the value is already in the BST
       return false;
     } else {
@@ -55,15 +55,16 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
   }
 
   /**
-   * Recursive function to add a new Node
-   * @param node - the node to which the value is added
+   * Recursive helper function to add a new Node
+   *
+   * @param node  - the Node to which the value is added
    * @param value - the value to be added into the BST
-   * @return - the value added to the node
+   * @return - the value added to the Node
    */
-  private Node addRecursive(Node<T> node, T value) {
+  private Node<T> addRecursive(Node<T> node, T value) {
     if (node == null) {
       node = new Node<>(value); // if the current node is null, add node here
-      this.size++; // size increases
+      this.size++; // increase size
     } else if (value.compareTo(node.value) < 0) { // recurs down to the left node
       node.left = addRecursive(node.left, value);
     } else if (value.compareTo(node.value) > 0) { // recurs down to the right node
@@ -109,8 +110,29 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    * @throws NullPointerException if the item is null
    */
   @Override
-  public boolean contains(T item) {
-    return false;
+  public boolean contains(T item) throws NullPointerException {
+    if (item == null) throw new NullPointerException();
+    return containsRecursive(this.root, item);
+  }
+
+  /**
+   * Recursive helper method to search a Node
+   *
+   * @param node  - the Node to search
+   * @param value - the value of the Node
+   * @return - return if the Node is in the BST
+   */
+  private boolean containsRecursive(Node<T> node, T value) {
+    if (node == null) { // if the node is null, its left and right node will be null too as per constructor
+      return false; // obviously no need to continue checking
+    } else if (node.value == value) {
+      return true;
+    } else if (value.compareTo(node.value) < 0) { // recurs down to the left node
+      return containsRecursive(node.left, value);
+    } else if (value.compareTo(node.value) > 0) { // recurs down to the right node
+      return containsRecursive(node.right, value);
+    }
+    return false; // placeholder
   }
 
   /**
@@ -124,7 +146,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean containsAll(Collection<? extends T> items) {
-    return false;
+    for (T item : items) { // IntelliJ wants to use simplified if statement for iterator
+      if (!contains(item)) return false;
+    }
+    return true;
   }
 
   /**
@@ -134,7 +159,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public T first() throws NoSuchElementException {
-    return null;
+    if (this.root == null) throw new NoSuchElementException();
+    Node<T> node = this.root;
+    while (node.left != null) node = node.left;
+    return node.value;
   }
 
   /**
@@ -142,7 +170,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean isEmpty() {
-    return false;
+    return this.size == 0;
   }
 
   /**
@@ -152,7 +180,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public T last() throws NoSuchElementException {
-    return null;
+    if (this.root == null) throw new NoSuchElementException();
+    Node<T> node = this.root;
+    while (node.right != null) node = node.right;
+    return node.value;
   }
 
   /**
@@ -192,11 +223,36 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
   }
 
   /**
-   * Returns an ArrayList containing all of the items in this set, in sorted
-   * order.
+   * Returns an ArrayList containing all the items in this set, in sorted order.
+   *
+   * @return - the array list containing the items
    */
   @Override
   public ArrayList<T> toArrayList() {
-    return null;
+    ArrayList<T> arrayList = new ArrayList<>();
+    inOrderTraversal(this.root, arrayList);
+    return arrayList;
+  }
+
+  /**
+   * Recursive helper function that traverse the BST in-order
+   *
+   * @param node - Node from which the traversal starts (usually the root)
+   //* @return - Array List that contains the node values in sorted order
+   */
+  public void inOrderTraversal(Node<T> node, ArrayList<T> list) {
+    if (node != null) {
+      inOrderTraversal(node.left, list);
+      list.add(node.value);
+      inOrderTraversal(node.right, list);
+    }
+  }
+
+  /**
+   * Helper function for testing
+   * @return - the root node of the BST
+   */
+  public Node<T> getRoot() {
+    return this.root;
   }
 }
