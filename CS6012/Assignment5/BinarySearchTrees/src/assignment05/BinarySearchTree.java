@@ -1,9 +1,7 @@
 package assignment05;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.*;
+import java.util.function.BinaryOperator;
 
 public class BinarySearchTree<T extends Comparable<? super T>> implements SortedSet<T> {
 
@@ -195,8 +193,123 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    * @throws NullPointerException if the item is null
    */
   @Override
-  public boolean remove(T item) {
+  public boolean remove(T item) throws NullPointerException {
+    if (item == null) throw new NullPointerException();
+    if (!contains(item) || this.size == 0) return false;
+    // item is in the BST, find the node to remove and its parent:
+    Node<T> parent, removed;
+    if (this.root.value.equals(item)) {
+      parent = this.root; // parent node of the node to remove
+      removed = this.root; // node to remove
+    } else {
+      parent = findParent(this.root, item);
+      if (parent.left.value.equals(item)) {
+        removed = parent.left;
+      } else { // node that has value is the right child of the parent
+        removed = parent.right;
+      }
+    }
+    // now need to consider 3 cases for a node to remove:
+    // 1, node is at a leaf
+    // 2, node has two children / subtrees
+    // 3, node has one child / subtree and another child / subtree is null
+    if (removed.left == null && removed.right == null) { // 1
+
+    }
     return false;
+  }
+
+  /**
+   * Helper method to remove a leaf node
+   * @param parent - parent node of the leaf
+   * @param item - value of the node to remove
+   * @return - if the BST size changes (always)
+   */
+  private boolean removeLeaf(Node<T> parent, T item) {
+    if (parent.left.value.equals(item)) {
+      parent.left = null;
+    } else {
+      parent.right = null;
+    }
+    this.size--;
+    return true;
+  }
+
+  /**
+   * Helper method to remove node that has only one branch that contains the value to remove (another null)
+   * @param parent - parent node of the node to remove
+   * @param item - value to remove
+   * @return - is the BST size changes (always)
+   */
+  private boolean removedSingleChild(Node<T> parent, T item) {
+    if (parent.left.value.equals(item)) { // node to remove is the left child / root of subtree
+      if (parent.left.left == null) { // node to remove doesn't have left branch
+        parent.left = parent.left.right;
+      } else {
+        parent.left = parent.left.left;
+      }
+    } else { // node to remove is the right child / root of subtree
+      if (parent.right.left == null) { // node to remove doesn't have left branch
+        parent.right = parent.right.right;
+      } else {
+        parent.right = parent.right.left;
+      }
+    }
+    this.size--;
+    return true;
+  }
+
+  /**
+   * Helper method to remove node that has two branches
+   * @param parent - parent node of the node to remove
+   * @param item - value to be removed
+   * @return - calls one of other two remove methods aforementioned
+   */
+  private boolean removeDoubleChildren(Node<T> parent, T item) {
+    if (this.root.value.equals(item)) {
+      parent = this.root;
+    } else if (parent.left.value.equals(item)) {
+      parent = parent.left;
+    } else {
+      parent = parent.right;
+    }
+    // need to find the successor node
+    Node<T> successor = parent.right;
+    Node<T> successorsParent = parent;
+    int count = 0;
+    while (successor.left != null) {
+      if (count == 0) {
+        successorsParent = successorsParent.right;
+      } else {
+        successorsParent = successorsParent.left;
+      }
+      successor = successorsParent.left;
+      count++;
+    }
+    parent.value = successor.value;
+    if (successor.right == null) { // 1
+      return removeLeaf(successorsParent, successor.value);
+    } else { // 2
+      return removedSingleChild(successorsParent, successor.value);
+    }
+  }
+
+  /**
+   * Helper function to find the parent node of the node to be removed
+   * @param node - the current Node
+   * @param item - item (value) of the Node to be removed
+   * @return - parent Node of the Node that contains the value item
+   */
+  private Node<T> findParent(Node<T> node, T item) {
+    if (node.left.value.equals(item) || node.right.value.equals(item)) {
+      return node;
+    } else if (item.compareTo(node.value) < 0) { // recurs down to the left
+      node = node.left;
+      return findParent(node, item);
+    } else { // item > node.value, recurs down to the right
+      node = node.right;
+      return findParent(node, item);
+    }
   }
 
   /**
@@ -210,8 +323,18 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    * @throws NullPointerException if any of the items is null
    */
   @Override
-  public boolean removeAll(Collection<? extends T> items) {
-    return false;
+  public boolean removeAll(Collection<? extends T> items) throws NullPointerException {
+    Object[] itemArray = items.toArray();
+    boolean itemRemoved = false;
+    for (Object item : itemArray) {
+      if (item == null) throw new NullPointerException();
+    }
+    for (Object item : itemArray) {
+      if (remove((T) item)) {
+        itemRemoved = true;
+      }
+    }
+    return itemRemoved;
   }
 
   /**
@@ -236,9 +359,8 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
 
   /**
    * Recursive helper function that traverse the BST in-order
-   *
    * @param node - Node from which the traversal starts (usually the root)
-   //* @return - Array List that contains the node values in sorted order
+   * @param list - the Array List containing node values in sorted order
    */
   public void inOrderTraversal(Node<T> node, ArrayList<T> list) {
     if (node != null) {
@@ -249,10 +371,37 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
   }
 
   /**
-   * Helper function for testing
+   * Helper method for testing
    * @return - the root node of the BST
    */
   public Node<T> getRoot() {
     return this.root;
+  }
+
+  /**
+   * Helper method for testing
+   * @param node - the node we want to know its left child
+   * @return - left child of the node
+   */
+  public Node<T> getLeft(Node<T> node) {
+    return node.left;
+  }
+
+  /**
+   * Helper method for testing
+   * @param node - the node we want to know its right child
+   * @return - right child of the node
+   */
+  public Node<T> getRight(Node<T> node) {
+    return node.right;
+  }
+
+  /**
+   * Helper method for testing
+   * @param node - node we want to get its value
+   * @return value of the node
+   */
+  public T getValue(Node<T> node) {
+    return node.value;
   }
 }

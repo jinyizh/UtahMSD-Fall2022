@@ -111,10 +111,67 @@ class BinarySearchTreeTest {
 
   @Test
   void remove() {
+    stringBinarySearchTree.add("a");
+    assertEquals(stringBinarySearchTree.size(), 1);
+    stringBinarySearchTree.remove("a");
+    assertEquals(stringBinarySearchTree.size(), 0);
+    integerBinarySearchTree.add(4);
+    integerBinarySearchTree.add(2);
+    integerBinarySearchTree.add(1);
+    integerBinarySearchTree.add(3);
+    integerBinarySearchTree.add(6);
+    integerBinarySearchTree.add(5);
+    integerBinarySearchTree.add(7);
+    /*
+                      4
+              2              6
+         1         3     5          7
+     */
+    integerBinarySearchTree.remove(6);
+    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getRight(integerBinarySearchTree.getRoot())), 5);
+    integerBinarySearchTree.remove(2);
+    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getLeft(integerBinarySearchTree.getRoot())), 3);
+    integerBinarySearchTree.clear();
+    assertTrue(integerBinarySearchTree.isEmpty());
+    // add again to test removing the root
+    integerBinarySearchTree.add(4);
+    integerBinarySearchTree.add(2);
+    integerBinarySearchTree.add(1);
+    integerBinarySearchTree.add(3);
+    integerBinarySearchTree.add(6);
+    integerBinarySearchTree.add(5);
+    integerBinarySearchTree.add(7);
+    /*
+                      4
+              2              6
+         1         3     5          7
+     */
+    integerBinarySearchTree.remove(4);
+    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getRoot()), 6);
   }
 
   @Test
   void removeAll() {
+    integerBinarySearchTree.add(4);
+    integerBinarySearchTree.add(2);
+    integerBinarySearchTree.add(1);
+    integerBinarySearchTree.add(3);
+    integerBinarySearchTree.add(6);
+    integerBinarySearchTree.add(5);
+    integerBinarySearchTree.add(7);
+    /*
+                      4
+              2              6
+         1         3     5          7
+     */
+    assertFalse(integerBinarySearchTree.removeAll(integerArrayList));
+    integerArrayList.add(1);
+    assertTrue(integerBinarySearchTree.removeAll(integerArrayList));
+    assertEquals(integerBinarySearchTree.size(), 6);
+    integerArrayList.add(7);
+    assertTrue(integerBinarySearchTree.removeAll(integerArrayList));
+    assertEquals(integerBinarySearchTree.size(), 5);
+    assertFalse(integerBinarySearchTree.contains(7));
   }
 
   @Test
