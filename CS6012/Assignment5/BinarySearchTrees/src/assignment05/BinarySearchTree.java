@@ -86,10 +86,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
     boolean itemAdded = false;
     // Check for null values first
     for(int y = 0; y < itemList.length; y++){
-      if(itemList[y] == null){
-        System.err.println("Cannot add null to the Binary Search Tree");
-        throw new NullPointerException();
-      }
+      if(itemList[y] == null) throw new NullPointerException();
     }
     // Add items
     for(int x = 0; x < itemList.length; x++){
@@ -135,7 +132,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
   private boolean containsRecursive(Node<T> node, T value) {
     if (node == null) { // if the node is null, its left and right node will be null too as per constructor
       return false; // obviously no need to continue checking
-    } else if (node.value == value) {
+    } else if (node.value.compareTo(value) == 0) {
       return true;
     } else if (value.compareTo(node.value) < 0) { // recurs down to the left node
       return containsRecursive(node.left, value);

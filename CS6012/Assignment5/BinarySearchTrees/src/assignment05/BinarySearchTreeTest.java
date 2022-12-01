@@ -47,11 +47,11 @@ class BinarySearchTreeTest {
 
   @Test
   void addAll() {
-    stringArrayList.add("a");
+    stringArrayList.add("ab");
     stringBinarySearchTree.addAll(stringArrayList);
     assertEquals(stringBinarySearchTree.size(), 1);
-    stringArrayList.add("b");
-    stringArrayList.add("c");
+    stringArrayList.add("bb");
+    stringArrayList.add("cb");
     stringBinarySearchTree.addAll(stringArrayList);
     assertEquals(stringBinarySearchTree.size(), 3);
   }
@@ -73,6 +73,11 @@ class BinarySearchTreeTest {
     assertFalse(stringBinarySearchTree.contains("a"));
     stringBinarySearchTree.add("a");
     assertTrue(stringBinarySearchTree.contains("a"));
+    stringBinarySearchTree.add("b");
+    assertTrue(stringBinarySearchTree.contains("b"));
+    stringBinarySearchTree.add("ab");
+    assertTrue(stringBinarySearchTree.contains("ab"));
+    assertFalse(stringBinarySearchTree.contains("c"));
   }
 
   @Test
