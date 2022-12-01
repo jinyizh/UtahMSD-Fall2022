@@ -49,9 +49,11 @@ class BinarySearchTreeTest {
   void addAll() {
     stringArrayList.add("a");
     stringBinarySearchTree.addAll(stringArrayList);
+    assertEquals(stringBinarySearchTree.size(), 1);
     stringArrayList.add("b");
     stringArrayList.add("c");
     stringBinarySearchTree.addAll(stringArrayList);
+    assertEquals(stringBinarySearchTree.size(), 3);
   }
 
   @Test
@@ -67,7 +69,10 @@ class BinarySearchTreeTest {
     assertFalse(integerBinarySearchTree.contains(1));
     integerBinarySearchTree.add(1);
     assertTrue(integerBinarySearchTree.contains(1));
-    // TODO remove
+    assertFalse(stringBinarySearchTree.contains("a"));
+    assertFalse(stringBinarySearchTree.contains("a"));
+    stringBinarySearchTree.add("a");
+    assertTrue(stringBinarySearchTree.contains("a"));
   }
 
   @Test
@@ -96,7 +101,6 @@ class BinarySearchTreeTest {
     assertTrue(stringBinarySearchTree.isEmpty());
     stringBinarySearchTree.add("k");
     assertFalse(stringBinarySearchTree.isEmpty());
-    // TODO remove
   }
 
   @Test
@@ -128,7 +132,7 @@ class BinarySearchTreeTest {
          1         3     5          7
      */
     integerBinarySearchTree.remove(6);
-    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getRight(integerBinarySearchTree.getRoot())), 5);
+    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getRight(integerBinarySearchTree.getRoot())), 7);
     integerBinarySearchTree.remove(2);
     assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getLeft(integerBinarySearchTree.getRoot())), 3);
     integerBinarySearchTree.clear();
@@ -147,7 +151,7 @@ class BinarySearchTreeTest {
          1         3     5          7
      */
     integerBinarySearchTree.remove(4);
-    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getRoot()), 6);
+    assertEquals(integerBinarySearchTree.getValue(integerBinarySearchTree.getRoot()), 5);
   }
 
   @Test

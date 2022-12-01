@@ -81,11 +81,23 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    * @throws NullPointerException if any of the items is null
    */
   @Override
-  public boolean addAll(Collection<? extends T> items) {
-    int originalSize = this.size;
-    Iterator<? extends T> iterator = items.iterator();
-    if (iterator.hasNext()) add(iterator.next());
-    return this.size > originalSize;
+  public boolean addAll(Collection<? extends T> items) throws NullPointerException {
+    Object[] itemList = items.toArray();
+    boolean itemAdded = false;
+    // Check for null values first
+    for(int y = 0; y < itemList.length; y++){
+      if(itemList[y] == null){
+        System.err.println("Cannot add null to the Binary Search Tree");
+        throw new NullPointerException();
+      }
+    }
+    // Add items
+    for(int x = 0; x < itemList.length; x++){
+      if(add((T) itemList[x])){
+        itemAdded = true;
+      }
+    }
+    return itemAdded;
   }
 
   /**
@@ -194,6 +206,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean remove(T item) throws NullPointerException {
+    if (this.size == 1) { // special case: BST only has one node
+      this.root = null;
+      this.size = 0;
+    }
     if (item == null) throw new NullPointerException();
     if (!contains(item) || this.size == 0) return false;
     // item is in the BST, find the node to remove and its parent:
@@ -214,9 +230,12 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
     // 2, node has two children / subtrees
     // 3, node has one child / subtree and another child / subtree is null
     if (removed.left == null && removed.right == null) { // 1
-
+      return removeLeaf(parent, item);
+    } else if (removed.left != null && removed.right != null) { // 3
+      return removeDoubleChildren(parent, item);
+    } else { //2
+      return removedSingleChild(parent, item);
     }
-    return false;
   }
 
   /**

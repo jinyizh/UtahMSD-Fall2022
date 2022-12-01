@@ -75,11 +75,13 @@ public class SpellChecker {
   public List<String> spellCheck(File documentFile) {
 
     List<String> wordsToCheck = readFromFile(documentFile);
-    List<String> misspelledWords = new ArrayList<>();
+    ArrayList<String> misspelledWords = new ArrayList<>();
 
-    for (String word : wordsToCheck)
-      if (!dictionary.contains(word))
+    for (String word : wordsToCheck) {
+      if (!dictionary.contains(word)) {
         misspelledWords.add(word);
+      }
+    }
     return misspelledWords;
   }
 
