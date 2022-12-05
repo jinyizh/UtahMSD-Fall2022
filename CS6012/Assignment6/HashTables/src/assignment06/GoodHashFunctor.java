@@ -7,6 +7,6 @@ public class GoodHashFunctor implements HashFunctor {
     for (int i = 0; i < item.length(); i++) {
       hash = hash * 31 + item.charAt(i);
     }
-    return hash;
+    return Math.abs(hash);
   }
 }
