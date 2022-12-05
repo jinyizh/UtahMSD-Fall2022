@@ -84,11 +84,7 @@ public class ChainingHashTable implements Set<String> {
   @Override
   public boolean contains(String item) {
     int hashIndex = functor.hash(item) % capacity;
-    if (storage[hashIndex] == null || !storage[hashIndex].contains(item)) { // LL not exist, or item not in LL
-      return false;
-    } else { // item is in that LL
-      return true;
-    }
+    return storage[hashIndex] != null && storage[hashIndex].contains(item); // LL exists and contains that item
   }
 
   /**
@@ -156,5 +152,9 @@ public class ChainingHashTable implements Set<String> {
   @Override
   public int size() {
     return this.size;
+  }
+
+  public int getCollisions() {
+    return this.collisions;
   }
 }
