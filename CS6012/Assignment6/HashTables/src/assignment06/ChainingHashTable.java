@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class ChainingHashTable implements Set<String> {
 
-  private LinkedList<String>[] storage; // appended to buckets
+  private LinkedList<String>[] storage;
   private HashFunctor functor; // hash function
   private int capacity; // capacity of array
   private int size; // size of Hash Table (num of k-v pairs)

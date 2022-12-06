@@ -133,16 +133,16 @@ class ChainingHashTableTest {
     System.out.println("for good functor, # of collisions is: " + goodTable.getCollisions());
   }
 
-  private ArrayList<String> readFromFile(String file) {
+  private ArrayList<String> readFromFile(String filename) {
     ArrayList<String> words = new ArrayList<String>();
-    try (Scanner fileInput = new Scanner(new File(file))) {
+    try (Scanner fileInput = new Scanner(new File(filename))) {
       fileInput.useDelimiter("\\s*[^a-zA-Z]\\s*");
       while (fileInput.hasNext()) {
         String s = fileInput.next();
         if (!s.equals("")) words.add(s.toLowerCase());
       }
     } catch (FileNotFoundException e) {
-      System.err.println("File " + file + " cannot be found.");
+      System.err.println("File " + filename + " cannot be found.");
     }
     return words;
   }
