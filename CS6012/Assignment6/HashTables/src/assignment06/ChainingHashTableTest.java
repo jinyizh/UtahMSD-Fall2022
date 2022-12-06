@@ -17,7 +17,7 @@ class ChainingHashTableTest {
   ChainingHashTable mediocreTable;
   ChainingHashTable goodTable;
   ArrayList<String> list; // for testing addAll() and other methods
-  ArrayList<String> wordList; // for testing collision
+//  ArrayList<String> wordList; // for testing collision
 
   @BeforeEach
   void setUp() {
@@ -25,7 +25,7 @@ class ChainingHashTableTest {
     mediocreTable = new ChainingHashTable(2000, new MediocreHashFunctor());
     goodTable = new ChainingHashTable(2000, new GoodHashFunctor());
     list = new ArrayList<>();
-    wordList = readFromFile("dictionary.txt");
+//    wordList = readFromFile("dictionary.txt");
   }
 
   @AfterEach
@@ -34,7 +34,7 @@ class ChainingHashTableTest {
     mediocreTable = null;
     goodTable = null;
     list = null;
-    wordList = null;
+//    wordList = null;
   }
 
   @Test
@@ -123,16 +123,24 @@ class ChainingHashTableTest {
     assertEquals(badTable.size(), 3);
   }
 
-  @Test
-  void testCollision() {
-    badTable.addAll(wordList);
-    mediocreTable.addAll(wordList);
-    goodTable.addAll(wordList);
-    System.out.println("for bad functor, # of collisions is: " + badTable.getCollisions());
-    System.out.println("for mediocre functor, # of collisions is: " + mediocreTable.getCollisions());
-    System.out.println("for good functor, # of collisions is: " + goodTable.getCollisions());
-  }
+  /*
+   * Commented out since it is used for the analysis doc
+   */
+//  @Test
+//  void testCollision() {
+//    badTable.addAll(wordList);
+//    mediocreTable.addAll(wordList);
+//    goodTable.addAll(wordList);
+//    System.out.println("for bad functor, # of collisions is: " + badTable.getCollisions());
+//    System.out.println("for mediocre functor, # of collisions is: " + mediocreTable.getCollisions());
+//    System.out.println("for good functor, # of collisions is: " + goodTable.getCollisions());
+//  }
 
+  /**
+   * For testing collisions
+   * @param filename name of the file used to generate test arrays
+   * @return the test array
+   */
   private ArrayList<String> readFromFile(String filename) {
     ArrayList<String> words = new ArrayList<String>();
     try (Scanner fileInput = new Scanner(new File(filename))) {
