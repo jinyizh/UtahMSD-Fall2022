@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class SortUtil {
 
-  private static int mergesortThreshold = 100;
-  private static int quicksortThreshold = 100;
+  private static int mergesortThreshold;
+  private static int quicksortThreshold;
   //
 
    public static void setMergesortThreshold(int desiredThreshold) {

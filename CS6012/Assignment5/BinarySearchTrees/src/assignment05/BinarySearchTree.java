@@ -203,11 +203,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
    */
   @Override
   public boolean remove(T item) throws NullPointerException {
-    if (this.size == 1) { // special case: BST only has one node
-      this.root = null;
-      this.size = 0;
-    }
     if (item == null) throw new NullPointerException();
+    if (this.size == 1) { // special case: BST only has one node
+      clear();
+    }
     if (!contains(item) || this.size == 0) return false;
     // item is in the BST, find the node to remove and its parent:
     Node<T> parent, removed;

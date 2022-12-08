@@ -70,7 +70,6 @@ class BinarySearchTreeTest {
     integerBinarySearchTree.add(1);
     assertTrue(integerBinarySearchTree.contains(1));
     assertFalse(stringBinarySearchTree.contains("a"));
-    assertFalse(stringBinarySearchTree.contains("a"));
     stringBinarySearchTree.add("a");
     assertTrue(stringBinarySearchTree.contains("a"));
     stringBinarySearchTree.add("b");
