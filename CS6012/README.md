@@ -1,3 +1,32 @@
-Repo for CS6012.
-
-Jinyi Zhou
+# CS6012 Data Structures and Algorithms Fall 2022
+## Course Coverage
+- Introduction
+- Generic Programming
+- Algorithm Analysis
+- Basic Sorting Algorithms
+- Collection and Iterator, Recursion
+- Mergesort, Quicksort
+- Linked List
+- Stack and Queue
+- Tree
+- Binary Search Tree
+- Hash Table
+- Graph
+- Binary Heap and Priority Queue
+- Heapsort, Self-blancing tree, Dijkstra's Algorithm
+- AVL Tree
+- Huffman Compression
+- Dynamic Programming
+- Interview Questions
+## Labs and Assignments
+- Lab 1: Unit Testing
+- Lab 2: Basic Timing
+- Lab 3: Visualizing Timing Data
+- Lab 4: Debugging
+- Assignment 1: Matrices
+- Assignment 2: Generic Books
+- Assignment 3: Searching a Set
+- Assignment 4: Quicksort and Mergesort
+- Assignment 5: Binary Search Trees
+- Assignment 6: Hash Tables
+- Assignment 7: PacMan! (Graph Pathfinding)
