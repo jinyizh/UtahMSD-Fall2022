@@ -61,8 +61,8 @@ public class PathFinder {
 
     // Graph constructor using maze text file
     Graph(String filename) throws FileNotFoundException {
-      this.start = null;
-      this.goal = null;
+//      this.start = null;
+//      this.goal = null;
       try {
         Scanner sc = new Scanner(new File(filename));
         String dimension = sc.nextLine(); // 1st row, dimensions of maze
@@ -131,7 +131,7 @@ public class PathFinder {
       PrintWriter pw = new PrintWriter(filename);
       pw.println(this.rows + " " + this.cols); // first row
       for (int i = 0; i < this.rows; i++) {
-        String s = " ";
+        String s = "";
         for (int j = 0; j < this.cols; j++) {
           s += this.maze[i][j].data;
         }
@@ -140,7 +140,6 @@ public class PathFinder {
       pw.flush();
       pw.close();
     }
-
   }
 
   public static void solveMaze(String inputFile, String outputFile) throws FileNotFoundException {
