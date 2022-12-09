@@ -131,11 +131,11 @@ public class PathFinder {
       PrintWriter pw = new PrintWriter(filename);
       pw.println(this.rows + " " + this.cols); // first row
       for (int i = 0; i < this.rows; i++) {
-        String s = "";
+        StringBuilder sb = new StringBuilder();
         for (int j = 0; j < this.cols; j++) {
-          s += this.maze[i][j].data;
+          sb.append(this.maze[i][j].data);
         }
-        pw.println(s);
+        pw.println(sb);
       }
       pw.flush();
       pw.close();

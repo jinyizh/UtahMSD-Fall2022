@@ -13,7 +13,9 @@ public class TestPathFinder {
      * REMEMBER - You have to refresh your project to see the output file in your package explorer.
      * You are still required to make JUnit tests...just lookin' at text files ain't gonna fly.
      */
+    PathFinder.solveMaze("tinyMaze.txt", "tinyMazeOutput.txt");
+    PathFinder.solveMaze("bigMaze.txt", "bigMazeOutput.txt");
     PathFinder.solveMaze("unsolvable.txt", "unsolvableOutput.txt");
-//    PathFinder.solveMaze("bigMaze.txt", "bigMazeOutput.txt");
+    PathFinder.solveMaze("randomMaze.txt", "randomMazeOutput.txt");
   }
 }

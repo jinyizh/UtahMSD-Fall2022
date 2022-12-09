@@ -1,3 +1,5 @@
+package assignment07;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +18,7 @@ public class PacmanApp {
     static final int DotRadius = 7;
     public static void main(String[] args) throws IOException {
 
-        var mazeFile = "tinyMazeOutput.txt";
+        var mazeFile = "randomMazeOutput.txt";
         var maze = readMaze(mazeFile);
 
         SwingUtilities.invokeLater(new Runnable() {
