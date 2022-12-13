@@ -169,7 +169,7 @@ public class QuadProbeHashTable implements Set<String> {
    */
   @Override
   public int size() {
-    return 0;
+    return this.size;
   }
 
   /**
