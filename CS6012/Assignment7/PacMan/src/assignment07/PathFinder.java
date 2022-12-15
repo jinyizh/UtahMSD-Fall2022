@@ -33,8 +33,7 @@ public class PathFinder {
       int index = 0; // index
       for (int i = -1; i <= 1; i++) { // row
         for (int j = -1; j <= 1; j++) { // col
-          if (i == 0 && j == 0) continue;
-          else if (i == 0 || j == 0) { // adjacent to that vertex
+          if (i == 0 || j == 0) { // adjacent to that vertex
             Vertex neighbor;
             if (this.row + i > rows || this.row + i < 0 || this.col + j >= cols || this.col + j < 0) { // exceed bound
               neighbor = null;
@@ -93,7 +92,7 @@ public class PathFinder {
         if (this.goal == null || this.start == null) throw new InvalidObjectException("No start or goal point");
       } catch (FileNotFoundException | InvalidObjectException e) {
         e.printStackTrace();
-        throw new FileNotFoundException("Fle not exist");
+        throw new FileNotFoundException("File not exist");
       }
     }
 
