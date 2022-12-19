@@ -1,5 +1,6 @@
 package com.example.androidchatclient;
 
+import android.annotation.SuppressLint;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.util.Log;
@@ -20,6 +21,7 @@ public class myWebSocket extends WebSocketAdapter {
         Log.i("Z: myWebSocket", "WS Connected");
     }
 
+    @SuppressLint("SimpleDateFormat")
     @Override
     public void onTextMessage(WebSocket webSocket, String payload) throws Exception {
         Log.i("Z: myWebSocket", "WS Message");
@@ -27,23 +29,27 @@ public class myWebSocket extends WebSocketAdapter {
         JSONObject json = new JSONObject(payload);
         String type = (String) json.get("type");
         String user = (String) json.get("user");
-        String room = (String) json.get("room");
+        String word = (String) json.get("watchword");
 
         String timeStamp = " ";
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             timeStamp = new SimpleDateFormat("HH:mm").format(new java.util.Date());
         }
-        if (type.equals("join")) {
-            message = user + " has joined " + room + " " + timeStamp;
-            Log.i("Z: myWebSocket", message);
-        } else if (type.equals("message")) {
-            String realMsg = (String) json.get("message");
-            message = user + ": " + realMsg + " " + timeStamp;
-            Log.i("Z: myWebSocket", message);
-        } else {
-            message = user + " has left the " + room + " " + timeStamp;
-            Log.i("Z: myWebSocket", message);
+        switch (type) {
+            case "join":
+                message = timeStamp + "\n" + user + " says " + word + "!";
+                Log.i("Z: myWebSocket", message);
+                break;
+            case "message":
+                String realMsg = (String) json.get("message");
+                message = timeStamp + "\n" + user + ": " + realMsg;
+                Log.i("Z: myWebSocket", message);
+                break;
+            case "leave":
+                message = timeStamp + "\n" + user + " has left.";
+                Log.i("Z: myWebSocket", message);
+                break;
         }
 
         ChatViewActivity.messages.add(message);
