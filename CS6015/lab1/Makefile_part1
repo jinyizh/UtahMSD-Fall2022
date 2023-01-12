@@ -1,0 +1,23 @@
+# Makefile - build
+# rule "clothes" is used to link .o files into executable
+# rule "main.o" depends on main.cpp. It is used to generate .o file from main.cpp
+# rule "Caps.o" depends on Caps.cpp and Caps.h. It is used to generate Caps.o
+# rule "Clothing.o" depends on Clothing.cpp and Clothing.h. It generates Clothing.o
+# rule "Pants" depends on Pants.cpp and Pants.h. It generates Pants.o
+# rule "clean" deletes the executale file clothes, and all the files end with .o
+
+build: clothes
+clothes: main.o Caps.o Clothing.o Pants.o
+	g++ -o clothes main.o Caps.o Clothing.o Pants.o
+main.o: main.cpp
+	g++ -c main.cpp
+Caps.o: Caps.cpp Caps.h
+	g++ -c Caps.cpp
+Clothing.o: Clothing.cpp Clothing.h
+	g++ -c Clothing.cpp
+Pants.o: Pants.cpp Pants.h
+	g++ -c Pants.cpp
+
+.PHONY: clean
+clean:
+	rm -rf *.o clothes
