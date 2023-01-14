@@ -52,3 +52,5 @@
 *.rtf
 **/out/production/*
 
+## Other xcode files and folders
+**/*.xcodeproj/*
