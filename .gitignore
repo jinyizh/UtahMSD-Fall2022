@@ -54,3 +54,7 @@
 
 ## Other xcode files and folders
 **/*.xcodeproj/*
+
+
+## CLion filefolders
+**/cmake-build-debug/*
