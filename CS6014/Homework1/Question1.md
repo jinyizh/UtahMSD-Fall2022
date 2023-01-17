@@ -9,10 +9,29 @@ What is the average queuing delay experienced by the 1000 byte packets?
 What are the reasonable estimates of transmission and propagation delays experienced by a packet of size 600 bytes sent through the link K?
 
 # Answer
-Refers to 1.4.2:
+Arrange the TB - TA for each 1000-byte packet from small to large, they are:
 
-transmission rate (the rate (in bits/sec) at which bits are pushed out of the queue) R = 
+2.8 ms, 3.0 ms, 5.5 ms, 10 ms, 11.0 ms
 
-the average rate at which packets arrive at the queue (packets/sec) a = 
+Assuming that the samllest time has no queuing delay, the queuing delay for each packet is
 
-Therefore, the traffic intensity I = La / R = 
+0 ms, 0.2 ms, 2.7 ms, 7.2 ms, 8.2 ms
+
+Therefore, the average queueing delay experienced by the 1000 byte packets is 3.66 ms.
+
+---
+
+For 500-byte packets, TB - TA are: 
+
+2.4 ms, 2.8 ms, 4 ms, 5.5 ms, 10 ms
+
+The smallest time has only transmission delay and propagation delay, that is:
+
+2.4 = 500 / (transmission_rate + propagation_delay) = 2.8 = 1000 / (transmission_rate + propagation_delay)
+
+Solve this group of equations, we get:
+
+- Transmission rate R = 1250 bytes/ms
+- Propagation delay= 2 ms
+
+Therefore, the transmission delay for a 600-byte packets is 600 / 1250 = 0.48 ms, and the propagation delay is 2 ms.
