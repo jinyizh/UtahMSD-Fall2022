@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) throws FileNotFoundException {
-    Scanner sc = new Scanner(new FileInputStream("output.txt"));
-    PrintWriter pw = new PrintWriter("newOutput.txt");
+    Scanner sc = new Scanner(new FileInputStream("output1.txt"));
+    PrintWriter pw = new PrintWriter("newOutput1.txt");
     while (sc.hasNextLine()) {
       String datum = sc.nextLine();
       System.out.println(datum);
