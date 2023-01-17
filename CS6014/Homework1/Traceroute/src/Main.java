@@ -27,7 +27,7 @@ public class Main {
           }
           avgDelay /= numDelay;
           System.out.println("avg delay is: " + avgDelay);
-          pw.println(hopNum + " " + avgDelay);
+          pw.println(address + " " + avgDelay);
         }
       } catch (NumberFormatException e) {
         System.out.println("not valid"); // only count the first route for each hop

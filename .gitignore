@@ -47,7 +47,6 @@
 ## for MSD Assignment submission
 *.pages
 *.properties
-*.pdf
 *.zip
 *.rtf
 **/out/production/*

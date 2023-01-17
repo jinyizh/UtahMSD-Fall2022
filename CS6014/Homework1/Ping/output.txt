@@ -1,305 +1,603 @@
-PING www.amsterdam.nl.cdn.cloudflare.net (104.22.4.8): 56 data bytes
-64 bytes from 104.22.4.8: icmp_seq=0 ttl=55 time=20.549 ms
-64 bytes from 104.22.4.8: icmp_seq=1 ttl=55 time=19.183 ms
-64 bytes from 104.22.4.8: icmp_seq=2 ttl=55 time=16.005 ms
-64 bytes from 104.22.4.8: icmp_seq=3 ttl=55 time=23.562 ms
-64 bytes from 104.22.4.8: icmp_seq=4 ttl=55 time=23.589 ms
-64 bytes from 104.22.4.8: icmp_seq=5 ttl=55 time=16.712 ms
-64 bytes from 104.22.4.8: icmp_seq=6 ttl=55 time=23.408 ms
-64 bytes from 104.22.4.8: icmp_seq=7 ttl=55 time=25.157 ms
-64 bytes from 104.22.4.8: icmp_seq=8 ttl=55 time=41.251 ms
-64 bytes from 104.22.4.8: icmp_seq=9 ttl=55 time=25.017 ms
-64 bytes from 104.22.4.8: icmp_seq=10 ttl=55 time=23.643 ms
-64 bytes from 104.22.4.8: icmp_seq=11 ttl=55 time=23.413 ms
-64 bytes from 104.22.4.8: icmp_seq=12 ttl=55 time=23.210 ms
-64 bytes from 104.22.4.8: icmp_seq=13 ttl=55 time=15.623 ms
-64 bytes from 104.22.4.8: icmp_seq=14 ttl=55 time=33.170 ms
-64 bytes from 104.22.4.8: icmp_seq=15 ttl=55 time=23.600 ms
-64 bytes from 104.22.4.8: icmp_seq=16 ttl=55 time=18.659 ms
-64 bytes from 104.22.4.8: icmp_seq=17 ttl=55 time=31.452 ms
-64 bytes from 104.22.4.8: icmp_seq=18 ttl=55 time=25.879 ms
-64 bytes from 104.22.4.8: icmp_seq=19 ttl=55 time=24.580 ms
-64 bytes from 104.22.4.8: icmp_seq=20 ttl=55 time=15.636 ms
-64 bytes from 104.22.4.8: icmp_seq=21 ttl=55 time=24.506 ms
-64 bytes from 104.22.4.8: icmp_seq=22 ttl=55 time=19.489 ms
-64 bytes from 104.22.4.8: icmp_seq=23 ttl=55 time=25.036 ms
-64 bytes from 104.22.4.8: icmp_seq=24 ttl=55 time=22.813 ms
-64 bytes from 104.22.4.8: icmp_seq=25 ttl=55 time=24.327 ms
-64 bytes from 104.22.4.8: icmp_seq=26 ttl=55 time=25.778 ms
-64 bytes from 104.22.4.8: icmp_seq=27 ttl=55 time=19.567 ms
-64 bytes from 104.22.4.8: icmp_seq=28 ttl=55 time=17.956 ms
-64 bytes from 104.22.4.8: icmp_seq=29 ttl=55 time=23.606 ms
-64 bytes from 104.22.4.8: icmp_seq=30 ttl=55 time=22.227 ms
-64 bytes from 104.22.4.8: icmp_seq=31 ttl=55 time=35.735 ms
-64 bytes from 104.22.4.8: icmp_seq=32 ttl=55 time=16.243 ms
-64 bytes from 104.22.4.8: icmp_seq=33 ttl=55 time=27.909 ms
-64 bytes from 104.22.4.8: icmp_seq=34 ttl=55 time=16.552 ms
-64 bytes from 104.22.4.8: icmp_seq=35 ttl=55 time=25.549 ms
-64 bytes from 104.22.4.8: icmp_seq=36 ttl=55 time=20.300 ms
-64 bytes from 104.22.4.8: icmp_seq=37 ttl=55 time=18.962 ms
-64 bytes from 104.22.4.8: icmp_seq=38 ttl=55 time=24.387 ms
-64 bytes from 104.22.4.8: icmp_seq=39 ttl=55 time=15.657 ms
-64 bytes from 104.22.4.8: icmp_seq=40 ttl=55 time=29.287 ms
-64 bytes from 104.22.4.8: icmp_seq=41 ttl=55 time=16.048 ms
-64 bytes from 104.22.4.8: icmp_seq=42 ttl=55 time=17.799 ms
-64 bytes from 104.22.4.8: icmp_seq=43 ttl=55 time=24.038 ms
-64 bytes from 104.22.4.8: icmp_seq=44 ttl=55 time=23.601 ms
-64 bytes from 104.22.4.8: icmp_seq=45 ttl=55 time=23.545 ms
-64 bytes from 104.22.4.8: icmp_seq=46 ttl=55 time=21.792 ms
-64 bytes from 104.22.4.8: icmp_seq=47 ttl=55 time=17.126 ms
-64 bytes from 104.22.4.8: icmp_seq=48 ttl=55 time=15.682 ms
-64 bytes from 104.22.4.8: icmp_seq=49 ttl=55 time=30.438 ms
-64 bytes from 104.22.4.8: icmp_seq=50 ttl=55 time=24.259 ms
-64 bytes from 104.22.4.8: icmp_seq=51 ttl=55 time=22.474 ms
-64 bytes from 104.22.4.8: icmp_seq=52 ttl=55 time=28.077 ms
-64 bytes from 104.22.4.8: icmp_seq=53 ttl=55 time=26.465 ms
-64 bytes from 104.22.4.8: icmp_seq=54 ttl=55 time=23.460 ms
-64 bytes from 104.22.4.8: icmp_seq=55 ttl=55 time=24.157 ms
-64 bytes from 104.22.4.8: icmp_seq=56 ttl=55 time=26.545 ms
-64 bytes from 104.22.4.8: icmp_seq=57 ttl=55 time=17.776 ms
-64 bytes from 104.22.4.8: icmp_seq=58 ttl=55 time=24.466 ms
-64 bytes from 104.22.4.8: icmp_seq=59 ttl=55 time=20.603 ms
-64 bytes from 104.22.4.8: icmp_seq=60 ttl=55 time=22.462 ms
-64 bytes from 104.22.4.8: icmp_seq=61 ttl=55 time=21.248 ms
-64 bytes from 104.22.4.8: icmp_seq=62 ttl=55 time=23.955 ms
-64 bytes from 104.22.4.8: icmp_seq=63 ttl=55 time=17.859 ms
-64 bytes from 104.22.4.8: icmp_seq=64 ttl=55 time=29.624 ms
-64 bytes from 104.22.4.8: icmp_seq=65 ttl=55 time=17.752 ms
-64 bytes from 104.22.4.8: icmp_seq=66 ttl=55 time=24.104 ms
-64 bytes from 104.22.4.8: icmp_seq=67 ttl=55 time=26.493 ms
-64 bytes from 104.22.4.8: icmp_seq=68 ttl=55 time=19.196 ms
-64 bytes from 104.22.4.8: icmp_seq=69 ttl=55 time=24.866 ms
-64 bytes from 104.22.4.8: icmp_seq=70 ttl=55 time=15.210 ms
-64 bytes from 104.22.4.8: icmp_seq=71 ttl=55 time=15.642 ms
-64 bytes from 104.22.4.8: icmp_seq=72 ttl=55 time=24.025 ms
-64 bytes from 104.22.4.8: icmp_seq=73 ttl=55 time=20.393 ms
-64 bytes from 104.22.4.8: icmp_seq=74 ttl=55 time=24.380 ms
-64 bytes from 104.22.4.8: icmp_seq=75 ttl=55 time=25.793 ms
-64 bytes from 104.22.4.8: icmp_seq=76 ttl=55 time=26.718 ms
-64 bytes from 104.22.4.8: icmp_seq=77 ttl=55 time=17.133 ms
-64 bytes from 104.22.4.8: icmp_seq=78 ttl=55 time=15.762 ms
-64 bytes from 104.22.4.8: icmp_seq=79 ttl=55 time=16.798 ms
-64 bytes from 104.22.4.8: icmp_seq=80 ttl=55 time=26.752 ms
-64 bytes from 104.22.4.8: icmp_seq=81 ttl=55 time=22.994 ms
-64 bytes from 104.22.4.8: icmp_seq=82 ttl=55 time=23.981 ms
-64 bytes from 104.22.4.8: icmp_seq=83 ttl=55 time=15.975 ms
-64 bytes from 104.22.4.8: icmp_seq=84 ttl=55 time=19.637 ms
-64 bytes from 104.22.4.8: icmp_seq=85 ttl=55 time=25.751 ms
-64 bytes from 104.22.4.8: icmp_seq=86 ttl=55 time=24.379 ms
-64 bytes from 104.22.4.8: icmp_seq=87 ttl=55 time=22.800 ms
-64 bytes from 104.22.4.8: icmp_seq=88 ttl=55 time=23.730 ms
-64 bytes from 104.22.4.8: icmp_seq=89 ttl=55 time=21.568 ms
-64 bytes from 104.22.4.8: icmp_seq=90 ttl=55 time=26.750 ms
-64 bytes from 104.22.4.8: icmp_seq=91 ttl=55 time=34.547 ms
-64 bytes from 104.22.4.8: icmp_seq=92 ttl=55 time=24.004 ms
-64 bytes from 104.22.4.8: icmp_seq=93 ttl=55 time=23.792 ms
-64 bytes from 104.22.4.8: icmp_seq=94 ttl=55 time=34.294 ms
-64 bytes from 104.22.4.8: icmp_seq=95 ttl=55 time=23.648 ms
-64 bytes from 104.22.4.8: icmp_seq=96 ttl=55 time=24.212 ms
-64 bytes from 104.22.4.8: icmp_seq=97 ttl=55 time=26.621 ms
-64 bytes from 104.22.4.8: icmp_seq=98 ttl=55 time=23.803 ms
-64 bytes from 104.22.4.8: icmp_seq=99 ttl=55 time=26.041 ms
-64 bytes from 104.22.4.8: icmp_seq=100 ttl=55 time=21.998 ms
-64 bytes from 104.22.4.8: icmp_seq=101 ttl=55 time=23.502 ms
-64 bytes from 104.22.4.8: icmp_seq=102 ttl=55 time=24.317 ms
-64 bytes from 104.22.4.8: icmp_seq=103 ttl=55 time=15.430 ms
-64 bytes from 104.22.4.8: icmp_seq=104 ttl=55 time=16.523 ms
-64 bytes from 104.22.4.8: icmp_seq=105 ttl=55 time=24.715 ms
-64 bytes from 104.22.4.8: icmp_seq=106 ttl=55 time=23.902 ms
-64 bytes from 104.22.4.8: icmp_seq=107 ttl=55 time=23.848 ms
-64 bytes from 104.22.4.8: icmp_seq=108 ttl=55 time=24.621 ms
-64 bytes from 104.22.4.8: icmp_seq=109 ttl=55 time=17.035 ms
-64 bytes from 104.22.4.8: icmp_seq=110 ttl=55 time=16.170 ms
-64 bytes from 104.22.4.8: icmp_seq=111 ttl=55 time=15.271 ms
-64 bytes from 104.22.4.8: icmp_seq=112 ttl=55 time=24.161 ms
-64 bytes from 104.22.4.8: icmp_seq=113 ttl=55 time=23.836 ms
-64 bytes from 104.22.4.8: icmp_seq=114 ttl=55 time=18.843 ms
-64 bytes from 104.22.4.8: icmp_seq=115 ttl=55 time=16.733 ms
-64 bytes from 104.22.4.8: icmp_seq=116 ttl=55 time=15.423 ms
-64 bytes from 104.22.4.8: icmp_seq=117 ttl=55 time=19.373 ms
-64 bytes from 104.22.4.8: icmp_seq=118 ttl=55 time=15.559 ms
-64 bytes from 104.22.4.8: icmp_seq=119 ttl=55 time=33.419 ms
-64 bytes from 104.22.4.8: icmp_seq=120 ttl=55 time=23.654 ms
-64 bytes from 104.22.4.8: icmp_seq=121 ttl=55 time=23.931 ms
-64 bytes from 104.22.4.8: icmp_seq=122 ttl=55 time=25.961 ms
-64 bytes from 104.22.4.8: icmp_seq=123 ttl=55 time=23.765 ms
-64 bytes from 104.22.4.8: icmp_seq=124 ttl=55 time=25.519 ms
-64 bytes from 104.22.4.8: icmp_seq=125 ttl=55 time=31.549 ms
-64 bytes from 104.22.4.8: icmp_seq=126 ttl=55 time=26.224 ms
-64 bytes from 104.22.4.8: icmp_seq=127 ttl=55 time=24.101 ms
-64 bytes from 104.22.4.8: icmp_seq=128 ttl=55 time=39.862 ms
-64 bytes from 104.22.4.8: icmp_seq=129 ttl=55 time=24.155 ms
-64 bytes from 104.22.4.8: icmp_seq=130 ttl=55 time=26.831 ms
-64 bytes from 104.22.4.8: icmp_seq=131 ttl=55 time=24.844 ms
-64 bytes from 104.22.4.8: icmp_seq=132 ttl=55 time=24.419 ms
-64 bytes from 104.22.4.8: icmp_seq=133 ttl=55 time=24.170 ms
-64 bytes from 104.22.4.8: icmp_seq=134 ttl=55 time=29.895 ms
-64 bytes from 104.22.4.8: icmp_seq=135 ttl=55 time=29.431 ms
-64 bytes from 104.22.4.8: icmp_seq=136 ttl=55 time=23.477 ms
-64 bytes from 104.22.4.8: icmp_seq=137 ttl=55 time=24.315 ms
-64 bytes from 104.22.4.8: icmp_seq=138 ttl=55 time=23.925 ms
-64 bytes from 104.22.4.8: icmp_seq=139 ttl=55 time=25.301 ms
-64 bytes from 104.22.4.8: icmp_seq=140 ttl=55 time=17.473 ms
-64 bytes from 104.22.4.8: icmp_seq=141 ttl=55 time=24.321 ms
-64 bytes from 104.22.4.8: icmp_seq=142 ttl=55 time=25.519 ms
-64 bytes from 104.22.4.8: icmp_seq=143 ttl=55 time=15.616 ms
-64 bytes from 104.22.4.8: icmp_seq=144 ttl=55 time=16.363 ms
-64 bytes from 104.22.4.8: icmp_seq=145 ttl=55 time=16.149 ms
-64 bytes from 104.22.4.8: icmp_seq=146 ttl=55 time=28.387 ms
-64 bytes from 104.22.4.8: icmp_seq=147 ttl=55 time=16.040 ms
-64 bytes from 104.22.4.8: icmp_seq=148 ttl=55 time=16.114 ms
-64 bytes from 104.22.4.8: icmp_seq=149 ttl=55 time=19.652 ms
-64 bytes from 104.22.4.8: icmp_seq=150 ttl=55 time=23.969 ms
-64 bytes from 104.22.4.8: icmp_seq=151 ttl=55 time=21.288 ms
-64 bytes from 104.22.4.8: icmp_seq=152 ttl=55 time=22.189 ms
-64 bytes from 104.22.4.8: icmp_seq=153 ttl=55 time=24.263 ms
-64 bytes from 104.22.4.8: icmp_seq=154 ttl=55 time=24.259 ms
-64 bytes from 104.22.4.8: icmp_seq=155 ttl=55 time=26.232 ms
-64 bytes from 104.22.4.8: icmp_seq=156 ttl=55 time=22.966 ms
-64 bytes from 104.22.4.8: icmp_seq=157 ttl=55 time=16.442 ms
-64 bytes from 104.22.4.8: icmp_seq=158 ttl=55 time=22.258 ms
-64 bytes from 104.22.4.8: icmp_seq=159 ttl=55 time=21.853 ms
-64 bytes from 104.22.4.8: icmp_seq=160 ttl=55 time=24.047 ms
-64 bytes from 104.22.4.8: icmp_seq=161 ttl=55 time=20.787 ms
-64 bytes from 104.22.4.8: icmp_seq=162 ttl=55 time=22.129 ms
-64 bytes from 104.22.4.8: icmp_seq=163 ttl=55 time=18.363 ms
-64 bytes from 104.22.4.8: icmp_seq=164 ttl=55 time=35.770 ms
-64 bytes from 104.22.4.8: icmp_seq=165 ttl=55 time=28.198 ms
-64 bytes from 104.22.4.8: icmp_seq=166 ttl=55 time=27.887 ms
-64 bytes from 104.22.4.8: icmp_seq=167 ttl=55 time=16.538 ms
-64 bytes from 104.22.4.8: icmp_seq=168 ttl=55 time=18.450 ms
-64 bytes from 104.22.4.8: icmp_seq=169 ttl=55 time=23.970 ms
-64 bytes from 104.22.4.8: icmp_seq=170 ttl=55 time=27.129 ms
-64 bytes from 104.22.4.8: icmp_seq=171 ttl=55 time=17.039 ms
-64 bytes from 104.22.4.8: icmp_seq=172 ttl=55 time=25.795 ms
-64 bytes from 104.22.4.8: icmp_seq=173 ttl=55 time=24.676 ms
-64 bytes from 104.22.4.8: icmp_seq=174 ttl=55 time=24.601 ms
-64 bytes from 104.22.4.8: icmp_seq=175 ttl=55 time=24.275 ms
-64 bytes from 104.22.4.8: icmp_seq=176 ttl=55 time=24.061 ms
-64 bytes from 104.22.4.8: icmp_seq=177 ttl=55 time=24.583 ms
-64 bytes from 104.22.4.8: icmp_seq=178 ttl=55 time=25.998 ms
-64 bytes from 104.22.4.8: icmp_seq=179 ttl=55 time=15.854 ms
-64 bytes from 104.22.4.8: icmp_seq=180 ttl=55 time=24.520 ms
-64 bytes from 104.22.4.8: icmp_seq=181 ttl=55 time=31.419 ms
-64 bytes from 104.22.4.8: icmp_seq=182 ttl=55 time=16.794 ms
-64 bytes from 104.22.4.8: icmp_seq=183 ttl=55 time=17.219 ms
-64 bytes from 104.22.4.8: icmp_seq=184 ttl=55 time=15.986 ms
-64 bytes from 104.22.4.8: icmp_seq=185 ttl=55 time=18.326 ms
-64 bytes from 104.22.4.8: icmp_seq=186 ttl=55 time=18.162 ms
-64 bytes from 104.22.4.8: icmp_seq=187 ttl=55 time=15.591 ms
-64 bytes from 104.22.4.8: icmp_seq=188 ttl=55 time=26.394 ms
-64 bytes from 104.22.4.8: icmp_seq=189 ttl=55 time=24.399 ms
-64 bytes from 104.22.4.8: icmp_seq=190 ttl=55 time=24.016 ms
-64 bytes from 104.22.4.8: icmp_seq=191 ttl=55 time=27.009 ms
-64 bytes from 104.22.4.8: icmp_seq=192 ttl=55 time=24.189 ms
-64 bytes from 104.22.4.8: icmp_seq=193 ttl=55 time=24.680 ms
-64 bytes from 104.22.4.8: icmp_seq=194 ttl=55 time=20.931 ms
-64 bytes from 104.22.4.8: icmp_seq=195 ttl=55 time=16.743 ms
-64 bytes from 104.22.4.8: icmp_seq=196 ttl=55 time=16.817 ms
-64 bytes from 104.22.4.8: icmp_seq=197 ttl=55 time=26.385 ms
-64 bytes from 104.22.4.8: icmp_seq=198 ttl=55 time=29.279 ms
-64 bytes from 104.22.4.8: icmp_seq=199 ttl=55 time=23.964 ms
-64 bytes from 104.22.4.8: icmp_seq=200 ttl=55 time=24.490 ms
-64 bytes from 104.22.4.8: icmp_seq=201 ttl=55 time=19.500 ms
-64 bytes from 104.22.4.8: icmp_seq=202 ttl=55 time=18.075 ms
-64 bytes from 104.22.4.8: icmp_seq=203 ttl=55 time=22.278 ms
-64 bytes from 104.22.4.8: icmp_seq=204 ttl=55 time=15.572 ms
-64 bytes from 104.22.4.8: icmp_seq=205 ttl=55 time=24.400 ms
-64 bytes from 104.22.4.8: icmp_seq=206 ttl=55 time=19.724 ms
-64 bytes from 104.22.4.8: icmp_seq=207 ttl=55 time=15.798 ms
-64 bytes from 104.22.4.8: icmp_seq=208 ttl=55 time=24.179 ms
-64 bytes from 104.22.4.8: icmp_seq=209 ttl=55 time=16.497 ms
-64 bytes from 104.22.4.8: icmp_seq=210 ttl=55 time=16.142 ms
-64 bytes from 104.22.4.8: icmp_seq=211 ttl=55 time=15.982 ms
-64 bytes from 104.22.4.8: icmp_seq=212 ttl=55 time=18.912 ms
-64 bytes from 104.22.4.8: icmp_seq=213 ttl=55 time=15.783 ms
-64 bytes from 104.22.4.8: icmp_seq=214 ttl=55 time=15.519 ms
-64 bytes from 104.22.4.8: icmp_seq=215 ttl=55 time=15.819 ms
-64 bytes from 104.22.4.8: icmp_seq=216 ttl=55 time=18.468 ms
-64 bytes from 104.22.4.8: icmp_seq=217 ttl=55 time=25.188 ms
-64 bytes from 104.22.4.8: icmp_seq=218 ttl=55 time=18.653 ms
-64 bytes from 104.22.4.8: icmp_seq=219 ttl=55 time=17.729 ms
-64 bytes from 104.22.4.8: icmp_seq=220 ttl=55 time=21.404 ms
-64 bytes from 104.22.4.8: icmp_seq=221 ttl=55 time=28.016 ms
-64 bytes from 104.22.4.8: icmp_seq=222 ttl=55 time=52.360 ms
-64 bytes from 104.22.4.8: icmp_seq=223 ttl=55 time=25.711 ms
-64 bytes from 104.22.4.8: icmp_seq=224 ttl=55 time=25.523 ms
-64 bytes from 104.22.4.8: icmp_seq=225 ttl=55 time=23.657 ms
-64 bytes from 104.22.4.8: icmp_seq=226 ttl=55 time=34.408 ms
-64 bytes from 104.22.4.8: icmp_seq=227 ttl=55 time=29.127 ms
-64 bytes from 104.22.4.8: icmp_seq=228 ttl=55 time=23.876 ms
-64 bytes from 104.22.4.8: icmp_seq=229 ttl=55 time=34.259 ms
-64 bytes from 104.22.4.8: icmp_seq=230 ttl=55 time=26.715 ms
-64 bytes from 104.22.4.8: icmp_seq=231 ttl=55 time=24.001 ms
-64 bytes from 104.22.4.8: icmp_seq=232 ttl=55 time=20.858 ms
-64 bytes from 104.22.4.8: icmp_seq=233 ttl=55 time=22.183 ms
-64 bytes from 104.22.4.8: icmp_seq=234 ttl=55 time=28.880 ms
-64 bytes from 104.22.4.8: icmp_seq=235 ttl=55 time=24.495 ms
-64 bytes from 104.22.4.8: icmp_seq=236 ttl=55 time=16.461 ms
-64 bytes from 104.22.4.8: icmp_seq=237 ttl=55 time=23.920 ms
-64 bytes from 104.22.4.8: icmp_seq=238 ttl=55 time=18.961 ms
-64 bytes from 104.22.4.8: icmp_seq=239 ttl=55 time=16.975 ms
-64 bytes from 104.22.4.8: icmp_seq=240 ttl=55 time=16.138 ms
-64 bytes from 104.22.4.8: icmp_seq=241 ttl=55 time=31.447 ms
-64 bytes from 104.22.4.8: icmp_seq=242 ttl=55 time=30.984 ms
-64 bytes from 104.22.4.8: icmp_seq=243 ttl=55 time=23.896 ms
-64 bytes from 104.22.4.8: icmp_seq=244 ttl=55 time=74.100 ms
-64 bytes from 104.22.4.8: icmp_seq=245 ttl=55 time=23.352 ms
-64 bytes from 104.22.4.8: icmp_seq=246 ttl=55 time=30.409 ms
-64 bytes from 104.22.4.8: icmp_seq=247 ttl=55 time=16.916 ms
-64 bytes from 104.22.4.8: icmp_seq=248 ttl=55 time=21.690 ms
-64 bytes from 104.22.4.8: icmp_seq=249 ttl=55 time=15.981 ms
-64 bytes from 104.22.4.8: icmp_seq=250 ttl=55 time=53.618 ms
-64 bytes from 104.22.4.8: icmp_seq=251 ttl=55 time=15.745 ms
-64 bytes from 104.22.4.8: icmp_seq=252 ttl=55 time=17.010 ms
-64 bytes from 104.22.4.8: icmp_seq=253 ttl=55 time=21.717 ms
-64 bytes from 104.22.4.8: icmp_seq=254 ttl=55 time=21.950 ms
-64 bytes from 104.22.4.8: icmp_seq=255 ttl=55 time=24.279 ms
-64 bytes from 104.22.4.8: icmp_seq=256 ttl=55 time=17.120 ms
-64 bytes from 104.22.4.8: icmp_seq=257 ttl=55 time=23.159 ms
-64 bytes from 104.22.4.8: icmp_seq=258 ttl=55 time=16.065 ms
-64 bytes from 104.22.4.8: icmp_seq=259 ttl=55 time=24.624 ms
-64 bytes from 104.22.4.8: icmp_seq=260 ttl=55 time=25.258 ms
-64 bytes from 104.22.4.8: icmp_seq=261 ttl=55 time=16.231 ms
-64 bytes from 104.22.4.8: icmp_seq=262 ttl=55 time=24.283 ms
-64 bytes from 104.22.4.8: icmp_seq=263 ttl=55 time=27.767 ms
-64 bytes from 104.22.4.8: icmp_seq=264 ttl=55 time=17.637 ms
-64 bytes from 104.22.4.8: icmp_seq=265 ttl=55 time=31.405 ms
-64 bytes from 104.22.4.8: icmp_seq=266 ttl=55 time=23.989 ms
-64 bytes from 104.22.4.8: icmp_seq=267 ttl=55 time=23.975 ms
-64 bytes from 104.22.4.8: icmp_seq=268 ttl=55 time=24.094 ms
-64 bytes from 104.22.4.8: icmp_seq=269 ttl=55 time=65.194 ms
-64 bytes from 104.22.4.8: icmp_seq=270 ttl=55 time=21.785 ms
-64 bytes from 104.22.4.8: icmp_seq=271 ttl=55 time=27.341 ms
-64 bytes from 104.22.4.8: icmp_seq=272 ttl=55 time=23.783 ms
-64 bytes from 104.22.4.8: icmp_seq=273 ttl=55 time=18.385 ms
-64 bytes from 104.22.4.8: icmp_seq=274 ttl=55 time=16.155 ms
-64 bytes from 104.22.4.8: icmp_seq=275 ttl=55 time=17.912 ms
-64 bytes from 104.22.4.8: icmp_seq=276 ttl=55 time=16.261 ms
-64 bytes from 104.22.4.8: icmp_seq=277 ttl=55 time=17.978 ms
-64 bytes from 104.22.4.8: icmp_seq=278 ttl=55 time=24.402 ms
-64 bytes from 104.22.4.8: icmp_seq=279 ttl=55 time=18.650 ms
-64 bytes from 104.22.4.8: icmp_seq=280 ttl=55 time=23.203 ms
-64 bytes from 104.22.4.8: icmp_seq=281 ttl=55 time=25.687 ms
-64 bytes from 104.22.4.8: icmp_seq=282 ttl=55 time=25.253 ms
-64 bytes from 104.22.4.8: icmp_seq=283 ttl=55 time=24.842 ms
-64 bytes from 104.22.4.8: icmp_seq=284 ttl=55 time=16.392 ms
-64 bytes from 104.22.4.8: icmp_seq=285 ttl=55 time=26.228 ms
-64 bytes from 104.22.4.8: icmp_seq=286 ttl=55 time=23.462 ms
-64 bytes from 104.22.4.8: icmp_seq=287 ttl=55 time=16.002 ms
-64 bytes from 104.22.4.8: icmp_seq=288 ttl=55 time=18.132 ms
-64 bytes from 104.22.4.8: icmp_seq=289 ttl=55 time=15.987 ms
-64 bytes from 104.22.4.8: icmp_seq=290 ttl=55 time=26.699 ms
-64 bytes from 104.22.4.8: icmp_seq=291 ttl=55 time=21.327 ms
-64 bytes from 104.22.4.8: icmp_seq=292 ttl=55 time=26.661 ms
-64 bytes from 104.22.4.8: icmp_seq=293 ttl=55 time=23.695 ms
-64 bytes from 104.22.4.8: icmp_seq=294 ttl=55 time=19.748 ms
-64 bytes from 104.22.4.8: icmp_seq=295 ttl=55 time=19.822 ms
-64 bytes from 104.22.4.8: icmp_seq=296 ttl=55 time=24.558 ms
-64 bytes from 104.22.4.8: icmp_seq=297 ttl=55 time=23.957 ms
-64 bytes from 104.22.4.8: icmp_seq=298 ttl=55 time=23.837 ms
-64 bytes from 104.22.4.8: icmp_seq=299 ttl=55 time=15.959 ms
+The total round trip delay and queueing delay for each packet is: 
 
---- www.amsterdam.nl.cdn.cloudflare.net ping statistics ---
-300 packets transmitted, 300 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 15.210/23.071/74.100/6.603 ms
+For packet 0:
+Total round trip delay is: 15.271 ms
+Queueing delay is: 0.0 ms
+
+For packet 1:
+Total round trip delay is: 15.43 ms
+Queueing delay is: 0.1590004 ms
+
+For packet 2:
+Total round trip delay is: 15.591 ms
+Queueing delay is: 0.3199997 ms
+
+For packet 3:
+Total round trip delay is: 15.616 ms
+Queueing delay is: 0.34500027 ms
+
+For packet 4:
+Total round trip delay is: 15.623 ms
+Queueing delay is: 0.35200024 ms
+
+For packet 5:
+Total round trip delay is: 15.642 ms
+Queueing delay is: 0.3710003 ms
+
+For packet 6:
+Total round trip delay is: 15.657 ms
+Queueing delay is: 0.38599968 ms
+
+For packet 7:
+Total round trip delay is: 15.745 ms
+Queueing delay is: 0.47399998 ms
+
+For packet 8:
+Total round trip delay is: 15.783 ms
+Queueing delay is: 0.5120001 ms
+
+For packet 9:
+Total round trip delay is: 15.798 ms
+Queueing delay is: 0.5270004 ms
+
+For packet 10:
+Total round trip delay is: 15.819 ms
+Queueing delay is: 0.54800034 ms
+
+For packet 11:
+Total round trip delay is: 15.854 ms
+Queueing delay is: 0.5830002 ms
+
+For packet 12:
+Total round trip delay is: 15.959 ms
+Queueing delay is: 0.6879997 ms
+
+For packet 13:
+Total round trip delay is: 15.975 ms
+Queueing delay is: 0.7040005 ms
+
+For packet 14:
+Total round trip delay is: 15.981 ms
+Queueing delay is: 0.71000004 ms
+
+For packet 15:
+Total round trip delay is: 15.982 ms
+Queueing delay is: 0.71100044 ms
+
+For packet 16:
+Total round trip delay is: 15.987 ms
+Queueing delay is: 0.71600056 ms
+
+For packet 17:
+Total round trip delay is: 16.002 ms
+Queueing delay is: 0.7310009 ms
+
+For packet 18:
+Total round trip delay is: 16.04 ms
+Queueing delay is: 0.769001 ms
+
+For packet 19:
+Total round trip delay is: 16.048 ms
+Queueing delay is: 0.7770004 ms
+
+For packet 20:
+Total round trip delay is: 16.149 ms
+Queueing delay is: 0.87800026 ms
+
+For packet 21:
+Total round trip delay is: 16.231 ms
+Queueing delay is: 0.960001 ms
+
+For packet 22:
+Total round trip delay is: 16.442 ms
+Queueing delay is: 1.1709995 ms
+
+For packet 23:
+Total round trip delay is: 16.497 ms
+Queueing delay is: 1.2259998 ms
+
+For packet 24:
+Total round trip delay is: 16.538 ms
+Queueing delay is: 1.2670002 ms
+
+For packet 25:
+Total round trip delay is: 16.712 ms
+Queueing delay is: 1.441 ms
+
+For packet 26:
+Total round trip delay is: 16.733 ms
+Queueing delay is: 1.4619999 ms
+
+For packet 27:
+Total round trip delay is: 16.743 ms
+Queueing delay is: 1.4720001 ms
+
+For packet 28:
+Total round trip delay is: 16.798 ms
+Queueing delay is: 1.5270004 ms
+
+For packet 29:
+Total round trip delay is: 16.916 ms
+Queueing delay is: 1.6450005 ms
+
+For packet 30:
+Total round trip delay is: 16.975 ms
+Queueing delay is: 1.7040005 ms
+
+For packet 31:
+Total round trip delay is: 17.035 ms
+Queueing delay is: 1.7639999 ms
+
+For packet 32:
+Total round trip delay is: 17.039 ms
+Queueing delay is: 1.7679996 ms
+
+For packet 33:
+Total round trip delay is: 17.126 ms
+Queueing delay is: 1.8549995 ms
+
+For packet 34:
+Total round trip delay is: 17.133 ms
+Queueing delay is: 1.8619995 ms
+
+For packet 35:
+Total round trip delay is: 17.219 ms
+Queueing delay is: 1.948 ms
+
+For packet 36:
+Total round trip delay is: 17.729 ms
+Queueing delay is: 2.4580002 ms
+
+For packet 37:
+Total round trip delay is: 17.752 ms
+Queueing delay is: 2.481001 ms
+
+For packet 38:
+Total round trip delay is: 17.776 ms
+Queueing delay is: 2.5049992 ms
+
+For packet 39:
+Total round trip delay is: 17.859 ms
+Queueing delay is: 2.5879993 ms
+
+For packet 40:
+Total round trip delay is: 17.912 ms
+Queueing delay is: 2.6410007 ms
+
+For packet 41:
+Total round trip delay is: 17.978 ms
+Queueing delay is: 2.7070007 ms
+
+For packet 42:
+Total round trip delay is: 18.326 ms
+Queueing delay is: 3.0550003 ms
+
+For packet 43:
+Total round trip delay is: 18.363 ms
+Queueing delay is: 3.092001 ms
+
+For packet 44:
+Total round trip delay is: 18.385 ms
+Queueing delay is: 3.1140003 ms
+
+For packet 45:
+Total round trip delay is: 18.65 ms
+Queueing delay is: 3.3789997 ms
+
+For packet 46:
+Total round trip delay is: 18.962 ms
+Queueing delay is: 3.691 ms
+
+For packet 47:
+Total round trip delay is: 19.183 ms
+Queueing delay is: 3.9120007 ms
+
+For packet 48:
+Total round trip delay is: 19.373 ms
+Queueing delay is: 4.1019993 ms
+
+For packet 49:
+Total round trip delay is: 19.5 ms
+Queueing delay is: 4.229 ms
+
+For packet 50:
+Total round trip delay is: 19.567 ms
+Queueing delay is: 4.2959995 ms
+
+For packet 51:
+Total round trip delay is: 19.652 ms
+Queueing delay is: 4.3810005 ms
+
+For packet 52:
+Total round trip delay is: 19.822 ms
+Queueing delay is: 4.5510006 ms
+
+For packet 53:
+Total round trip delay is: 20.393 ms
+Queueing delay is: 5.1219997 ms
+
+For packet 54:
+Total round trip delay is: 20.603 ms
+Queueing delay is: 5.3320007 ms
+
+For packet 55:
+Total round trip delay is: 20.787 ms
+Queueing delay is: 5.5160007 ms
+
+For packet 56:
+Total round trip delay is: 21.248 ms
+Queueing delay is: 5.9769993 ms
+
+For packet 57:
+Total round trip delay is: 21.288 ms
+Queueing delay is: 6.017 ms
+
+For packet 58:
+Total round trip delay is: 21.327 ms
+Queueing delay is: 6.0559998 ms
+
+For packet 59:
+Total round trip delay is: 21.568 ms
+Queueing delay is: 6.297001 ms
+
+For packet 60:
+Total round trip delay is: 21.717 ms
+Queueing delay is: 6.445999 ms
+
+For packet 61:
+Total round trip delay is: 21.853 ms
+Queueing delay is: 6.5820007 ms
+
+For packet 62:
+Total round trip delay is: 22.183 ms
+Queueing delay is: 6.9120007 ms
+
+For packet 63:
+Total round trip delay is: 22.278 ms
+Queueing delay is: 7.007 ms
+
+For packet 64:
+Total round trip delay is: 22.474 ms
+Queueing delay is: 7.203001 ms
+
+For packet 65:
+Total round trip delay is: 22.8 ms
+Queueing delay is: 7.5289993 ms
+
+For packet 66:
+Total round trip delay is: 22.994 ms
+Queueing delay is: 7.7229996 ms
+
+For packet 67:
+Total round trip delay is: 23.159 ms
+Queueing delay is: 7.8880005 ms
+
+For packet 68:
+Total round trip delay is: 23.352 ms
+Queueing delay is: 8.080999 ms
+
+For packet 69:
+Total round trip delay is: 23.413 ms
+Queueing delay is: 8.142 ms
+
+For packet 70:
+Total round trip delay is: 23.502 ms
+Queueing delay is: 8.231001 ms
+
+For packet 71:
+Total round trip delay is: 23.545 ms
+Queueing delay is: 8.274 ms
+
+For packet 72:
+Total round trip delay is: 23.562 ms
+Queueing delay is: 8.291 ms
+
+For packet 73:
+Total round trip delay is: 23.6 ms
+Queueing delay is: 8.329 ms
+
+For packet 74:
+Total round trip delay is: 23.606 ms
+Queueing delay is: 8.335001 ms
+
+For packet 75:
+Total round trip delay is: 23.648 ms
+Queueing delay is: 8.377001 ms
+
+For packet 76:
+Total round trip delay is: 23.657 ms
+Queueing delay is: 8.386 ms
+
+For packet 77:
+Total round trip delay is: 23.695 ms
+Queueing delay is: 8.424 ms
+
+For packet 78:
+Total round trip delay is: 23.765 ms
+Queueing delay is: 8.4939995 ms
+
+For packet 79:
+Total round trip delay is: 23.792 ms
+Queueing delay is: 8.521 ms
+
+For packet 80:
+Total round trip delay is: 23.836 ms
+Queueing delay is: 8.565001 ms
+
+For packet 81:
+Total round trip delay is: 23.848 ms
+Queueing delay is: 8.577 ms
+
+For packet 82:
+Total round trip delay is: 23.896 ms
+Queueing delay is: 8.625 ms
+
+For packet 83:
+Total round trip delay is: 23.92 ms
+Queueing delay is: 8.649 ms
+
+For packet 84:
+Total round trip delay is: 23.931 ms
+Queueing delay is: 8.66 ms
+
+For packet 85:
+Total round trip delay is: 23.957 ms
+Queueing delay is: 8.686001 ms
+
+For packet 86:
+Total round trip delay is: 23.964 ms
+Queueing delay is: 8.693001 ms
+
+For packet 87:
+Total round trip delay is: 23.97 ms
+Queueing delay is: 8.698999 ms
+
+For packet 88:
+Total round trip delay is: 23.975 ms
+Queueing delay is: 8.704 ms
+
+For packet 89:
+Total round trip delay is: 24.001 ms
+Queueing delay is: 8.73 ms
+
+For packet 90:
+Total round trip delay is: 24.038 ms
+Queueing delay is: 8.767 ms
+
+For packet 91:
+Total round trip delay is: 24.101 ms
+Queueing delay is: 8.83 ms
+
+For packet 92:
+Total round trip delay is: 24.155 ms
+Queueing delay is: 8.884001 ms
+
+For packet 93:
+Total round trip delay is: 24.157 ms
+Queueing delay is: 8.886 ms
+
+For packet 94:
+Total round trip delay is: 24.17 ms
+Queueing delay is: 8.899 ms
+
+For packet 95:
+Total round trip delay is: 24.263 ms
+Queueing delay is: 8.992001 ms
+
+For packet 96:
+Total round trip delay is: 24.275 ms
+Queueing delay is: 9.004 ms
+
+For packet 97:
+Total round trip delay is: 24.279 ms
+Queueing delay is: 9.007999 ms
+
+For packet 98:
+Total round trip delay is: 24.315 ms
+Queueing delay is: 9.044001 ms
+
+For packet 99:
+Total round trip delay is: 24.321 ms
+Queueing delay is: 9.049999 ms
+
+For packet 100:
+Total round trip delay is: 24.327 ms
+Queueing delay is: 9.056 ms
+
+For packet 101:
+Total round trip delay is: 24.399 ms
+Queueing delay is: 9.128 ms
+
+For packet 102:
+Total round trip delay is: 24.4 ms
+Queueing delay is: 9.129 ms
+
+For packet 103:
+Total round trip delay is: 24.495 ms
+Queueing delay is: 9.224001 ms
+
+For packet 104:
+Total round trip delay is: 24.506 ms
+Queueing delay is: 9.235001 ms
+
+For packet 105:
+Total round trip delay is: 24.58 ms
+Queueing delay is: 9.309 ms
+
+For packet 106:
+Total round trip delay is: 24.583 ms
+Queueing delay is: 9.312 ms
+
+For packet 107:
+Total round trip delay is: 24.624 ms
+Queueing delay is: 9.353001 ms
+
+For packet 108:
+Total round trip delay is: 24.676 ms
+Queueing delay is: 9.405001 ms
+
+For packet 109:
+Total round trip delay is: 24.68 ms
+Queueing delay is: 9.409 ms
+
+For packet 110:
+Total round trip delay is: 24.715 ms
+Queueing delay is: 9.444 ms
+
+For packet 111:
+Total round trip delay is: 24.842 ms
+Queueing delay is: 9.570999 ms
+
+For packet 112:
+Total round trip delay is: 24.844 ms
+Queueing delay is: 9.573 ms
+
+For packet 113:
+Total round trip delay is: 24.866 ms
+Queueing delay is: 9.594999 ms
+
+For packet 114:
+Total round trip delay is: 25.017 ms
+Queueing delay is: 9.746 ms
+
+For packet 115:
+Total round trip delay is: 25.036 ms
+Queueing delay is: 9.764999 ms
+
+For packet 116:
+Total round trip delay is: 25.157 ms
+Queueing delay is: 9.886 ms
+
+For packet 117:
+Total round trip delay is: 25.188 ms
+Queueing delay is: 9.917 ms
+
+For packet 118:
+Total round trip delay is: 25.301 ms
+Queueing delay is: 10.030001 ms
+
+For packet 119:
+Total round trip delay is: 25.549 ms
+Queueing delay is: 10.278 ms
+
+For packet 120:
+Total round trip delay is: 25.687 ms
+Queueing delay is: 10.416 ms
+
+For packet 121:
+Total round trip delay is: 25.711 ms
+Queueing delay is: 10.440001 ms
+
+For packet 122:
+Total round trip delay is: 25.751 ms
+Queueing delay is: 10.48 ms
+
+For packet 123:
+Total round trip delay is: 25.793 ms
+Queueing delay is: 10.521999 ms
+
+For packet 124:
+Total round trip delay is: 26.041 ms
+Queueing delay is: 10.77 ms
+
+For packet 125:
+Total round trip delay is: 26.228 ms
+Queueing delay is: 10.957001 ms
+
+For packet 126:
+Total round trip delay is: 26.232 ms
+Queueing delay is: 10.961 ms
+
+For packet 127:
+Total round trip delay is: 26.385 ms
+Queueing delay is: 11.114 ms
+
+For packet 128:
+Total round trip delay is: 26.465 ms
+Queueing delay is: 11.194 ms
+
+For packet 129:
+Total round trip delay is: 26.493 ms
+Queueing delay is: 11.222 ms
+
+For packet 130:
+Total round trip delay is: 26.621 ms
+Queueing delay is: 11.35 ms
+
+For packet 131:
+Total round trip delay is: 27.009 ms
+Queueing delay is: 11.738001 ms
+
+For packet 132:
+Total round trip delay is: 27.341 ms
+Queueing delay is: 12.07 ms
+
+For packet 133:
+Total round trip delay is: 27.767 ms
+Queueing delay is: 12.496 ms
+
+For packet 134:
+Total round trip delay is: 27.909 ms
+Queueing delay is: 12.6380005 ms
+
+For packet 135:
+Total round trip delay is: 28.016 ms
+Queueing delay is: 12.745001 ms
+
+For packet 136:
+Total round trip delay is: 28.198 ms
+Queueing delay is: 12.927 ms
+
+For packet 137:
+Total round trip delay is: 29.127 ms
+Queueing delay is: 13.856001 ms
+
+For packet 138:
+Total round trip delay is: 29.431 ms
+Queueing delay is: 14.16 ms
+
+For packet 139:
+Total round trip delay is: 30.438 ms
+Queueing delay is: 15.167 ms
+
+For packet 140:
+Total round trip delay is: 31.405 ms
+Queueing delay is: 16.134 ms
+
+For packet 141:
+Total round trip delay is: 31.419 ms
+Queueing delay is: 16.148 ms
+
+For packet 142:
+Total round trip delay is: 31.447 ms
+Queueing delay is: 16.176 ms
+
+For packet 143:
+Total round trip delay is: 31.452 ms
+Queueing delay is: 16.181 ms
+
+For packet 144:
+Total round trip delay is: 31.549 ms
+Queueing delay is: 16.278 ms
+
+For packet 145:
+Total round trip delay is: 33.419 ms
+Queueing delay is: 18.147999 ms
+
+For packet 146:
+Total round trip delay is: 34.259 ms
+Queueing delay is: 18.987999 ms
+
+For packet 147:
+Total round trip delay is: 34.547 ms
+Queueing delay is: 19.276001 ms
+
+For packet 148:
+Total round trip delay is: 35.735 ms
+Queueing delay is: 20.464 ms
+
+For packet 149:
+Total round trip delay is: 65.194 ms
+Queueing delay is: 49.923 ms
+
+The average round trip queueing delay is: 7.3350863 ms
