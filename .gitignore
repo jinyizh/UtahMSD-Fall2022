@@ -46,6 +46,7 @@
 
 ## for MSD Assignment submission
 *.pages
+**/CS6012/*/*.pdf
 *.properties
 *.zip
 *.rtf
@@ -55,5 +56,6 @@
 **/*.xcodeproj/*
 
 
-## CLion filefolders
+## CLion filefolders and other C++ files
 **/cmake-build-debug/*
+*.o

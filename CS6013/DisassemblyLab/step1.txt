@@ -1,0 +1,9 @@
+#include <cstdio>
+
+template <typename T> T add(T x, T y) {
+	return x + y;
+}
+
+int main() {
+	printf("%d", add(3, 1));
+}

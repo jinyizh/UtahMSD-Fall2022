@@ -1,0 +1,1661 @@
+Script started on Thu Jan 26 14:50:07 2023
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004hcclang++ *.cpp -o program[?2004l
+[1mDepartment.cpp:143:47: [0m[0;1;35mwarning: [0m[1mif statement has empty body [-Wempty-body][0m
+                if (E.getID() == Programmers->at(i).getID());
+[0;1;32m                                                            ^
+[0m[1mDepartment.cpp:143:47: [0m[0;1;30mnote: [0mput the semicolon on a separate line to silence this warning[0m
+[1mDepartment.cpp:162:10: [0m[0;1;35mwarning: [0m[1mexpression result unused [-Wunused-value][0m
+    for (i; i < Programmers->size(); i++)
+[0;1;32m         ^
+[0m[1mDepartment.cpp:170:10: [0m[0;1;35mwarning: [0m[1mexpression result unused [-Wunused-value][0m
+    for (i; i < SoftwareArchitects->size(); i++)
+[0;1;32m         ^
+[0m3 warnings generated.
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004hlls -l[?2004l
+total 568
+-rwxrwxrwx@ 1 jinyizhou  staff    4064 Oct 11  2018 Department.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff    1486 Oct  8  2018 Department.h
+-rw-r--r--@ 1 jinyizhou  staff   15076 Jan 26 14:48 Expected_Output.docx
+-rw-r--r--@ 1 jinyizhou  staff    1204 Jan 26 16:03 JinyiZhou.txt
+-rw-r--r--@ 1 jinyizhou  staff   13406 Jan 26 14:48 Report (1).docx
+-rw-r--r--@ 1 jinyizhou  staff   13406 Jan 26 14:48 Report.docx
+-rwxrwxrwx@ 1 jinyizhou  staff     998 Oct 11  2018 employeeClass.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff     625 Oct 11  2018 employeeClass.h
+-rwxrwxrwx@ 1 jinyizhou  staff    4996 Oct  8  2018 main.cpp
+-rwxr-xr-x  1 jinyizhou  staff  193380 Jan 26 16:03 program
+-rwxrwxrwx@ 1 jinyizhou  staff     955 Mar 15  2018 programmerClass.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff     595 Mar 15  2018 programmerClass.h
+-rwxrwxrwx@ 1 jinyizhou  staff    1072 Mar 15  2018 softwarearchitectClass.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff     633 Mar 15  2018 softwarearchitectClass.h
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004hcclang++ -g -O0 *.cpp -o program_new[?2004l
+[1mDepartment.cpp:143:47: [0m[0;1;35mwarning: [0m[1mif statement has empty body [-Wempty-body][0m
+                if (E.getID() == Programmers->at(i).getID());
+[0;1;32m                                                            ^
+[0m[1mDepartment.cpp:143:47: [0m[0;1;30mnote: [0mput the semicolon on a separate line to silence this warning[0m
+[1mDepartment.cpp:162:10: [0m[0;1;35mwarning: [0m[1mexpression result unused [-Wunused-value][0m
+    for (i; i < Programmers->size(); i++)
+[0;1;32m         ^
+[0m[1mDepartment.cpp:170:10: [0m[0;1;35mwarning: [0m[1mexpression result unused [-Wunused-value][0m
+    for (i; i < SoftwareArchitects->size(); i++)
+[0;1;32m         ^
+[0m3 warnings generated.
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004hlls -l[?2004l
+total 1208
+-rwxrwxrwx@ 1 jinyizhou  staff    4064 Oct 11  2018 Department.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff    1486 Oct  8  2018 Department.h
+-rw-r--r--@ 1 jinyizhou  staff   15076 Jan 26 14:48 Expected_Output.docx
+-rw-r--r--@ 1 jinyizhou  staff    2664 Jan 26 16:18 JinyiZhou.txt
+-rw-r--r--@ 1 jinyizhou  staff   13406 Jan 26 14:48 Report (1).docx
+-rw-r--r--@ 1 jinyizhou  staff   13406 Jan 26 14:48 Report.docx
+-rwxrwxrwx@ 1 jinyizhou  staff     998 Oct 11  2018 employeeClass.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff     625 Oct 11  2018 employeeClass.h
+-rwxrwxrwx@ 1 jinyizhou  staff    4996 Oct  8  2018 main.cpp
+-rwxr-xr-x  1 jinyizhou  staff  193380 Jan 26 16:03 program
+-rwxr-xr-x  1 jinyizhou  staff  324584 Jan 26 16:19 program_new
+drwxr-xr-x  3 jinyizhou  staff      96 Jan 26 16:19 program_new.dSYM
+-rwxrwxrwx@ 1 jinyizhou  staff     955 Mar 15  2018 programmerClass.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff     595 Mar 15  2018 programmerClass.h
+-rwxrwxrwx@ 1 jinyizhou  staff    1072 Mar 15  2018 softwarearchitectClass.cpp
+-rwxrwxrwx@ 1 jinyizhou  staff     633 Mar 15  2018 softwarearchitectClass.h
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004h../
+[JDepartment.cpp*              main.cpp*                    programmerClass.cpp*
+Department.h*                program*                     programmerClass.h*
+employeeClass.cpp*           program_new*                 softwarearchitectClass.cpp*
+employeeClass.h*             program_new.dSYM/            softwarearchitectClass.h*[4A[0m[27m[24m[36C./[Kpro
+[J[A[41Cgram
+[J[Jprogram*              program_new.dSYM/     programmerClass.h*    
+program_new*          programmerClass.cpp*  [A[A[0m[27m[24m[36C./program[K[?2004l
+[J  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+ Listing All Project IDs: 
+-------------------------
+The Highest R&D Employee Salary is: 5500.00
+The Highest R&D Programmer Salary is: 2150.00
+The Highest R&D Software Architect Salary is: 1900.00
+
+The Average R&D Employee Salary is: 5500
+The Average R&D Programmer Salary is: 2150
+The Average R&D Software Architect Salary is: 1900
+
+The Average IT Employee Salary is: 0
+The Average IT Programmer Salary is: 1700
+The Average IT Software Architect Salary is: 0
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004h./program[9Dls -l    clang++ -g -O0 *.cpp -o program_new[35Dls -l                              [30Dclang++ *.cpp -o program[?2004l
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004h。/   ../program[?2004l
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+ Listing All Project IDs:  5 8
+-------------------------
+The Highest R&D Employee Salary is: 5500.00
+The Highest R&D Programmer Salary is: 2150.00
+The Highest R&D Software Architect Salary is: 1900.00
+
+The Average R&D Employee Salary is: 5500
+The Average R&D Programmer Salary is: 2150
+The Average R&D Software Architect Salary is: 1900
+
+The Average IT Employee Salary is: 0
+The Average IT Programmer Salary is: 1700
+The Average IT Software Architect Salary is: 0
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004h./program[9Dclang++ *.cpp -o program[24D./program               [15D[9Dls -l    clang++ -g -O0 *.cpp -o program_new[?2004l
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004hllldb program
+[Jprogram*              program_new.dSYM/     programmerClass.h*    
+program_new*          programmerClass.cpp*  [A[A[0m[27m[24m[36Clldb program[K_
+[J[A[49Cnew
+[J[Jprogram_new*       program_new.dSYM/[A[0m[27m[24m[36Clldb program_new[K[?2004l
+[J(lldb) target create "program_new"
+[2mLocating external symbol file for program_new...[0m[K[2K[2mLoading Apple DWARF index for program_new...[0m[K[2K[2mLocating external symbol file for dyld...[0m[K[2K[2mParsing symbol table for dyld...[0m[K[2K[2mLocating external symbol file for libc++.1.dylib...[0m[K[2K[2mParsing symbol table for libc++.1.dylib...[0m[K[2K[2mLocating external symbol file for libSystem.B.dylib...[0m[K[2K[2mParsing symbol table for libSystem.B.dylib...[0m[K[2K[2mLocating external symbol file for libc++abi.dylib...[0m[K[2K[2mParsing symbol table for libc++abi.dylib...[0m[K[2K[2mLocating external symbol file for libcache.dylib...[0m[K[2K[2mParsing symbol table for libcache.dylib...[0m[K[2K[2mLocating external symbol file for libcommonCrypto.dylib...[0m[K[2K[2mParsing symbol table for libcommonCrypto.dylib...[0m[K[2K[2mLocating external symbol file for libcompiler_rt.dylib...[0m[K[2K[2mParsing symbol table for libcompiler_rt.dylib...[0m[K[2K[2mLocating external symbol file for libcopyfile.dylib...[0m[K[2K[2mParsing symbol table for libcopyfile.dylib...[0m[K[2K[2mLocating external symbol file for libcorecrypto.dylib...[0m[K[2K[2mParsing symbol table for libcorecrypto.dylib...[0m[K[2K[2mLocating external symbol file for libdispatch.dylib...[0m[K[2K[2mParsing symbol table for libdispatch.dylib...[0m[K[2K[2mLocating external symbol file for libdyld.dylib...[0m[K[2K[2mParsing symbol table for libdyld.dylib...[0m[K[2K[2mLocating external symbol file for libkeymgr.dylib...[0m[K[2K[2mParsing symbol table for libkeymgr.dylib...[0m[K[2K[2mLocating external symbol file for libmacho.dylib...[0m[K[2K[2mParsing symbol table for libmacho.dylib...[0m[K[2K[2mLocating external symbol file for libquarantine.dylib...[0m[K[2K[2mParsing symbol table for libquarantine.dylib...[0m[K[2K[2mLocating external symbol file for libremovefile.dylib...[0m[K[2K[2mParsing symbol table for libremovefile.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_asl.dylib...[0m[K[2K[2mParsing symbol table for libsystem_asl.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_blocks.dylib...[0m[K[2K[2mParsing symbol table for libsystem_blocks.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_c.dylib...[0m[K[2K[2mParsing symbol table for libsystem_c.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_collections.dylib...[0m[K[2K[2mParsing symbol table for libsystem_collections.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_configuration.dylib...[0m[K[2K[2mParsing symbol table for libsystem_configuration.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_containermanager.dylib...[0m[K[2K[2mParsing symbol table for libsystem_containermanager.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_coreservices.dylib...[0m[K[2K[2mParsing symbol table for libsystem_coreservices.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_darwin.dylib...[0m[K[2K[2mParsing symbol table for libsystem_darwin.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_dnssd.dylib...[0m[K[2K[2mParsing symbol table for libsystem_dnssd.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_featureflags.dylib...[0m[K[2K[2mParsing symbol table for libsystem_featureflags.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_info.dylib...[0m[K[2K[2mParsing symbol table for libsystem_info.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_m.dylib...[0m[K[2K[2mParsing symbol table for libsystem_m.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_malloc.dylib...[0m[K[2K[2mParsing symbol table for libsystem_malloc.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_networkextension.dylib...[0m[K[2K[2mParsing symbol table for libsystem_networkextension.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_notify.dylib...[0m[K[2K[2mParsing symbol table for libsystem_notify.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_sandbox.dylib...[0m[K[2K[2mParsing symbol table for libsystem_sandbox.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_secinit.dylib...[0m[K[2K[2mParsing symbol table for libsystem_secinit.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_kernel.dylib...[0m[K[2K[2mParsing symbol table for libsystem_kernel.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_platform.dylib...[0m[K[2K[2mParsing symbol table for libsystem_platform.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_pthread.dylib...[0m[K[2K[2mParsing symbol table for libsystem_pthread.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_symptoms.dylib...[0m[K[2K[2mParsing symbol table for libsystem_symptoms.dylib...[0m[K[2K[2mLocating external symbol file for libsystem_trace.dylib...[0m[K[2K[2mParsing symbol table for libsystem_trace.dylib...[0m[K[2K[2mLocating external symbol file for libunwind.dylib...[0m[K[2K[2mParsing symbol table for libunwind.dylib...[0m[K[2K[2mLocating external symbol file for libxpc.dylib...[0m[K[2K[2mParsing symbol table for libxpc.dylib...[0m[K[2K[2mLocating external symbol file for libobjc.A.dylib...[0m[K[2K[2mParsing symbol table for libobjc.A.dylib...[0m[K[2K[2mLocating external symbol file for liboah.dylib...[0m[K[2K[2mParsing symbol table for liboah.dylib...[0m[K[2K[2mParsing symbol table for program_new...[0m[K[2KCurrent executable set to '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64).
+(lldb) [1G[2m(lldb) [0m[8Grun
+Process 4661 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+ Listing All Project IDs:  5 8
+-------------------------
+The Highest R&D Employee Salary is: 5500.00
+The Highest R&D Programmer Salary is: 2150.00
+The Highest R&D Software Architect Salary is: 1900.00
+
+The Average R&D Employee Salary is: 5500
+The Average R&D Programmer Salary is: 2150
+The Average R&D Software Architect Salary is: 1900
+
+The Average IT Employee Salary is: 0
+The Average IT Programmer Salary is: 1700
+The Average IT Software Architect Salary is: 0
+Process 4661 exited with status = 0 (0x00000000) 
+(lldb) [1G[2m(lldb) [0m[8Gb employeeClass.cpp [1G[2m(lldb) [0m[28G: 20
+Breakpoint 1: where = program_new`Employee::Employee(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, double, int) + 172 at employeeClass.cpp:20:3, address = 0x0000000100008a88
+(lldb) [1G[2m(lldb) [0m[8Gbr del
+About to delete all breakpoints, do you want to do that?: [Y/n] Y
+All breakpoints removed. (1 breakpoint)
+(lldb) [1G[2m(lldb) [0m[8Gbr del[1G[2m(lldb) [0m[14G[9G employeeClass.cpp : 20[1G[2m(lldb) [0m[32G[K[1G[2m(lldb) [0m[31G1
+Breakpoint 2: where = program_new`Employee::Employee(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, double, int) + 220 at employeeClass.cpp:21:3, address = 0x0000000100008ab8
+(lldb) [1G[2m(lldb) [0m[8Grun
+Process 5377 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 2.1[0m
+    frame #0: [33m0x0000000100008ab8[0m program_new`Employee::Employee(this=0x000000016fdff3f0, nme="Josh", id=1, jobTitle="Technology Specialist", slry=3000, yr=2015) at [36memployeeClass.cpp[0m:[33m21[0m:[33m3[0m
+[33m  [0m 18  		jobTitle = jobTitle;
+[33m  [0m 19  	
+[33m  [0m 20  		(slry > [31m0[0m) ? salary = slry : salary = [31m0.00[0m;
+[33m->[0m 21  		([4myr[0m > [31m0[0m) ? HireYear = yr : HireYear = [31m2018[0m;
+[33m  [0m 22  	
+[33m  [0m 23  	}
+[33m  [0m 24  	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gfr v
+(Employee *) this = 0x000000016fdff3f0
+(std::string) nme = "Josh"
+(long) id = 1
+(std::string) jobTitle = "Technology Specialist"
+(double) slry = 3000
+(int) yr = 2015
+(lldb) [1G[2m(lldb) [0m[8Gframe info
+frame #0: [33m0x0000000100008ab8[0m program_new`Employee::Employee(this=0x000000016fdff3f0, nme="Josh", id=1, jobTitle="Technology Specialist", slry=3000, yr=2015) at [36memployeeClass.cpp[0m:[33m21[0m:[33m3[0m
+(lldb) [1G[2m(lldb) [0m[8Gprint salary [1G[2m(lldb) [0m[21Gar[K[1G[2m(lldb) [0m[22G[K[1G[2m(lldb) [0m[21G[1G[2m(lldb) [0m[20G
+(double) $0 = 3000
+(lldb) [1G[2m(lldb) [0m[8Gprint ID
+(long) $1 = 0
+(lldb) [1G[2m(lldb) [0m[8Gprint jobTitle
+(std::string) $2 = "Technology Specialist"
+(lldb) [1G[2m(lldb) [0m[8Gprint this->jobTitle
+(std::string) $3 = ""
+(lldb) [1G[2m(lldb) [0m[8Gb main.cpp [1G[2m(lldb) [0m[19G: 90
+Breakpoint 3: where = program_new`main + 3988 at main.cpp:90:68, address = 0x000000010000af30
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x0000000100008ae8[0m program_new`Employee::Employee(this=0x000000016fdff3f0, nme="Josh", id=1, jobTitle="Technology Specialist", slry=3000, yr=2015) at [36memployeeClass.cpp[0m:[33m23[0m:[33m1[0m
+[33m  [0m 20  		(slry > [31m0[0m) ? salary = slry : salary = [31m0.00[0m;
+[33m  [0m 21  		(yr > [31m0[0m) ? HireYear = yr : HireYear = [31m2018[0m;
+[33m  [0m 22  	
+[33m->[0m 23  	[4m}[0m
+[33m  [0m 24  	
+[33m  [0m 25  	[35m/* Accessor Functions */[0m
+[33m  [0m 26  	string Employee::getName() [32mconst[0m {
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x0000000100008b9c[0m program_new`Employee::Employee(this=0x000000016fdff3f0, nme=<unavailable>, id=1, jobTitle=<unavailable>, slry=3000, yr=2015) at [36memployeeClass.cpp[0m:[33m23[0m:[33m1[0m
+[33m  [0m 20  		(slry > [31m0[0m) ? salary = slry : salary = [31m0.00[0m;
+[33m  [0m 21  		(yr > [31m0[0m) ? HireYear = yr : HireYear = [31m2018[0m;
+[33m  [0m 22  	
+[33m->[0m 23  	[4m}[0m
+[33m  [0m 24  	
+[33m  [0m 25  	[35m/* Accessor Functions */[0m
+[33m  [0m 26  	string Employee::getName() [32mconst[0m {
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x000000010000a07c[0m program_new`main at [36mmain.cpp[0m:[33m20[0m:[33m11[0m
+[33m  [0m 17  		Department RnD("Research and Development", [31m1[0m);
+[33m  [0m 18  		Department IT("Info And Tech", [31m2[0m);
+[33m  [0m 19  		[35m//creating new Employees[0m
+[33m->[0m 20  		Employee [4mE1[0m("Josh", [31m1[0m, "Technology Specialist", [31m3000[0m, [31m2015[0m);
+[33m  [0m 21  		Employee E2("Mary", [31m2[0m, "Project Manager", [31m5500[0m, [31m2010[0m);
+[33m  [0m 22  		Employee E3("Marc", [31m3[0m, "Research Team Leader", [31m8000[0m, [31m2007[0m);
+[33m  [0m 23  		[35m//adding the employees to the appropriate vector[0m
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x000000010000a0a4[0m program_new`main at [36mmain.cpp[0m:[33m21[0m:[33m14[0m
+[33m  [0m 18  		Department IT("Info And Tech", [31m2[0m);
+[33m  [0m 19  		[35m//creating new Employees[0m
+[33m  [0m 20  		Employee E1("Josh", [31m1[0m, "Technology Specialist", [31m3000[0m, [31m2015[0m);
+[33m->[0m 21  		Employee E2([4m"Mary"[0m, [31m2[0m, "Project Manager", [31m5500[0m, [31m2010[0m);
+[33m  [0m 22  		Employee E3("Marc", [31m3[0m, "Research Team Leader", [31m8000[0m, [31m2007[0m);
+[33m  [0m 23  		[35m//adding the employees to the appropriate vector[0m
+[33m  [0m 24  		RnD.Employees->push_back(E1);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 2.1[0m
+    frame #0: [33m0x0000000100008ab8[0m program_new`Employee::Employee(this=0x000000016fdff358, nme="Mary", id=2, jobTitle="Project Manager", slry=5500, yr=2010) at [36memployeeClass.cpp[0m:[33m21[0m:[33m3[0m
+[33m  [0m 18  		jobTitle = jobTitle;
+[33m  [0m 19  	
+[33m  [0m 20  		(slry > [31m0[0m) ? salary = slry : salary = [31m0.00[0m;
+[33m->[0m 21  		([4myr[0m > [31m0[0m) ? HireYear = yr : HireYear = [31m2018[0m;
+[33m  [0m 22  	
+[33m  [0m 23  	}
+[33m  [0m 24  	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x0000000100008ae8[0m program_new`Employee::Employee(this=0x000000016fdff358, nme="Mary", id=2, jobTitle="Project Manager", slry=5500, yr=2010) at [36memployeeClass.cpp[0m:[33m23[0m:[33m1[0m
+[33m  [0m 20  		(slry > [31m0[0m) ? salary = slry : salary = [31m0.00[0m;
+[33m  [0m 21  		(yr > [31m0[0m) ? HireYear = yr : HireYear = [31m2018[0m;
+[33m  [0m 22  	
+[33m->[0m 23  	[4m}[0m
+[33m  [0m 24  	
+[33m  [0m 25  	[35m/* Accessor Functions */[0m
+[33m  [0m 26  	string Employee::getName() [32mconst[0m {
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x0000000100008b9c[0m program_new`Employee::Employee(this=0x000000016fdff358, nme=<unavailable>, id=2, jobTitle=<unavailable>, slry=5500, yr=2010) at [36memployeeClass.cpp[0m:[33m23[0m:[33m1[0m
+[33m  [0m 20  		(slry > [31m0[0m) ? salary = slry : salary = [31m0.00[0m;
+[33m  [0m 21  		(yr > [31m0[0m) ? HireYear = yr : HireYear = [31m2018[0m;
+[33m  [0m 22  	
+[33m->[0m 23  	[4m}[0m
+[33m  [0m 24  	
+[33m  [0m 25  	[35m/* Accessor Functions */[0m
+[33m  [0m 26  	string Employee::getName() [32mconst[0m {
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gn
+Process 5377 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep over[0m
+    frame #0: [33m0x000000010000a0e8[0m program_new`main at [36mmain.cpp[0m:[33m21[0m:[33m11[0m
+[33m  [0m 18  		Department IT("Info And Tech", [31m2[0m);
+[33m  [0m 19  		[35m//creating new Employees[0m
+[33m  [0m 20  		Employee E1("Josh", [31m1[0m, "Technology Specialist", [31m3000[0m, [31m2015[0m);
+[33m->[0m 21  		Employee [4mE2[0m("Mary", [31m2[0m, "Project Manager", [31m5500[0m, [31m2010[0m);
+[33m  [0m 22  		Employee E3("Marc", [31m3[0m, "Research Team Leader", [31m8000[0m, [31m2007[0m);
+[33m  [0m 23  		[35m//adding the employees to the appropriate vector[0m
+[33m  [0m 24  		RnD.Employees->push_back(E1);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gbr del 2
+1 breakpoints deleted; 0 breakpoint locations disabled.
+(lldb) [1G[2m(lldb) [0m[8Grun
+There is a running process, kill it and restart?: [Y/n] Y
+Process 5377 exited with status = 9 (0x00000009) 
+Process 5620 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 3.1[0m
+    frame #0: [33m0x000000010000af30[0m program_new`main at [36mmain.cpp[0m:[33m90[0m:[33m68[0m
+[33m  [0m 87  		cout << "\n  Here is the List of all the Programmers who know C++ in the R&D Department: \n";
+[33m  [0m 88  		cout << "  ---------------------------------------------------------------------------\n";
+[33m  [0m 89  		printHeader();
+[33m->[0m 90  		vector<Programmer> *CppProgrammers = RnD.getProgrammersByLanguage([4m"C++"[0m);
+[33m  [0m 91  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < CppProgrammers->size(); i++)
+[33m  [0m 92  		{
+[33m  [0m 93  			cout << "\n";
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001300[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m120[0m:[33m34[0m
+[33m  [0m 117 	
+[33m  [0m 118 	vector<Programmer> *Department::getProgrammersByLanguage(string Lang)
+[33m  [0m 119 	{
+[33m->[0m 120 	    vector<Programmer> *result = [32m[4mnew[0m[0m vector<Programmer>();
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001318[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m121[0m:[33m11[0m
+[33m  [0m 118 	vector<Programmer> *Department::getProgrammersByLanguage(string Lang)
+[33m  [0m 119 	{
+[33m  [0m 120 	    vector<Programmer> *result = [32mnew[0m vector<Programmer>();
+[33m->[0m 121 		[32mfor[0m ([32mint[0m [4mi[0m = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001348[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m123[0m:[33m21[0m
+[33m  [0m 120 	    vector<Programmer> *result = [32mnew[0m vector<Programmer>();
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m->[0m 123 			Programmer temp = [4mProgrammers[0m->at(i);
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001448[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000022a8[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100002368[0m program_new`Employee::Employee(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36memployeeClass.h[0m:[33m10[0m:[33m7[0m
+[33m  [0m 7   	
+[33m  [0m 8   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 9   	
+[33m->[0m 10  	[32mclass[0m [4mEmployee[0m {
+[33m  [0m 11  		string name;
+[33m  [0m 12  		[32mint[0m age;
+[33m  [0m 13  		[32mchar[0m gender;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000023d0[0m program_new`Employee::Employee(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36memployeeClass.h[0m:[33m10[0m:[33m7[0m
+[33m  [0m 7   	
+[33m  [0m 8   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 9   	
+[33m->[0m 10  	[32mclass[0m [4mEmployee[0m {
+[33m  [0m 11  		string name;
+[33m  [0m 12  		[32mint[0m age;
+[33m  [0m 13  		[32mchar[0m gender;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000022b0[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000022fc[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001450[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100304360) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000145c[0m program_new`Programmer::Programmer(this=0x0000000000000000, (null)=0x000000016fdfe8c0) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001364[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m123[0m:[33m21[0m
+[33m  [0m 120 	    vector<Programmer> *result = [32mnew[0m vector<Programmer>();
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m->[0m 123 			Programmer temp = [4mProgrammers[0m->at(i);
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000136c[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m124[0m:[33m18[0m
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+[33m->[0m 124 	        [32mif[0m (temp.[4mgetProgLanguage[0m() == Lang)
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+[33m  [0m 127 			}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000fe5c[0m program_new`Programmer::getProgLanguage(this=0x000000016fdfe8c0) const at [36mprogrammerClass.cpp[0m:[33m34[0m:[33m9[0m
+[33m  [0m 31  	
+[33m  [0m 32  	string Programmer::getProgLanguage() [32mconst[0m
+[33m  [0m 33  	{
+[33m->[0m 34  		[32mreturn[0m [4mLanguage[0m;
+[33m  [0m 35  	}
+[33m  [0m 36  	
+[33m  [0m 37  	[32mvoid[0m Programmer::print()
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000fe6c[0m program_new`Programmer::getProgLanguage(this=0x000000016fdfe8c0) const at [36mprogrammerClass.cpp[0m:[33m34[0m:[33m2[0m
+[33m  [0m 31  	
+[33m  [0m 32  	string Programmer::getProgLanguage() [32mconst[0m
+[33m  [0m 33  	{
+[33m->[0m 34  		[32m[4mreturn[0m[0m Language;
+[33m  [0m 35  	}
+[33m  [0m 36  	
+[33m  [0m 37  	[32mvoid[0m Programmer::print()
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001370[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m124[0m:[33m18[0m
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+[33m->[0m 124 	        [32mif[0m (temp.[4mgetProgLanguage[0m() == Lang)
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+[33m  [0m 127 			}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000013a4[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m126[0m:[33m4[0m
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+[33m  [0m 125 			{
+[33m->[0m 126 				[4mresult[0m->push_back(temp);
+[33m  [0m 127 			}
+[33m  [0m 128 		}
+[33m  [0m 129 		[32mreturn[0m result;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000013b4[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m127[0m:[33m3[0m
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+[33m->[0m 127 			[4m}[0m
+[33m  [0m 128 		}
+[33m  [0m 129 		[32mreturn[0m result;
+[33m  [0m 130 	}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000013f0[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m128[0m:[33m2[0m
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+[33m  [0m 127 			}
+[33m->[0m 128 		[4m}[0m
+[33m  [0m 129 		[32mreturn[0m result;
+[33m  [0m 130 	}
+[33m  [0m 131 	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001618[0m program_new`Programmer::~Programmer(this=0x000000016fdfe8c0) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000024d0[0m program_new`Programmer::~Programmer(this=0x000000016fdfe8c0) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100002438[0m program_new`Employee::~Employee(this=0x000000016fdfe8c0) at [36memployeeClass.h[0m:[33m10[0m:[33m7[0m
+[33m  [0m 7   	
+[33m  [0m 8   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 9   	
+[33m->[0m 10  	[32mclass[0m [4mEmployee[0m {
+[33m  [0m 11  		string name;
+[33m  [0m 12  		[32mint[0m age;
+[33m  [0m 13  		[32mchar[0m gender;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100002468[0m program_new`Employee::~Employee(this=0x000000016fdfe8c0) at [36memployeeClass.h[0m:[33m10[0m:[33m7[0m
+[33m  [0m 7   	
+[33m  [0m 8   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 9   	
+[33m->[0m 10  	[32mclass[0m [4mEmployee[0m {
+[33m  [0m 11  		string name;
+[33m  [0m 12  		[32mint[0m age;
+[33m  [0m 13  		[32mchar[0m gender;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000024f4[0m program_new`Programmer::~Programmer(this=0x000000016fdfe8c0) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100002500[0m program_new`Programmer::~Programmer(this=0x000000016fdfe8c0) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000161c[0m program_new`Programmer::~Programmer(this=0x000000016fdfe8c0) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5620 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001628[0m program_new`Programmer::~Programmer(this=0x000000016fdfeb38) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gbr del 3
+1 breakpoints deleted; 0 breakpoint locations disabled.
+(lldb) [1G[2m(lldb) [0m[8Gbr[K[1G[2m(lldb) [0m[9G main.cpp [1G[2m(lldb) [0m[19G99
+Breakpoint 4: no locations (pending).
+WARNING:  Unable to resolve breakpoint to any actual locations.
+(lldb) [1G[2m(lldb) [0m[8Gb main.cpp 99[1G[2m(lldb) [0m[21G  99[1G[2m(lldb) [0m[19G: 99[1G[2m(lldb) [0m[20G
+Breakpoint 5: where = program_new`main + 4228 at main.cpp:99:19, address = 0x000000010000b020
+(lldb) [1G[2m(lldb) [0m[8Grun
+There is a running process, kill it and restart?: [Y/n] Y
+Process 5620 exited with status = 9 (0x00000009) 
+Process 5647 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 5.1[0m
+    frame #0: [33m0x000000010000b020[0m program_new`main at [36mmain.cpp[0m:[33m99[0m:[33m19[0m
+[33m  [0m 96  	
+[33m  [0m 97  		cout << "\n Listing All Project IDs: ";
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m->[0m 99  	    [32mfor[0m ([32munsigned[0m [4mi[0m=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b054[0m program_new`main at [36mmain.cpp[0m:[33m101[0m:[33m8[0m
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m->[0m 101 			cout [4m<<[0m" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b08c[0m program_new`main at [36mmain.cpp[0m:[33m102[0m:[33m2[0m
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m->[0m 102 		[4m}[0m
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+[33m  [0m 105 		
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b090[0m program_new`main at [36mmain.cpp[0m:[33m99[0m:[33m50[0m
+[33m  [0m 96  	
+[33m  [0m 97  		cout << "\n Listing All Project IDs: ";
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m->[0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i[4m++[0m)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gprint Al[K(lldb) print All[1G[2m(lldb) [0m[17G
+[JAvailable completions:
+	AllProjects      -- vector<int, allocator<int>> *&
+	AllITEmployees   -- vector<Employee *, allocator<Employee *>> *&
+	AllRnDEmployees1 -- vector<Employee *, allocator<Employee *>> *&
+	AllRnDEmployees2 -- vector<Employee *, allocator<Employee *>> *&
+[1G[J[2m(lldb) [0m [17G[K(lldb) print All[1G[2m(lldb) [0m[17GProjects [1G[2m(lldb) [0m[26G[1G[2m(lldb) [0m[25G->at(i)
+(std::__vector_base<int, std::allocator<int> >::value_type) $4 = 5
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b054[0m program_new`main at [36mmain.cpp[0m:[33m101[0m:[33m8[0m
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m->[0m 101 			cout [4m<<[0m" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b08c[0m program_new`main at [36mmain.cpp[0m:[33m102[0m:[33m2[0m
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m->[0m 102 		[4m}[0m
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+[33m  [0m 105 		
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b090[0m program_new`main at [36mmain.cpp[0m:[33m99[0m:[33m50[0m
+[33m  [0m 96  	
+[33m  [0m 97  		cout << "\n Listing All Project IDs: ";
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m->[0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i[4m++[0m)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5647 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b0ac[0m program_new`main at [36mmain.cpp[0m:[33m103[0m:[33m7[0m
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+[33m->[0m 103 		cout [4m<<[0m "\n-------------------------\n";
+[33m  [0m 104 	
+[33m  [0m 105 		
+[33m  [0m 106 		cout << "The Highest R&D Employee Salary is: " << RnD.CalculateMaxSalary(RnD.EMPLOYEE) << endl;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs[1G[2m(lldb) [0m[9Gprint AllProjects->at(i)[1G[2m(lldb) [0m[32G[8Gs[K[1G[2m(lldb) [0m[9Gprint AllProjects->at(i)[1G[2m(lldb) [0m[32G
+error: expression failed to parse:
+error: <user expression 9>:1:17: use of undeclared identifier 'i'
+AllProjects->at(i)
+                ^
+(lldb) [1G[2m(lldb) [0m[8Grun
+There is a running process, kill it and restart?: [Y/n] y
+Process 5647 exited with status = 9 (0x00000009) 
+Process 5650 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+Process 5650 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 5.1[0m
+    frame #0: [33m0x000000010000b020[0m program_new`main at [36mmain.cpp[0m:[33m99[0m:[33m19[0m
+[33m  [0m 96  	
+[33m  [0m 97  		cout << "\n Listing All Project IDs: ";
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m->[0m 99  	    [32mfor[0m ([32munsigned[0m [4mi[0m=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5650 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b054[0m program_new`main at [36mmain.cpp[0m:[33m101[0m:[33m8[0m
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m->[0m 101 			cout [4m<<[0m" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs[1G[2m(lldb) [0m[9Grun[1G[2m(lldb) [0m[11Gprint AllProjects->at(i)[1G[2m(lldb) [0m[32G
+(std::__vector_base<int, std::allocator<int> >::value_type) $5 = 5
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5650 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b08c[0m program_new`main at [36mmain.cpp[0m:[33m102[0m:[33m2[0m
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m->[0m 102 		[4m}[0m
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+[33m  [0m 105 		
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5650 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b090[0m program_new`main at [36mmain.cpp[0m:[33m99[0m:[33m50[0m
+[33m  [0m 96  	
+[33m  [0m 97  		cout << "\n Listing All Project IDs: ";
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m->[0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i[4m++[0m)
+[33m  [0m 100 		{
+[33m  [0m 101 			cout <<" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 5650 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b054[0m program_new`main at [36mmain.cpp[0m:[33m101[0m:[33m8[0m
+[33m  [0m 98  		vector<[32mint[0m> *AllProjects = RnD.getAllProjectIDs();
+[33m  [0m 99  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < AllProjects->size(); i++)
+[33m  [0m 100 		{
+[33m->[0m 101 			cout [4m<<[0m" "<<AllProjects->at(i);
+[33m  [0m 102 		}
+[33m  [0m 103 		cout << "\n-------------------------\n";
+[33m  [0m 104 	
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs[1G[2m(lldb) [0m[9Gprint AllProjects->at(i)[1G[2m(lldb) [0m[32G
+(std::__vector_base<int, std::allocator<int> >::value_type) $6 = 8
+(lldb) [1G[2m(lldb) [0m[8Gb main
+[JAvailable completions:
+	main.cpp              
+	main                  
+	main_image_has_section
+[1G[J[2m(lldb) [0m [14G[K(lldb) b main[1G[2m(lldb) [0m[14G
+[JAvailable completions:
+	main.cpp              
+	main                  
+	main_image_has_section
+[1G[J[2m(lldb) [0m [14G[K(lldb) b main[1G[2m(lldb) [0m[14G.cpp [1G[2m(lldb) [0m[19G: 90
+Breakpoint 6: where = program_new`main + 3988 at main.cpp:90:68, address = 0x000000010000af30
+(lldb) [1G[2m(lldb) [0m[8Grun
+There is a running process, kill it and restart?: [Y/n] Y
+Process 5650 exited with status = 9 (0x00000009) 
+Process 6162 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+Process 6162 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 6.1[0m
+    frame #0: [33m0x000000010000af30[0m program_new`main at [36mmain.cpp[0m:[33m90[0m:[33m68[0m
+[33m  [0m 87  		cout << "\n  Here is the List of all the Programmers who know C++ in the R&D Department: \n";
+[33m  [0m 88  		cout << "  ---------------------------------------------------------------------------\n";
+[33m  [0m 89  		printHeader();
+[33m->[0m 90  		vector<Programmer> *CppProgrammers = RnD.getProgrammersByLanguage([4m"C++"[0m);
+[33m  [0m 91  	    [32mfor[0m ([32munsigned[0m i=[31m0[0m; i < CppProgrammers->size(); i++)
+[33m  [0m 92  		{
+[33m  [0m 93  			cout << "\n";
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 6162 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001300[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m120[0m:[33m34[0m
+[33m  [0m 117 	
+[33m  [0m 118 	vector<Programmer> *Department::getProgrammersByLanguage(string Lang)
+[33m  [0m 119 	{
+[33m->[0m 120 	    vector<Programmer> *result = [32m[4mnew[0m[0m vector<Programmer>();
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 6162 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001318[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m121[0m:[33m11[0m
+[33m  [0m 118 	vector<Programmer> *Department::getProgrammersByLanguage(string Lang)
+[33m  [0m 119 	{
+[33m  [0m 120 	    vector<Programmer> *result = [32mnew[0m vector<Programmer>();
+[33m->[0m 121 		[32mfor[0m ([32mint[0m [4mi[0m = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m  [0m 123 			Programmer temp = Programmers->at(i);
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 6162 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001348[0m program_new`Department::getProgrammersByLanguage(this=0x000000016fdff4d0, Lang="C++") at [36mDepartment.cpp[0m:[33m123[0m:[33m21[0m
+[33m  [0m 120 	    vector<Programmer> *result = [32mnew[0m vector<Programmer>();
+[33m  [0m 121 		[32mfor[0m ([32mint[0m i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 122 		{
+[33m->[0m 123 			Programmer temp = [4mProgrammers[0m->at(i);
+[33m  [0m 124 	        [32mif[0m (temp.getProgLanguage() == Lang)
+[33m  [0m 125 			{
+[33m  [0m 126 				result->push_back(temp);
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 6162 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001448[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100204570) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 6162 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x00000001000022a8[0m program_new`Programmer::Programmer(this=0x000000016fdfe8c0, (null)=0x0000000100204570) at [36mprogrammerClass.h[0m:[33m7[0m:[33m7[0m
+[33m  [0m 4   	#include "employeeClass.h"
+[33m  [0m 5   	[32musing[0m [32mnamespace[0m std;
+[33m  [0m 6   	
+[33m->[0m 7   	[32mclass[0m [4mProgrammer[0m : [32mpublic[0m Employee {
+[33m  [0m 8   		string supervisorName;
+[33m  [0m 9   		[32mint[0m ProjectID;
+[33m  [0m 10  		string Language;
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Grun[K[1G[2m(lldb) [0m[10G[K[1G[2m(lldb) [0m[9G[K[1G[2m(lldb) [0m[8Gbr del
+About to delete all breakpoints, do you want to do that?: [Y/n] y
+All breakpoints removed. (3 breakpoints)
+(lldb) [1G[2m(lldb) [0m[8Grun
+There is a running process, kill it and restart?: [Y/n] y
+Process 6162 exited with status = 9 (0x00000009) 
+Process 9905 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+ Listing All Project IDs:  5 8
+-------------------------
+The Highest R&D Employee Salary is: 5500.00
+The Highest R&D Programmer Salary is: 2150.00
+The Highest R&D Software Architect Salary is: 1900.00
+
+The Average R&D Employee Salary is: 5500
+The Average R&D Programmer Salary is: 2150
+The Average R&D Software Architect Salary is: 1900
+
+The Average IT Employee Salary is: 0
+The Average IT Programmer Salary is: 1700
+The Average IT Software Architect Salary is: 0
+Process 9905 exited with status = 0 (0x00000000) 
+(lldb) [1G[2m(lldb) [0m[8Gb de
+[JAvailable completions:
+	deCode                                                                                                                                                                                                                           
+	deallocate                                                                                                                                                                                                                       
+	deallocate.cold.1                                                                                                                                                                                                                
+	deallocate.cold.2                                                                                                                                                                                                                
+	deallocate.cold.3                                                                                                                                                                                                                
+	debug_control_port_for_pid                                                                                                                                                                                                       
+	debug_syscall_reject                                                                                                                                                                                                             
+	debug_syscall_reject_config                                                                                                                                                                                                      
+	debug_zone                                                                                                                                                                                                                       
+	debug_zone.cold.1                                                                                                                                                                                                                
+	dec                                                                                                                                                                                                                              
+	decltype(std::__1::__unwrap_iter_impl<Employee*, true>::__apply(declval<Employee*>())) std::__1::__unwrap_iter<Employee*, std::__1::__unwrap_iter_impl<Employee*, true> >(Employee*)                                             
+	decltype(std::__1::__unwrap_iter_impl<Programmer*, true>::__apply(declval<Programmer*>())) std::__1::__unwrap_iter<Programmer*, std::__1::__unwrap_iter_impl<Programmer*, true> >(Programmer*)                                   
+	decltype(std::__1::__unwrap_iter_impl<SoftwareArchitect*, true>::__apply(declval<SoftwareArchitect*>())) std::__1::__unwrap_iter<SoftwareArchitect*, std::__1::__unwrap_iter_impl<SoftwareArchitect*, true> >(SoftwareArchitect*)
+	decodeLen                                                                                                                                                                                                                        
+	defaultBadAllocHandler(objc_class*)                                                                                                                                                                                              
+	default_zone_batch_free                                                                                                                                                                                                          
+	default_zone_batch_malloc                                                                                                                                                                                                        
+	default_zone_calloc                                                                                                                                                                                                              
+	default_zone_check                                                                                                                                                                                                               
+	default_zone_destroy                                                                                                                                                                                                             
+	default_zone_force_lock                                                                                                                                                                                                          
+	default_zone_force_unlock                                                                                                                                                                                                        
+	default_zone_free                                                                                                                                                                                                                
+	default_zone_free_definite_size                                                                                                                                                                                                  
+	default_zone_good_size                                                                                                                                                                                                           
+	default_zone_locked                                                                                                                                                                                                              
+	default_zone_log                                                                                                                                                                                                                 
+	default_zone_malloc                                                                                                                                                                                                              
+	default_zone_malloc_claimed_address                                                                                                                                                                                              
+	default_zone_memalign                                                                                                                                                                                                            
+	default_zone_pressure_relief                                                                                                                                                                                                     
+	default_zone_print                                                                                                                                                                                                               
+	default_zone_ptr_in_use_enumerator                                                                                                                                                                                               
+	default_zone_realloc                                                                                                                                                                                                             
+	default_zone_reinit_lock                                                                                                                                                                                                         
+	default_zone_size                                                                                                                                                                                                                
+	default_zone_statistics                                                                                                                                                                                                          
+	default_zone_valloc                                                                                                                                                                                                              
+	deliver_request                                                                                                                                                                                                                  
+More (Y/n/a): 
+	demangling_terminate_handler()                                                                                                                                                                                                   
+	demangling_unexpected_handler()                                                                                                                                                                                                  
+	der_decode_boolean                                                                                                                                                                                                               
+	der_decode_data                                                                                                                                                                                                                  
+	der_decode_key_value                                                                                                                                                                                                             
+	der_decode_next                                                                                                                                                                                                                  
+	der_decode_number                                                                                                                                                                                                                
+	der_decode_string                                                                                                                                                                                                                
+	der_vm_CEType_from_context                                                                                                                                                                                                       
+	der_vm_bool_from_context                                                                                                                                                                                                         
+	der_vm_context_is_valid                                                                                                                                                                                                          
+	der_vm_execute                                                                                                                                                                                                                   
+	der_vm_execute_match_data                                                                                                                                                                                                        
+	der_vm_execute_match_integer                                                                                                                                                                                                     
+	der_vm_execute_match_string                                                                                                                                                                                                      
+	der_vm_execute_match_string_prefix                                                                                                                                                                                               
+	der_vm_execute_nocopy                                                                                                                                                                                                            
+	der_vm_integer_from_context                                                                                                                                                                                                      
+	der_vm_iterate                                                                                                                                                                                                                   
+	der_vm_string_from_context                                                                                                                                                                                                       
+	derive                                                                                                                                                                                                                           
+	desfunc                                                                                                                                                                                                                          
+	desfunc3                                                                                                                                                                                                                         
+	deskey                                                                                                                                                                                                                           
+	detach_class(objc_class*, bool)                                                                                                                                                                                                  
+	devname                                                                                                                                                                                                                          
+	devname_r                                                                                                                                                                                                                        
+[1G[J[2m(lldb) [0m [12G[K(lldb) b de[1G[2m(lldb) [0m[12Gpartment.cpp : 66
+Breakpoint 7: no locations (pending).
+WARNING:  Unable to resolve breakpoint to any actual locations.
+(lldb) [1G[2m(lldb) [0m[8Gb D
+[JAvailable completions:
+	Department.cpp                                                                                                             
+	DNSServiceAddRecord                                                                                                        
+	DNSServiceAttrCreate                                                                                                       
+	DNSServiceAttrFree                                                                                                         
+	DNSServiceAttrSetFailoverPolicy                                                                                            
+	DNSServiceAttrSetValidationData                                                                                            
+	DNSServiceAttrSetValidationPolicy                                                                                          
+	DNSServiceAttributeCreate                                                                                                  
+	DNSServiceAttributeDeallocate                                                                                              
+	DNSServiceAttributeSetAAAAPolicy                                                                                           
+	DNSServiceAttributeSetTimestamp                                                                                            
+	DNSServiceBrowse                                                                                                           
+	DNSServiceBrowseEx                                                                                                         
+	DNSServiceBrowseInternal                                                                                                   
+	DNSServiceConstructFullName                                                                                                
+	DNSServiceCreateConnection                                                                                                 
+	DNSServiceCreateDelegateConnection                                                                                         
+	DNSServiceEnumerateDomains                                                                                                 
+	DNSServiceErrorCodeToString                                                                                                
+	DNSServiceGetAddrInfo                                                                                                      
+	DNSServiceGetAddrInfoEx                                                                                                    
+	DNSServiceGetAddrInfoInternal                                                                                              
+	DNSServiceGetPID                                                                                                           
+	DNSServiceGetProperty                                                                                                      
+	DNSServiceGetRetainedResolverDefaults                                                                                      
+	DNSServiceGetValidationData                                                                                                
+	DNSServiceNATPortMappingCreate                                                                                             
+	DNSServiceProcessResult                                                                                                    
+	DNSServiceQueryRecord                                                                                                      
+	DNSServiceQueryRecordEx                                                                                                    
+	DNSServiceQueryRecordInternal                                                                                              
+	DNSServiceQueryRecordWithAttribute                                                                                         
+	DNSServiceReconfirmRecord                                                                                                  
+	DNSServiceRefDeallocate                                                                                                    
+	DNSServiceRefSockFD                                                                                                        
+	DNSServiceRegister                                                                                                         
+	DNSServiceRegisterInternal                                                                                                 
+	DNSServiceRegisterRecord                                                                                                   
+	DNSServiceRegisterRecordInternal                                                                                           
+	DNSServiceRegisterRecordWithAttribute                                                                                      
+More (Y/n/a): 
+	DNSServiceRegisterWithAttribute                                                                                            
+	DNSServiceRemoveRecord                                                                                                     
+	DNSServiceResolve                                                                                                          
+	DNSServiceResolveEx                                                                                                        
+	DNSServiceResolveInternal                                                                                                  
+	DNSServiceSendQueuedRequests                                                                                               
+	DNSServiceSetDefaultDomainForUser                                                                                          
+	DNSServiceSetDispatchQueue                                                                                                 
+	DNSServiceSetResolverDefaults                                                                                              
+	DNSServiceSleepKeepalive                                                                                                   
+	DNSServiceSleepKeepalive_sockaddr                                                                                          
+	DNSServiceUpdateRecord                                                                                                     
+	DNSServiceUpdateRecordInternal                                                                                             
+	DNSServiceUpdateRecordWithAttribute                                                                                        
+	Decrypt_Main_Loop                                                                                                          
+	Decrypt_Main_Loop_End                                                                                                      
+	DefaultMallocError                                                                                                         
+	Department::CalculateAverageSalary(Department::StaffTypes)                                                                 
+	Department::CalculateMaxSalary(Department::StaffTypes)                                                                     
+	Department::Department()                                                                                                   
+	Department::Department(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, int)         
+	Department::RemoveEmployee(Employee)                                                                                       
+	Department::checkID(int, std::__1::vector<int, std::__1::allocator<int> >*)                                                
+	Department::getAllProjectIDs()                                                                                             
+	Department::getAllStaff()                                                                                                  
+	Department::getProgrammersByLanguage(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >)
+	Department::~Department()                                                                                                  
+	Diagnostics::Diagnostics(bool)                                                                                             
+	Diagnostics::appendError(char const*, ...)                                                                                 
+	Diagnostics::assertNoError() const                                                                                         
+	Diagnostics::assertNoError() const (.cold.1)                                                                               
+	Diagnostics::clearError()                                                                                                  
+	Diagnostics::error(char const*, ...)                                                                                       
+	Diagnostics::error(char const*, char*)                                                                                     
+	Diagnostics::errorMessage() const                                                                                          
+	Diagnostics::hasError() const                                                                                              
+	Diagnostics::noError() const                                                                                               
+	Diagnostics::~Diagnostics()                                                                                                
+	DomainEndsInDot                                                                                                            
+	DyldSharedCache::isSubCachePath(char const*)                                                                               
+[1G[J[2m(lldb) [0m [11G[K(lldb) b D[1G[2m(lldb) [0m[11Gepar[K(lldb) b Department[1G[2m(lldb) [0m[20G.cpp [1G[2m(lldb) [0m[24G: 66
+Breakpoint 8: where = program_new`Department::CalculateAverageSalary(Department::StaffTypes) + 32 at Department.cpp:69:6, address = 0x0000000100000efc
+(lldb) [1G[2m(lldb) [0m[8Grun
+Process 10977 launched: '/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2/program_new' (arm64)
+  Here is the List of all the Staff in the R&D Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Josh   0                           3000.00      2015
+
+   Mary   0                           5500.00      2010
+
+   Marc   0                           8000.00      2007
+
+   Mike   0                           2500.00      2014
+
+  Julie   0                           2150.00      2013
+
+ Albert   0                           2300.00      2015
+
+   John   0                           4899.00      2011
+
+ Connor   0                           1900.00      2017
+  Here is the List of all the Staff in the IT Department: 
+  ------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+    Roy   0                           1900.00      2016
+
+   Jane   0                           1500.00      2018
+
+ Removing Mike from the company: Succeeded
+ -------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+   Mary   0                           5500.00      2010
+
+  Julie   0                           2150.00      2013
+
+ Connor   0                           1900.00      2017
+
+  Here is the List of all the Programmers who know C++ in the R&D Department: 
+  ---------------------------------------------------------------------------
+   Name  ID          Title            Salary   Year Hired  Supervisor  ProjectID Prog.Lang. #Exp Years
+
+  Julie   0                           2150.00      2013      Mary         5         C++
+
+ Listing All Project IDs:  5 8
+-------------------------
+The Highest R&D Employee Salary is: 5500.00
+The Highest R&D Programmer Salary is: 2150.00
+The Highest R&D Software Architect Salary is: 1900.00
+
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mbreakpoint 8.1[0m
+    frame #0: [33m0x0000000100000efc[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m69[0m:[33m6[0m
+[33m  [0m 66  	[32mdouble[0m Department::CalculateAverageSalary(StaffTypes type)
+[33m  [0m 67  	{
+[33m  [0m 68  	    [32mdouble[0m sum;
+[33m->[0m 69  		sum [4m=[0m [31m0.0[0m;
+[33m  [0m 70  		[32mint[0m i;
+[33m  [0m 71  		[32mswitch[0m (type)
+[33m  [0m 72  		{
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f00[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m71[0m:[33m10[0m
+[33m  [0m 68  	    [32mdouble[0m sum;
+[33m  [0m 69  		sum = [31m0.0[0m;
+[33m  [0m 70  		[32mint[0m i;
+[33m->[0m 71  		[32mswitch[0m ([4mtype[0m)
+[33m  [0m 72  		{
+[33m  [0m 73  		[32mcase[0m Department::EMPLOYEE:		
+[33m  [0m 74  			[32mfor[0m (i = [31m0[0m; i < Employees->size(); i++)
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f30[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m74[0m:[33m10[0m
+[33m  [0m 71  		[32mswitch[0m (type)
+[33m  [0m 72  		{
+[33m  [0m 73  		[32mcase[0m Department::EMPLOYEE:		
+[33m->[0m 74  			[32mfor[0m (i [4m=[0m [31m0[0m; i < Employees->size(); i++)
+[33m  [0m 75  			{
+[33m  [0m 76  				sum += Employees->at(i).getSalary();
+[33m  [0m 77  			}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f60[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m76[0m:[33m11[0m
+[33m  [0m 73  		[32mcase[0m Department::EMPLOYEE:		
+[33m  [0m 74  			[32mfor[0m (i = [31m0[0m; i < Employees->size(); i++)
+[33m  [0m 75  			{
+[33m->[0m 76  				sum += [4mEmployees[0m->at(i).getSalary();
+[33m  [0m 77  			}
+[33m  [0m 78  			[32mbreak[0m;
+[33m  [0m 79  		[32mcase[0m Department::PROGRAMMER:
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100008c40[0m program_new`Employee::getSalary(this=0x0000000100204290) const at [36memployeeClass.cpp[0m:[33m39[0m:[33m9[0m
+[33m  [0m 36  	}
+[33m  [0m 37  	
+[33m  [0m 38  	[32mdouble[0m Employee::getSalary() [32mconst[0m {
+[33m->[0m 39  		[32mreturn[0m [4msalary[0m;
+[33m  [0m 40  	}
+[33m  [0m 41  	
+[33m  [0m 42  	[32mint[0m Employee::getHireYear() [32mconst[0m
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f70[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m76[0m:[33m28[0m
+[33m  [0m 73  		[32mcase[0m Department::EMPLOYEE:		
+[33m  [0m 74  			[32mfor[0m (i = [31m0[0m; i < Employees->size(); i++)
+[33m  [0m 75  			{
+[33m->[0m 76  				sum += Employees->at(i).[4mgetSalary[0m();
+[33m  [0m 77  			}
+[33m  [0m 78  			[32mbreak[0m;
+[33m  [0m 79  		[32mcase[0m Department::PROGRAMMER:
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f80[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m77[0m:[33m3[0m
+[33m  [0m 74  			[32mfor[0m (i = [31m0[0m; i < Employees->size(); i++)
+[33m  [0m 75  			{
+[33m  [0m 76  				sum += Employees->at(i).getSalary();
+[33m->[0m 77  			[4m}[0m
+[33m  [0m 78  			[32mbreak[0m;
+[33m  [0m 79  		[32mcase[0m Department::PROGRAMMER:
+[33m  [0m 80  			[32mfor[0m (i = [31m0[0m; i < Programmers->size(); i++)
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f84[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m74[0m:[33m39[0m
+[33m  [0m 71  		[32mswitch[0m (type)
+[33m  [0m 72  		{
+[33m  [0m 73  		[32mcase[0m Department::EMPLOYEE:		
+[33m->[0m 74  			[32mfor[0m (i = [31m0[0m; i < Employees->size(); i[4m++[0m)
+[33m  [0m 75  			{
+[33m  [0m 76  				sum += Employees->at(i).getSalary();
+[33m  [0m 77  			}
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100000f94[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m78[0m:[33m3[0m
+[33m  [0m 75  			{
+[33m  [0m 76  				sum += Employees->at(i).getSalary();
+[33m  [0m 77  			}
+[33m->[0m 78  			[32m[4mbreak[0m[0m;
+[33m  [0m 79  		[32mcase[0m Department::PROGRAMMER:
+[33m  [0m 80  			[32mfor[0m (i = [31m0[0m; i < Programmers->size(); i++)
+[33m  [0m 81  			{
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001074[0m program_new`Department::CalculateAverageSalary(this=0x000000016fdff4d0, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m96[0m:[33m12[0m
+[33m  [0m 93  			[32mbreak[0m;
+[33m  [0m 94  		}
+[33m  [0m 95  	
+[33m->[0m 96  	    [32mreturn[0m [4msum[0m/i;
+[33m  [0m 97  	}
+[33m  [0m 98  	
+[33m  [0m 99  	vector<Employee*> *Department::getAllStaff()
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x0000000100001098[0m program_new`Department::CalculateAverageSalary(this=0x0000000000000000, type=EMPLOYEE) at [36mDepartment.cpp[0m:[33m96[0m:[33m5[0m
+[33m  [0m 93  			[32mbreak[0m;
+[33m  [0m 94  		}
+[33m  [0m 95  	
+[33m->[0m 96  	    [32m[4mreturn[0m[0m sum/i;
+[33m  [0m 97  	}
+[33m  [0m 98  	
+[33m  [0m 99  	vector<Employee*> *Department::getAllStaff()
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gs[K[1G[2m(lldb) [0m[8Gfr v
+(Department *) this = nullptr
+(Department::StaffTypes) type = EMPLOYEE
+(double) sum = 9.8743261714854267E-315
+(int) i = 24576
+(lldb) [1G[2m(lldb) [0m[8Gs
+Process 10977 stopped
+* thread #1, queue = [32m'com.apple.main-thread'[0m, stop reason = [31mstep in[0m
+    frame #0: [33m0x000000010000b1dc[0m program_new`main at [36mmain.cpp[0m:[33m110[0m:[33m56[0m
+[33m  [0m 107 		cout << "The Highest R&D Programmer Salary is: " << RnD.CalculateMaxSalary(RnD.PROGRAMMER) << endl;
+[33m  [0m 108 		cout << "The Highest R&D Software Architect Salary is: " << RnD.CalculateMaxSalary(RnD.SOFTWAREARCHITECTS) << endl;
+[33m  [0m 109 		cout << "\n";
+[33m->[0m 110 		cout << "The Average R&D Employee Salary is: " << RnD.[4mCalculateAverageSalary[0m(RnD.EMPLOYEE) << endl;
+[33m  [0m 111 		cout << "The Average R&D Programmer Salary is: " << RnD.CalculateAverageSalary(RnD.PROGRAMMER) << endl;
+[33m  [0m 112 		cout << "The Average R&D Software Architect Salary is: " << RnD.CalculateAverageSalary(RnD.SOFTWAREARCHITECTS) << endl;
+[33m  [0m 113 		cout << "\n";
+Target 0: (program_new) stopped.
+(lldb) [1G[2m(lldb) [0m[8Gfr -v
+invalid command 'frame -v'.
+(lldb) [1G[2m(lldb) [0m[8Gfr v
+(Department) RnD = {
+  Name = "Research and Development"
+  ID = -1
+  Employees = 0x00006000002012a0 size=1
+  Programmers = 0x00006000002012c0 size=1
+  SoftwareArchitects = 0x00006000002012e0 size=1
+}
+(Department) IT = {
+  Name = "Info And Tech"
+  ID = -1
+  Employees = 0x0000600000201180 size=0
+  Programmers = 0x0000600000201300 size=2
+  SoftwareArchitects = 0x0000600000201320 size=0
+}
+(Employee) E1 = (name = "Josh", age = -1395732480, gender = '\x01', ID = 0, phoneNumber = "", jobTitle = "", salary = 3000, HireYear = 2015)
+(Employee) E2 = (name = "Mary", age = 0, gender = '\0', ID = 0, phoneNumber = "", jobTitle = "", salary = 5500, HireYear = 2010)
+(Employee) E3 = (name = "Marc", age = 0, gender = '\0', ID = 0, phoneNumber = "", jobTitle = "", salary = 8000, HireYear = 2007)
+(Programmer) P1 = {
+  Employee = (name = "Mike", age = 0, gender = '\0', ID = 0, phoneNumber = "", jobTitle = "", salary = 2500, HireYear = 2014)
+  supervisorName = "Mary"
+  ProjectID = 5
+  Language = "CSS"
+}
+(Programmer) P2 = {
+  Employee = (name = "Julie", age = 0, gender = '\0', ID = 0, phoneNumber = "", jobTitle = "", salary = 2150, HireYear = 2013)
+  supervisorName = "Mary"
+  ProjectID = 5
+  Language = "C++"
+}
+(Programmer) P3 = {
+  Employee = (name = "Albert", age = 1024, gender = '\0', ID = 0, phoneNumber = "", jobTitle = "", salary = 2300, HireYear = 2015)
+  supervisorName = "Mary"
+  ProjectID = 9
+  Language = "C++"
+}
+(SoftwareArchitect) SA1 = {
+  Employee = (name = "John", age = 164630160, gender = '\x02', ID = 0, phoneNumber = "", jobTitle = "", salary = 4899, HireYear = 2011)
+  supervisorName = "Marc"
+  ProjectID = 6
+  experienceYears = 7
+}
+(SoftwareArchitect) SA2 = {
+  Employee = (name = "Connor", age = 335984, gender = '\x01', ID = 0, phoneNumber = "", jobTitle = "", salary = 1900, HireYear = 2017)
+  supervisorName = "John"
+  ProjectID = 8
+  experienceYears = 0
+}
+(Programmer) P4 = {
+  Employee = (name = "Roy", age = 1308494208, gender = '\x02', ID = 0, phoneNumber = "", jobTitle = "", salary = 1900, HireYear = 2016)
+  supervisorName = "N/A"
+  ProjectID = 7
+  Language = "JAVA"
+}
+(Programmer) P5 = {
+  Employee = (name = "Jane", age = 1998585867, gender = 'Q', ID = 0, phoneNumber = "", jobTitle = "", salary = 1500, HireYear = 2018)
+  supervisorName = "Roy"
+  ProjectID = 7
+  Language = "JAVA"
+}
+(std::vector<Employee *, std::allocator<Employee *> > *) AllRnDEmployees1 = 0x0000600000201340 size=8
+(std::vector<Employee *, std::allocator<Employee *> > *) AllITEmployees = 0x0000600000201380 size=2
+(std::vector<Employee *, std::allocator<Employee *> > *) AllRnDEmployees2 = 0x00006000002013a0 size=3
+(std::vector<Programmer, std::allocator<Programmer> > *) CppProgrammers = 0x00006000002013e0 size=1
+(std::vector<int, std::allocator<int> > *) AllProjects = 0x0000600000201400 size=2
+(lldb) [1G[2m(lldb) [0m[8Gexit
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] Y
+[1m[7m%[27m[1m[0m                                                                                                ]7;file://Jinyis-MacBook-Pro.local/Users/jinyizhou/myGithubRepo/UtahMSD/CS6015/lab2[0m[27m[24m[Jjinyizhou@Jinyis-MacBook-Pro lab2 % [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Fri Jan 27 21:27:59 2023

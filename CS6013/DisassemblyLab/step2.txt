@@ -1,0 +1,144 @@
+Q2: Set the compilation flag (in the little input box next to the compiler) to -O0 -std=c++17. What is the generated assembly?
+
+.LC0:
+        .string "%d"
+main:
+        push    rbp
+        mov     rbp, rsp
+        mov     esi, 1
+        mov     edi, 3
+        call    int add<int>(int, int)
+        mov     esi, eax
+        mov     edi, OFFSET FLAT:.LC0
+        mov     eax, 0
+        call    printf
+        mov     eax, 0
+        pop     rbp
+        ret
+int add<int>(int, int):
+        push    rbp
+        mov     rbp, rsp
+        mov     DWORD PTR [rbp-4], edi
+        mov     DWORD PTR [rbp-8], esi
+        mov     edx, DWORD PTR [rbp-4]
+        mov     eax, DWORD PTR [rbp-8]
+        add     eax, edx
+        pop     rbp
+        ret
+
+Q3: Explain the generated assembly. You can ignore anything that says OFFSET FLAT: (some label), this is just a way to refer to a string resource in a program.
+
+.LC0:
+        .string "%d"
+
+Above lines mean that a zero-terminated string "%d" is included.
+
+main:
+
+Above line means that a function called "main" is defined.
+
+        push    rbp
+
+Above line backs up the stack frame (rbp).
+
+        mov     rbp, rsp
+
+Above line takes the current value in rsp (stack pointer) and moves it into rbp.
+
+        mov     esi, 1
+
+Above line moves 1 into ESI register.
+
+        mov     edi, 3
+
+Above line moves 3 into EDI register.
+
+        call    int add<int>(int, int)
+
+Above line calls the add function of the int type.
+
+        mov     esi, eax
+
+Above line moves the memory address contained in EAX register into that of ESI register.
+
+        mov     edi, OFFSET FLAT:.LC0
+
+Above line moves the memory address of the string LC0 ("%d") into EDI register.
+
+        mov     eax, 0
+
+Above line moves 0 into EAX register.
+        
+        call    printf
+
+Above line calls the printf() function.
+
+        mov     eax, 0
+
+Above line moves 0 into EAX register.
+
+        leave
+
+Above ine copies rbp to rsp and restores the old rbp from the stack.
+
+        ret
+
+Above line pops the return address off the stack and continues execution at that address.
+
+int add<int>(int, int):
+
+Above line defines the add function which takes two integers in this case.
+
+        push    rbp
+
+Above line backs up the stack frame (rbp). 
+
+        mov     rbp, rsp
+
+Above line takes the current value in rsp (stack pointer) and moves it into rbp. 
+
+        mov     DWORD PTR [rbp-4], edi
+
+Above line takes the EDI register, copies the 4 bytes into the address that is rbp-4.
+
+        mov     DWORD PTR [rbp-8], esi
+
+Above line takes the ESI register, copies the 8 bytes into the address that is rbp-8.
+
+        mov     edx, DWORD PTR [rbp-4]
+
+Above line takes the 4 bytes in the rbp-8 address and moves it to EDX register.
+        
+        mov     eax, DWORD PTR [rbp-8]
+
+Above line takes the 8 bytes in the rbp-8 address and moves it to EAX register.
+        
+        add     eax, edx
+
+Above line adds EDX register to EAX register and store it into EAX.
+
+        pop     rbp
+
+Above line takes the old value of rbp from the callstack and put it back into the register.
+
+        ret
+
+Above line pops the return address off the stack and continues execution at that address.
+
+Q4: Change the compilation flag to -O3 -std=c++17. What is the generated assembly?
+
+.LC0:
+        .string "%d"
+main:
+        sub     rsp, 8
+        mov     esi, 4
+        mov     edi, OFFSET FLAT:.LC0
+        xor     eax, eax
+        call    printf
+        xor     eax, eax
+        add     rsp, 8
+        ret
+
+Q5: Why did the generated assembly change, and how does it relate to the -O3 flag?
+
+The -O3 flag means that the compiler generates much more optimized assembly language.
