@@ -1,3 +1,1 @@
-Repo for MSD program @ University of Utah
-
-Jinyi Zhou
+Repo for the Fall 2022 semester, MSD @ University of Utah

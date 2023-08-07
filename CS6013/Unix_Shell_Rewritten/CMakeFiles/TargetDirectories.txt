@@ -1,3 +1,0 @@
-/Users/jinyizhou/myGithubRepo/UtahMSD/CS6013/Unix_Shell_Rewritten/CMakeFiles/Unix_Shell_Rewritten.dir
-/Users/jinyizhou/myGithubRepo/UtahMSD/CS6013/Unix_Shell_Rewritten/CMakeFiles/edit_cache.dir
-/Users/jinyizhou/myGithubRepo/UtahMSD/CS6013/Unix_Shell_Rewritten/CMakeFiles/rebuild_cache.dir
